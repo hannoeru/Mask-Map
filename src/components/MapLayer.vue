@@ -1,103 +1,156 @@
 <template>
   <div id="map">
-    <vl-map
-      :load-tiles-while-animating="true"
-      :load-tiles-while-interacting="true"
-      data-projection="EPSG:4326"
+    <l-map
+      :zoom="zoom"
+      :center="center"
+      :options="{ zoomControl: false }"
+      v-if="data != null"
     >
-      <vl-view
-        :zoom.sync="zoom"
-        :center.sync="center"
-        :rotation.sync="rotation"
-      ></vl-view>
-      <vl-layer-tile id="osm">
-        <vl-source-osm></vl-source-osm>
-      </vl-layer-tile>
-      <vl-layer-vector>
-        <vl-source-vector :url="api"></vl-source-vector>
-      </vl-layer-vector>
-      <vl-geoloc @update:position="geolocPosition = $event">
-        <template slot-scope="geoloc">
-          <vl-feature v-if="geoloc.position" id="position-feature">
-            <vl-geom-point :coordinates="geoloc.position"></vl-geom-point>
-            <vl-style-box>
-              <vl-style-icon
-                src="https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png"
-                :scale="0.4"
-                :anchor="[0.5, 1]"
-              ></vl-style-icon>
-            </vl-style-box>
-          </vl-feature>
-        </template>
-      </vl-geoloc>
-      <vl-interaction-select
-        :features.sync="selectedFeatures"
-        ref="interaction"
+      <l-tile-layer :url="url"></l-tile-layer>
+      <l-control-zoom position="topright"></l-control-zoom>
+      <v-marker-cluster
+        ref="clusterRef"
+        :options="clusterOption"
       >
-      </vl-interaction-select>
-    </vl-map>
+        <l-geo-json
+          :geojson="data"
+          :options="geoJsonOption"
+        ></l-geo-json>
+      </v-marker-cluster>
+    </l-map>
   </div>
 </template>
-
 <script>
-export default {
-  props: ['data'],
-  data() {
-    return {
-      zoom: 11,
-      center: [121.597366, 25.105497],
-      rotation: 0,
-      geolocPosition: undefined,
-      selectedFeatures: [],
-      list: this.data,
-      api: process.env.VUE_APP_MASK_API
-    }
-  },
-  components: {},
-  created() {
-    // this.getUesrLocation();
-  },
-  methods: {
-    getUesrLocation() {
-      navigator.geolocation.getCurrentPosition(location => {
-        this.center = [location.coords.latitude, location.coords.longitude]
-        this.userLocation = [
-          location.coords.latitude,
-          location.coords.longitude
-        ]
-      })
+  import "leaflet/dist/leaflet.css";
+  import L from "leaflet";
+  import { LMap, LTileLayer, LGeoJson, LControlZoom } from "vue2-leaflet";
+  import Vue2LeafletMarkerCluster from "vue2-leaflet-markercluster";
+
+  delete L.Icon.Default.prototype._getIconUrl;
+  L.Icon.Default.mergeOptions({
+    iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
+    iconUrl: require("leaflet/dist/images/marker-icon.png"),
+    shadowUrl: require("leaflet/dist/images/marker-shadow.png")
+  });
+  export default {
+    props: ["data"],
+    components: {
+      LMap,
+      LTileLayer,
+      LGeoJson,
+      LControlZoom,
+      "v-marker-cluster": Vue2LeafletMarkerCluster
     },
-    getIcon(maskNum) {
-      if (maskNum < 100) {
-        return this.greyIcon
-      } else {
-        return this.greenIcon
-      }
+    data() {
+      return {
+        center: L.latLng(25.03746, 121.564558),
+        zoom: 12,
+        url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
+        attribution:
+          'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a>',
+        api: process.env.VUE_APP_MASK_API,
+        geoJson: null,
+        map: null,
+        isAdult: true,
+        isChild: false,
+        geoJsonOption: {
+          onEachFeature: function(feature, layer) {
+            // var popupText = 'geometry type: ' + feature.geometry.type
+
+            // if (feature.properties.color) {
+            //   popupText += '<br/>color: ' + feature.properties.color
+            // }
+            const popupText = feature.properties.id;
+            layer.bindPopup(popupText);
+          }
+        },
+        clusterOption: {
+          iconCreateFunction: function(cluster) {
+            const markers = cluster.getAllChildMarkers();
+            let adult = 0;
+            let child = 0;
+            console.log(markers[0]);
+            for (var i = 0; i < markers.length; i++) {
+              adult += markers[i].feature.properties.mask_adult;
+              child += markers[i].feature.properties.mask_child;
+            }
+            let html = `<div><div class="adult">${adult}</div>
+                                                                                          <div class="child">${child}</div></div>`;
+            const total = adult + child;
+            let c = "";
+            if (total < 3000) {
+              c = "small";
+            } else if (total < 5000) {
+              c = "medium";
+            } else {
+              c = "large";
+            }
+            return L.divIcon({
+              html: html,
+              className: "marker-cluster marker-cluster-" + c,
+              iconSize: L.point(50, 50)
+            });
+          }
+          // //Disable all of the defaults:
+          // spiderfyOnMaxZoom: false,
+          // showCoverageOnHover: false,
+          // zoomToBoundsOnClick: false
+        }
+      };
     },
-    getPoints() {
-      return this.data.map(item => Object.freeze(item.geometry.coordinates))
-    },
-    showInfo(item) {
-      console.log(item)
-    }
-  },
-  computed: {
-    dataFilter() {
-      return this.data.filter(item => item.properties.county == this.city)
-    }
-  },
-  watch: {
-    selectedFeatures: function(val) {
-      this.$emit('update-selected', val[0])
-    }
-  }
-}
+    created() {},
+    methods: {}
+  };
 </script>
 <style lang="scss">
-@import '~leaflet/dist/leaflet.css';
-#map {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
+  @import "~leaflet.markercluster/dist/MarkerCluster.css";
+  #map {
+    height: 100%;
+    width: 100%;
+  }
+  .marker-cluster-small {
+    background-color: rgba(181, 226, 140, 0.6);
+    > div {
+      background-color: rgba(110, 204, 57, 0.6);
+    }
+  }
+  .marker-cluster-medium {
+    background-color: rgba(241, 211, 87, 0.6);
+    > div {
+      background-color: rgba(240, 194, 12, 0.6);
+    }
+  }
+
+  .marker-cluster-large {
+    background-color: rgba(253, 156, 115, 0.6);
+    > div {
+      background-color: rgba(241, 128, 23, 0.6);
+    }
+  }
+  .marker-cluster {
+    width: 60px;
+    height: 60px;
+    background-clip: padding-box;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > div {
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      border-radius: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+      > .adult {
+        color: blue;
+      }
+      > .child {
+        color: green;
+      }
+    }
+  }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <v-app id="app">
     <Loading :active.sync="isLoading"></Loading>
-    <SideMenu id="sidemenu" v-if="maskData !== null" :data="maskData" />
+    <SideMenu id="sidemenu" v-if="false" :data="maskData" />
     <MapLayer
       id="map"
       v-if="maskData !== null"
@@ -61,6 +61,14 @@ export default {
 @import '@/assets/main.scss';
 html {
   overflow: hidden;
+}
+html,
+body,
+#app {
+  height: 100%;
+}
+body {
+  margin: 0;
 }
 p {
   margin: 0;
