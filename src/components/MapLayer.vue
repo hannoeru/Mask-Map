@@ -13,8 +13,8 @@
       <vl-layer-tile id="osm">
         <vl-source-osm></vl-source-osm>
       </vl-layer-tile>
-      <vl-layer-vector>
-        <vl-source-vector :url="api"></vl-source-vector>
+      <vl-layer-vector v-if="data">
+        <vl-source-vector :features="data"></vl-source-vector>
       </vl-layer-vector>
       <vl-geoloc @update:position="geolocPosition = $event">
         <template slot-scope="geoloc">
@@ -36,6 +36,7 @@
       <vl-interaction-select
         :features.sync="selectedFeatures"
         ref="interaction"
+        @select="sendSelected()"
       >
         <vl-style-box>
           <vl-style-icon
@@ -51,7 +52,7 @@
 
 <script>
   export default {
-    props: ["data"],
+    props: ["selected"],
     data() {
       return {
         zoom: 11,
@@ -59,36 +60,24 @@
         rotation: 0,
         geolocPosition: undefined,
         selectedFeatures: [],
-        list: this.data,
-        api: process.env.VUE_APP_MASK_API
+        api: process.env.VUE_APP_MASK_API,
+        data: null
       };
     },
     components: {},
     created() {
-      // this.getUesrLocation();
+      this.getMaskData();
     },
     methods: {
-      getUesrLocation() {
-        navigator.geolocation.getCurrentPosition(location => {
-          this.center = [location.coords.latitude, location.coords.longitude];
-          this.userLocation = [
-            location.coords.latitude,
-            location.coords.longitude
-          ];
-        });
+      async getMaskData() {
+        const api = process.env.VUE_APP_MASK_API;
+        const response = await this.axios.get(api);
+        console.log(response.data.features);
+        this.data = await response.data.features;
+        console.log(this.$refs.interaction);
       },
-      getIcon(maskNum) {
-        if (maskNum < 100) {
-          return this.greyIcon;
-        } else {
-          return this.greenIcon;
-        }
-      },
-      getPoints() {
-        return this.data.map(item => Object.freeze(item.geometry.coordinates));
-      },
-      showInfo(item) {
-        console.log(item);
+      sendSelected() {
+        this.$emit("update-selected", this.selectedFeatures[0]);
       }
     },
     computed: {
@@ -97,8 +86,9 @@
       }
     },
     watch: {
-      selectedFeatures: function(val) {
-        this.$emit("update-selected", val[0]);
+      selected: function(val) {
+        console.log(val);
+        // this.$refs.interaction.select(val.id);
       }
     }
   };
