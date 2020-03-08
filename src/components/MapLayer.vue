@@ -1,103 +1,100 @@
 <template>
-  <div id="map">
-    <vl-map
-      :load-tiles-while-animating="true"
-      :load-tiles-while-interacting="true"
-      data-projection="EPSG:4326"
+  <div>
+    <MglMap
+      :accessToken="accessToken"
+      :mapStyle="mapStyle"
+      :center="center"
+      :zoom="zoom"
+      v-if="data != null"
     >
-      <vl-view
-        :zoom.sync="zoom"
-        :center.sync="center"
-        :rotation.sync="rotation"
-      ></vl-view>
-      <vl-layer-tile id="osm">
-        <vl-source-osm></vl-source-osm>
-      </vl-layer-tile>
-      <vl-layer-vector v-if="data">
-        <vl-source-vector :features="data"></vl-source-vector>
-      </vl-layer-vector>
-      <vl-geoloc @update:position="geolocPosition = $event">
-        <template slot-scope="geoloc">
-          <vl-feature
-            v-if="geoloc.position"
-            id="position-feature"
-          >
-            <vl-geom-point :coordinates="geoloc.position"></vl-geom-point>
-            <vl-style-box>
-              <vl-style-icon
-                src="https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png"
-                :scale="0.4"
-                :anchor="[0.5, 1]"
-              ></vl-style-icon>
-            </vl-style-box>
-          </vl-feature>
-        </template>
-      </vl-geoloc>
-      <vl-interaction-select
-        :features.sync="selectedFeatures"
-        ref="interaction"
-        @select="sendSelected()"
-      >
-        <vl-style-box>
-          <vl-style-icon
-            src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png"
-            :scale="0.4"
-            :anchor="[0.5, 1]"
-          ></vl-style-icon>
-        </vl-style-box>
-      </vl-interaction-select>
-    </vl-map>
+      <MglAttributionControl />
+      <MglNavigationControl position="top-right" />
+      <MglGeolocateControl position="top-right" />
+      <MglScaleControl position="bottom-right" />
+      <MglGeojsonLayer
+        sourceId="geojson"
+        :source="geoSource"
+        layerId="geojson"
+        :layer="geoLayer"
+      />
+      <MglGeojsonLayer
+        sourceId="geojson_text"
+        :source="geoSource"
+        layerId="geoText"
+        :layer="geoText"
+      />
+    </MglMap>
   </div>
 </template>
 
 <script>
-  export default {
-    props: ["selected"],
-    data() {
-      return {
-        zoom: 11,
-        center: [121.597366, 25.105497],
-        rotation: 0,
-        geolocPosition: undefined,
-        selectedFeatures: [],
-        api: process.env.VUE_APP_MASK_API,
-        data: null
-      };
-    },
-    components: {},
-    created() {
-      this.getMaskData();
-    },
-    methods: {
-      async getMaskData() {
-        const api = process.env.VUE_APP_MASK_API;
-        const response = await this.axios.get(api);
-        console.log(response.data.features);
-        this.data = await response.data.features;
-        console.log(this.$refs.interaction);
+// Map
+import Mapbox from 'mapbox-gl'
+import 'mapbox-gl/dist/mapbox-gl.css'
+import {
+  MglMap,
+  MglAttributionControl,
+  MglNavigationControl,
+  MglGeolocateControl,
+  MglScaleControl,
+  MglGeojsonLayer
+} from 'vue-mapbox'
+export default {
+  components: {
+    MglMap,
+    MglAttributionControl,
+    MglNavigationControl,
+    MglGeolocateControl,
+    MglScaleControl,
+    MglGeojsonLayer
+  },
+  data() {
+    return {
+      accessToken:
+        'pk.eyJ1IjoiaGFubm9lcnUiLCJhIjoiY2s3aXNrYnd4MDJ6YjNrbXNuaXdqNWxzOCJ9.6YD95RPYI9hsqi5ULKH7cA',
+      mapStyle: 'mapbox://styles/mapbox/navigation-preview-day-v4',
+      center: [121.464558, 25.03746],
+      zoom: 11,
+      masks: {
+        mask1: ['<', ['get', 'mask_adult'], 2]
       },
-      sendSelected() {
-        this.$emit("update-selected", this.selectedFeatures[0]);
-      }
-    },
-    computed: {
-      dataFilter() {
-        return this.data.filter(item => item.properties.county == this.city);
-      }
-    },
-    watch: {
-      selected: function(val) {
-        console.log(val);
-        // this.$refs.interaction.select(val.id);
-      }
+      geoSource: {
+        type: 'geojson',
+        data: {
+          type: 'FeatureCollection',
+          features: null
+        },
+        cluster: true,
+        clusterProperties: {
+          mask1: ['+', ['case', this.masks.mask1, 1, 0]]
+        },
+        buffer: 0
+      },
+      geoLayer: {
+        type: 'circle',
+        paint: {
+          'circle-color': '#33ccff',
+          'circle-radius': 12
+        }
+      },
+      geoText: {
+        type: 'symbol',
+        filter: ['!=', 'cluster', true],
+        layout: {
+          'text-field': ['get', 'mask_adult'],
+          'text-size': 10
+        },
+        paint: {}
+      },
+      data: null
     }
-  };
-</script>
-<style lang="scss">
-  @import "~leaflet/dist/leaflet.css";
-  #map {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+  },
+  async created() {
+    const response = await this.$http.get(process.env.VUE_APP_MASK_API)
+    console.log(response)
+    this.geoSource.data.features = await response.data.features
+    this.data = await response.data.features
+    this.mapbox = await Mapbox
   }
-</style>
+}
+</script>
