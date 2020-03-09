@@ -1,144 +1,237 @@
 <template>
-  <v-card
-    class="card"
-    v-if="isLoading == false"
+  <div
+    id="menu"
+    :class="{'close' : toggle}"
   >
-    <Loading :active.sync="isLoading"></Loading>
-    <v-card-title class="v-card-title blue white--text">
-      <span class="headline mb-4">尋找藥局</span>
-      <v-spacer></v-spacer>
-      <v-select
-        :items="citys.counties"
-        label="Outlined style"
-        v-model="selectedCity"
-        outlined
-      ></v-select>
-      <v-select
-        :items="getDistricts"
-        label="Outlined style"
-        v-model="selectedDistricts"
-        outlined
-      ></v-select>
-    </v-card-title>
-    <v-card-text class="v-card-text">
-      <v-row
-        dense
-        class="mt-2"
-      >
-        <v-col
-          v-for="(item, i) in listFilter"
-          :key="i"
-          cols="12"
-          @click="selectItem(item)"
+    <div
+      class="cover"
+      v-show='toggle'
+    >
+    </div>
+    <div class="nav">
+      <div class="nav_logo">
+        <img
+          src="@/assets/logo.png"
+          alt=""
         >
-          <v-card>
-            <v-card-title class="d-flex justify-space-between">
-              <v-row dense>
-                <v-col cols="5 d-flex align-center">
-                  <div>{{ item.properties.name }}</div>
-                </v-col>
-                <v-col cols="7">
-                  <div class="d-flex justify-end">
-                    <v-chip
-                      label
-                      class="ma-2"
-                      color="success"
-                      min-width="100"
-                    >
-                      {{ item.properties.mask_adult }}
-                    </v-chip>
-                    <v-chip
-                      label
-                      class="ma-2 ml-2"
-                      color="primary"
-                      min-width="100"
-                    >
-                      {{ item.properties.mask_child }}
-                    </v-chip>
-                  </div>
-                </v-col>
-              </v-row>
+      </div>
+      <div class="nav_title">口罩即時查</div>
+      <div
+        class="nav_toggler"
+        @click="(toggle = !toggle)"
+      ><img
+          src="@/assets/ic_toggler@2x.png"
+          alt=""
+        ></div>
+    </div>
+    <div class="search">
+      <select
+        name=""
+        v-model="selectedCity"
+      >
+        <option
+          v-for="(item, key) in cities.counties"
+          :key="key"
+          :value="item"
+        >{{ item }}</option>
+      </select>
+    </div>
+    <div class="title_day">
+      <div class="text_big">偶數</div>
+      <div class="text">購買日</div>
+      <div class="info"><img
+          src="@/assets/ic_help@2x.png"
+          alt=""
+        ></div>
+    </div>
+    <div class="data_info">
+      <div class="info">
+        <span>{{selectedCity}}內的供應商</span>
+        <span>資訊更新時間{{updateTime}}</span>
+      </div>
+      <button @click="$parent.getMaskData()">重整列表</button>
+    </div>
+    <div class="cards">
+      <div class="card-list">
+        <Card
+          v-for="item in filterData"
+          :key="item.properties.id"
+          :data="item"
+          @click.native="updateShow(item)"
+        />
+      </div>
 
-            </v-card-title>
-            <v-card-text>
-              電話 | {{ item.properties.address }}
-              備註 | {{ item.properties.phone }}
-            </v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-card-text>
-  </v-card>
+    </div>
+  </div>
 </template>
 <script>
-  import citys from "../data-zh";
-  import Loading from "vue-loading-overlay";
+  import cities from "../data-zh";
+  import Card from "./Card";
   export default {
+    components: { Card },
+    props: ["data"],
     data() {
       return {
-        citys: citys,
+        cities: cities,
+        toggle: false,
         selectedCity: "臺北市",
-        selectedDistricts: "",
-        selected: null,
-        isLoading: false,
-        data: null
+        updateTime: "20:22:22"
       };
     },
-    components: {
-      Loading
-    },
-    created() {
-      this.getMaskData();
-    },
     methods: {
-      async getMaskData() {
-        const api = process.env.VUE_APP_MASK_API;
-        this.isLoading = true;
-        const response = await this.axios.get(api);
-        console.log(response.data.features);
-        this.data = await response.data.features;
-        this.isLoading = false;
-        console.log(this.$refs.interaction);
-      },
-      selectItem(val) {
-        console.log(val);
-        this.$emit("update-selected", val);
-      }
-    },
-    computed: {
-      getDistricts: function() {
+      getDistricts() {
         if (this.selectedCity == "") {
           return [];
         }
-        const data = this.citys.districts[
-          citys.counties.indexOf(this.selectedCity)
+        const data = this.cities.districts[
+          cities.counties.indexOf(this.selectedCity)
         ];
         console.log(data);
         return data[0];
       },
-      listFilter: function() {
-        if (this.selectedCity == "") return this.data;
-        let cache = this.data.filter(
+      updateShow(item) {
+        this.$emit("update-show", item);
+      }
+    },
+    computed: {
+      filterData: function() {
+        console.log(
+          this.data.filter(item => item.properties.county == this.selectedCity)
+        );
+        return this.data.filter(
           item => item.properties.county == this.selectedCity
         );
-        console.log(cache);
-        return cache;
       }
     }
   };
 </script>
 <style lang="scss">
-  .card {
-    overflow: hidden;
-    width: 300px;
-    height: calc(100% - 30px);
-    margin: 15px;
+  select {
+    outline: none;
+    padding: 0px 12px;
   }
-  .v-card-title {
-    height: 220px;
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  .v-card-text {
-    height: calc(100% - 220px);
-    overflow-y: scroll;
+  .close {
+    transform: translateX(-310px);
+  }
+  #menu {
+    width: 375px;
+    height: 100%;
+    background: #fafafa;
+    position: relative;
+    transition-property: all;
+    transition-duration: 300ms;
+    transition-delay: 0s;
+    transition-timing-function: ease;
+    > .cover {
+      position: absolute;
+      top: 65px;
+      left: 0;
+      height: calc(100% - 65px);
+      width: 100%;
+      background: #fafafa;
+      z-index: 20;
+    }
+    > .nav {
+      @extend .center;
+      height: 65px;
+      background: #ffffff;
+      > .nav_logo {
+        @extend .center;
+        margin-left: 16px;
+        margin-right: 10px;
+      }
+      > .nav_title {
+        @extend .center;
+        margin-right: auto;
+      }
+      > .nav_toggler {
+        @extend .center;
+        margin-right: 24px;
+      }
+    }
+    > .search {
+      margin-top: 16px;
+      > select {
+        width: 343px;
+        height: 46px;
+        background: #ffffff 0% 0% no-repeat padding-box;
+        border: 1px solid #34495e33;
+        border-radius: 10px;
+      }
+    }
+    > .title_day {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+      margin-top: 12px;
+      padding: 0px 24px;
+      height: 54px;
+      text-align: left;
+      > .text_big {
+        font: Bold 36px/54px Noto Sans CJK TC;
+        letter-spacing: 0;
+        color: #34495e;
+      }
+      > .text {
+        margin-left: 8px;
+        padding-bottom: 7px;
+        font: Regular 16px/24px Noto Sans CJK TC;
+        letter-spacing: 0;
+        color: #34495e;
+      }
+      > .info {
+        margin-left: 8px;
+        margin-bottom: 7px;
+        height: 24px;
+        width: 24px;
+      }
+    }
+    > .data_info {
+      margin-top: 25px;
+      padding: 0px 24px;
+      @extend .center;
+      > .info {
+        @extend .center;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-right: auto;
+        span {
+          text-align: left;
+          font: 12px/18px Noto Sans CJK TC;
+          letter-spacing: 0;
+          color: #566778;
+          opacity: 1;
+        }
+      }
+      button {
+        height: 36px;
+        width: 96px;
+        border: 2px solid #34495e;
+        border-radius: 100px;
+        opacity: 1;
+        font: 14px/20px Noto Sans CJK TC;
+        letter-spacing: 0;
+        color: #34495e;
+        outline: none;
+      }
+    }
+    > .cards {
+      @extend .center;
+      flex-direction: column;
+      height: calc(100% - 276px);
+      margin-top: 20px;
+      overflow-y: auto;
+      .card-list {
+        height: 100%;
+      }
+      .card {
+        margin-bottom: 20px;
+      }
+    }
   }
 </style>
