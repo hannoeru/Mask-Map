@@ -5,7 +5,10 @@
       :center="center"
       :options="{ zoomControl: false }"
     >
-      <l-tile-layer :url="url"></l-tile-layer>
+      <l-tile-layer
+        :url="url"
+        :attribution="attribution"
+      ></l-tile-layer>
       <l-control-zoom position="topright"></l-control-zoom>
       <v-marker-cluster
         ref="clusterRef"
@@ -127,7 +130,9 @@
     created() {},
     methods: {
       markerCilckHandler(e) {
-        console.log(e.target.feature.properties.id);
+        const selected = e.target.feature;
+        console.log(selected.properties.id);
+        this.$emit("update-selected", selected);
       }
     }
   };

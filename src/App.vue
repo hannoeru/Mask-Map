@@ -1,9 +1,9 @@
 <template>
-  <v-app id="app">
+  <div id="app">
     <Loading :active.sync="isLoading"></Loading>
     <SideMenu
-      id="sidemenu"
-      v-if="false"
+      id="menu"
+      v-if="maskData !== null"
       :data="maskData"
     />
     <MapLayer
@@ -16,7 +16,7 @@
       id="show-box"
       :selected.sync="selected"
     />
-  </v-app>
+  </div>
 </template>
 
 <script>
@@ -35,7 +35,8 @@
         isLoading: false,
         maskData: null,
         selected: null,
-        showInfo: false
+        showInfo: false,
+        api: process.env.VUE_APP_MASK_API
       };
     },
     components: {
@@ -49,16 +50,14 @@
     },
     methods: {
       async getMaskData() {
-        const api = process.env.VUE_APP_MASK_API;
         this.isLoading = true;
-        const response = await this.axios.get(api);
+        const response = await this.axios.get(this.api);
         console.log("Data Get!");
         this.maskData = await Object.freeze(response.data.features);
         this.isLoading = false;
       },
       updateSelected(item) {
         this.selected = item;
-        this.showInfo = true;
       }
     }
   };
@@ -86,6 +85,13 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    font: 16px/19px Noto Sans CJK TC;
+  }
+  #map {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
   }
   #show-box {
     position: absolute;
@@ -93,12 +99,10 @@
     right: 30px;
     z-index: 10;
   }
-  #sidemenu {
+  #menu {
     position: absolute;
     top: 0px;
     left: 0px;
     z-index: 10;
-    height: 100%;
-    width: 300px;
   }
 </style>
