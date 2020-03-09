@@ -4,7 +4,6 @@
       :zoom="zoom"
       :center="center"
       :options="{ zoomControl: false }"
-      v-if="data != null"
     >
       <l-tile-layer :url="url"></l-tile-layer>
       <l-control-zoom position="topright"></l-control-zoom>
@@ -16,6 +15,7 @@
           :geojson="data"
           :options="geoJsonOption"
         ></l-geo-json>
+
       </v-marker-cluster>
     </l-map>
   </div>
@@ -43,25 +43,53 @@
     },
     data() {
       return {
+        isLoading: true,
         center: L.latLng(25.03746, 121.564558),
         zoom: 12,
         url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
         attribution:
           'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a>',
         api: process.env.VUE_APP_MASK_API,
-        geoJson: null,
-        map: null,
-        isAdult: true,
-        isChild: false,
+        adultTotal: 0,
+        childTotal: 0,
         geoJsonOption: {
-          onEachFeature: function(feature, layer) {
-            // var popupText = 'geometry type: ' + feature.geometry.type
-
-            // if (feature.properties.color) {
-            //   popupText += '<br/>color: ' + feature.properties.color
+          pointToLayer: (geoJsonPoint, latlng) => {
+            // Total Mask
+            // let adultTotal = 0;
+            // let childTotal = 0;
+            // for (let i = 0; i < this.data.length; i++) {
+            //   adultTotal += this.data[i].properties.mask_adult;
+            //   childTotal += this.data[i].properties.mask_child;
             // }
-            const popupText = feature.properties.id;
-            layer.bindPopup(popupText);
+            // CSS Class
+            const adult = geoJsonPoint.properties.mask_adult;
+            const child = geoJsonPoint.properties.mask_child;
+            let adultClass = "";
+            let childClass = "";
+            if (adult == 0) {
+              adultClass = "none";
+            } else if (adult < 1000) {
+              adultClass = "bad";
+            } else {
+              adultClass = "good";
+            }
+            if (child == 0) {
+              childClass = "none";
+            } else if (child < 1000) {
+              childClass = "bad";
+            } else {
+              childClass = "good";
+            }
+            const html = `<div class="adult ${adultClass}">${adult}</div><div class="child ${childClass}">${child}</div>`;
+            const options = {
+              icon: L.divIcon({
+                html: html,
+                className: "points",
+                iconSize: L.point(80, 38),
+                iconAnchor: L.point(40, 48)
+              })
+            };
+            return L.marker(latlng, options).on("click", this.markerCilckHandler);
           }
         },
         clusterOption: {
@@ -69,13 +97,11 @@
             const markers = cluster.getAllChildMarkers();
             let adult = 0;
             let child = 0;
-            console.log(markers[0]);
             for (var i = 0; i < markers.length; i++) {
               adult += markers[i].feature.properties.mask_adult;
               child += markers[i].feature.properties.mask_child;
             }
-            let html = `<div><div class="adult">${adult}</div>
-                                                                                          <div class="child">${child}</div></div>`;
+            let html = `<div><div class="adult">${adult}</div><div class="child">${child}</div></div>`;
             const total = adult + child;
             let c = "";
             if (total < 3000) {
@@ -92,14 +118,18 @@
             });
           }
           // //Disable all of the defaults:
-          // spiderfyOnMaxZoom: false,
+          // spiderfyOnMaxZoom: false
           // showCoverageOnHover: false,
           // zoomToBoundsOnClick: false
         }
       };
     },
     created() {},
-    methods: {}
+    methods: {
+      markerCilckHandler(e) {
+        console.log(e.target.feature.properties.id);
+      }
+    }
   };
 </script>
 <style lang="scss">
@@ -144,13 +174,53 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+      font: Bold 12px/12px Noto Sans CJK TC;
       > .adult {
-        color: blue;
+        color: #11787a;
       }
       > .child {
-        color: green;
+        color: #70777c;
       }
+    }
+  }
+  .points {
+    border-radius: 5px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: Bold 12px/28px Noto Sans CJK TC;
+    color: white;
+    > div {
+      width: 32px;
+      height: 28px;
+      border-radius: 4px;
+    }
+    > .adult {
+      background: rgba(241, 128, 23, 0.6);
+      margin-right: 4px;
+    }
+    > .child {
+      background: rgba(241, 128, 23, 0.6);
+    }
+    .good {
+      background: #11787a;
+    }
+    .bad {
+      background: #e67e22;
+    }
+    .none {
+      background: #70777c;
+      opacity: 0.5;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -10px;
+      border: 10px solid transparent;
+      border-top: 10px solid #ffffff;
     }
   }
 </style>
