@@ -132,13 +132,11 @@
     methods: {
       markerCilckHandler(e) {
         const selected = e.target.feature;
-        console.log(selected.properties.id);
         this.$emit("update-selected", selected);
       }
     },
     watch: {
       show: function(item) {
-        console.log(this.$refs.mymap.mapObject);
         const map = this.$refs.mymap.mapObject;
         map.flyTo(item.geometry.coordinates.reverse(), 18);
       }
