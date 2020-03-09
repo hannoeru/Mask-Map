@@ -3,6 +3,7 @@
     <l-map
       :zoom="zoom"
       :center="center"
+      ref="mymap"
       :options="{ zoomControl: false }"
     >
       <l-tile-layer
@@ -36,7 +37,7 @@
     shadowUrl: require("leaflet/dist/images/marker-shadow.png")
   });
   export default {
-    props: ["data"],
+    props: ["data", "show"],
     components: {
       LMap,
       LTileLayer,
@@ -47,7 +48,7 @@
     data() {
       return {
         isLoading: true,
-        center: L.latLng(25.03746, 121.564558),
+        center: [25.03746, 121.564558],
         zoom: 12,
         url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
         attribution:
@@ -133,6 +134,13 @@
         const selected = e.target.feature;
         console.log(selected.properties.id);
         this.$emit("update-selected", selected);
+      }
+    },
+    watch: {
+      show: function(item) {
+        console.log(this.$refs.mymap.mapObject);
+        const map = this.$refs.mymap.mapObject;
+        map.flyTo(item.geometry.coordinates.reverse(), 18);
       }
     }
   };

@@ -5,15 +5,18 @@
       id="menu"
       v-if="maskData !== null"
       :data="maskData"
+      @update-show="updateShow"
     />
     <MapLayer
       id="map"
       v-if="maskData !== null"
       :data="maskData"
+      :show.sync="show"
       @update-selected="updateSelected"
     />
     <ShowBox
       id="show-box"
+      v-if="selected !== null"
       :selected.sync="selected"
     />
   </div>
@@ -35,6 +38,7 @@
         isLoading: false,
         maskData: null,
         selected: null,
+        show: null,
         showInfo: false,
         api: process.env.VUE_APP_MASK_API
       };
@@ -58,6 +62,9 @@
       },
       updateSelected(item) {
         this.selected = item;
+      },
+      updateShow(item) {
+        this.show = item;
       }
     }
   };
@@ -72,12 +79,16 @@
   body,
   #app {
     height: 100%;
+    box-sizing: border-box;
   }
   body {
     margin: 0;
   }
   p {
     margin: 0;
+  }
+  button {
+    outline: none;
   }
   #app {
     text-align: center;
@@ -99,6 +110,7 @@
     right: 30px;
     z-index: 10;
   }
+
   #menu {
     position: absolute;
     top: 0px;
