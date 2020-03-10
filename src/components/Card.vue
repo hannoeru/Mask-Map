@@ -72,7 +72,7 @@ export default {
       const time = new Date()
       const hour = time.getHours()
       const min = time.getMinutes()
-      const date = time.getDate()
+      const day = time.getDay()
       let zone = 0
       if (8 < hour < 11 && min > 30) {
         zone = 0
@@ -81,7 +81,7 @@ export default {
       } else {
         zone = 2
       }
-      return timeArray[zone][date] ? '營業中' : '休息中'
+      return timeArray[zone][day] ? '營業中' : '休息中'
     },
     mapUrl(val) {
       return `https://www.google.com/maps/search/?api=1&query=${val.name} ${val.address}`

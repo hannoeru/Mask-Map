@@ -1,6 +1,5 @@
 <template>
   <div id="menu" :class="{ close: toggle }">
-    <div class="cover" v-show="toggle"></div>
     <div class="nav">
       <div class="nav_logo">
         <img src="@/assets/logo.png" alt="" />
@@ -84,7 +83,8 @@ export default {
 <style lang="scss">
 select {
   outline: none;
-  padding: 0px 12px;
+  padding: 0px 16px;
+  font: 14px/16px Noto Sans CJK TC;
 }
 .center {
   display: flex;
@@ -93,24 +93,24 @@ select {
 }
 .close {
   transform: translateX(-310px);
+  height: 65px;
 }
 #menu {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
   width: 375px;
   height: 100%;
   background: #fafafa;
-  position: relative;
   transition-property: all;
   transition-duration: 300ms;
   transition-delay: 0s;
   transition-timing-function: ease;
-  > .cover {
-    position: absolute;
-    top: 65px;
-    left: 0;
-    height: calc(100% - 65px);
-    width: 100%;
-    background: #fafafa;
-    z-index: 20;
+  overflow: hidden;
+  &.close {
+    transform: translateX(-310px);
+    height: 65px;
   }
   > .nav {
     @extend .center;
@@ -127,7 +127,9 @@ select {
     }
     > .nav_toggler {
       @extend .center;
-      margin-right: 24px;
+      height: 65px;
+      width: 65px;
+      margin-right: 3px;
     }
   }
   > .search {
@@ -206,7 +208,7 @@ select {
       height: 100%;
     }
     .card {
-      margin-bottom: 20px;
+      margin-top: 20px;
     }
   }
 }
