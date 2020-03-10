@@ -231,6 +231,7 @@
     transition-duration: 300ms;
     transition-delay: 0s;
     transition-timing-function: ease;
+    font: 16px/24px Noto Sans TC;
     overflow: hidden;
     &.close {
       transform: translateX(-310px);
