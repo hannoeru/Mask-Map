@@ -11,23 +11,26 @@
     </div>
     <div class="search">
       <select name="" v-model="selectedCity">
-        <option
-          v-for="(item, key) in cities.counties"
-          :key="key"
-          :value="item"
-          >{{ item }}</option
-        >
+        <option v-for="(item, key) in cities.counties" :key="key" :value="item">
+          {{ item }}
+        </option>
       </select>
     </div>
     <div class="title_day">
-      <div class="text_big">偶數</div>
+      <div class="text_big">{{ day ? '奇' : '偶' }}數</div>
       <div class="text">購買日</div>
-      <div class="info"><img src="@/assets/ic_help@2x.png" alt="" /></div>
+      <div class="info">
+        <a
+          href="https://www.facebook.com/mohw.gov.tw/photos/a.484593545040402/1470252826474464/?type=3&theater"
+          target="_blank"
+          ><img src="@/assets/ic_help@2x.png" alt=""
+        /></a>
+      </div>
     </div>
     <div class="data_info">
       <div class="info">
-        <span>{{ selectedCity }}內的供應商</span>
-        <span>資訊更新時間{{ updateTime }}</span>
+        <span>{{ selectedCity }} 內的供應商</span>
+        <span>資訊更新時間 {{ updateTime }}</span>
       </div>
       <button @click="$parent.getMaskData()">重整列表</button>
     </div>
@@ -53,9 +56,19 @@ export default {
     return {
       cities: cities,
       toggle: false,
+      day: true,
       selectedCity: '臺北市',
       updateTime: '20:22:22'
     }
+  },
+  created() {
+    const day = new Date().getDay()
+    if (day % 2 != 0) {
+      this.day = true
+    } else {
+      this.day = false
+    }
+    this.updateTime = this.data[0].properties.updated
   },
   methods: {
     getDistricts() {
@@ -85,7 +98,8 @@ export default {
 select {
   outline: none;
   padding: 0px 16px;
-  font: 14px/16px Noto Sans CJK TC;
+  font: 14px/16px Noto Sans TC;
+  background: #ffffff;
 }
 .center {
   display: flex;
@@ -152,14 +166,14 @@ select {
     height: 54px;
     text-align: left;
     > .text_big {
-      font: Bold 36px/54px Noto Sans CJK TC;
+      font: Bold 36px/54px Noto Sans TC;
       letter-spacing: 0;
       color: #34495e;
     }
     > .text {
       margin-left: 8px;
       padding-bottom: 7px;
-      font: Regular 16px/24px Noto Sans CJK TC;
+      font: Regular 16px/24px Noto Sans TC;
       letter-spacing: 0;
       color: #34495e;
     }
@@ -193,7 +207,7 @@ select {
       border: 2px solid #34495e;
       border-radius: 100px;
       opacity: 1;
-      font: 14px/20px Noto Sans CJK TC;
+      font: 14px/20px Noto Sans TC;
       letter-spacing: 0;
       color: #34495e;
       outline: none;
