@@ -2,7 +2,6 @@
   <div id="app">
     <Loading :active.sync="isLoading"></Loading>
     <SideMenu
-      id="menu"
       v-if="maskData !== null"
       :data="maskData"
       @update-show="updateShow"
@@ -73,6 +72,9 @@ export default {
 html {
   overflow: hidden;
 }
+* {
+  box-sizing: border-box;
+}
 html,
 body,
 #app {
@@ -104,15 +106,8 @@ button {
 }
 #show-box {
   position: absolute;
-  bottom: 30px;
-  right: 30px;
-  z-index: 10;
-}
-
-#menu {
-  position: absolute;
-  top: 0px;
-  left: 0px;
+  bottom: 15px;
+  right: 15px;
   z-index: 10;
 }
 </style>
