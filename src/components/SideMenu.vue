@@ -68,6 +68,7 @@ export default {
       return data[0]
     },
     updateShow(item) {
+      if (window.screen.availWidth < 768) this.toggle = true
       this.$emit('update-show', item)
     }
   },

@@ -128,7 +128,7 @@ export default {
   watch: {
     show: function(item) {
       const map = this.$refs.mymap.mapObject
-      map.flyTo(item.geometry.coordinates.reverse(), 18)
+      map.flyTo(item.geometry.coordinates.reverse(), 17)
     }
   }
 }
