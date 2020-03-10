@@ -29,8 +29,8 @@
     </div>
     <div class="data_info">
       <div class="info">
-        <span>{{ selectedCity }}內的供應商</span>
-        <span>資訊更新時間{{ updateTime }}</span>
+        <span>{{ selectedCity }} 內的供應商</span>
+        <span>資訊更新時間 {{ updateTime }}</span>
       </div>
       <button @click="$parent.getMaskData()">重整列表</button>
     </div>
@@ -62,12 +62,13 @@ export default {
     }
   },
   created() {
-    let day = new Date().getDay()
+    const day = new Date().getDay()
     if (day % 2 != 0) {
       this.day = true
     } else {
       this.day = false
     }
+    this.updateTime = this.data[0].properties.updated
   },
   methods: {
     getDistricts() {
@@ -97,7 +98,8 @@ export default {
 select {
   outline: none;
   padding: 0px 16px;
-  font: 14px/16px Noto Sans CJK TC;
+  font: 14px/16px Noto Sans TC;
+  background: #ffffff;
 }
 .center {
   display: flex;
@@ -164,14 +166,14 @@ select {
     height: 54px;
     text-align: left;
     > .text_big {
-      font: Bold 36px/54px Noto Sans CJK TC;
+      font: Bold 36px/54px Noto Sans TC;
       letter-spacing: 0;
       color: #34495e;
     }
     > .text {
       margin-left: 8px;
       padding-bottom: 7px;
-      font: Regular 16px/24px Noto Sans CJK TC;
+      font: Regular 16px/24px Noto Sans TC;
       letter-spacing: 0;
       color: #34495e;
     }
@@ -205,7 +207,7 @@ select {
       border: 2px solid #34495e;
       border-radius: 100px;
       opacity: 1;
-      font: 14px/20px Noto Sans CJK TC;
+      font: 14px/20px Noto Sans TC;
       letter-spacing: 0;
       color: #34495e;
       outline: none;

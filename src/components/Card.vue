@@ -115,14 +115,14 @@ export default {
       padding: 7px 16px;
       > .text {
         padding-top: 4px;
-        font: 14px/20px Noto Sans CJK TC;
+        font: 14px/20px Noto Sans TC;
       }
       > .num {
         margin-top: 6px;
-        font: Bold 32px/47px Noto Sans CJK TC;
+        font: Bold 32px/47px Noto Sans TC;
         > .unit {
           margin-left: 4px;
-          font: 12px/18px Noto Sans CJK TC;
+          font: 12px/18px Noto Sans TC;
         }
       }
     }
@@ -161,13 +161,13 @@ export default {
       background: #11787a;
     }
     > .name {
-      font: Bold 16px/24px Noto Sans CJK TC;
+      font: Bold 16px/24px Noto Sans TC;
       color: #34495e;
     }
     > .km {
       padding-top: 7px;
       margin-left: 4px;
-      font: Bold 11px/17px Noto Sans CJK TC;
+      font: Bold 11px/17px Noto Sans TC;
       color: #566778;
     }
     > .is-open {
@@ -177,7 +177,7 @@ export default {
       background: rgba(22, 160, 133, 0.1);
       border-radius: 6px;
       text-align: center;
-      font: 12px/24px Noto Sans CJK TC;
+      font: 12px/24px Noto Sans TC;
       letter-spacing: 0;
       color: #16a085;
     }
@@ -192,7 +192,7 @@ export default {
       align-items: flex-start;
       justify-content: flex-start;
       text-align: left;
-      font: 14px/20px Noto Sans CJK TC;
+      font: 14px/20px Noto Sans TC;
       color: #70777c;
       a:link,
       a:visited,
@@ -210,7 +210,7 @@ export default {
       > .check {
         margin-left: auto;
         white-space: nowrap;
-        font: 12px/18px Noto Sans CJK TC;
+        font: 12px/18px Noto Sans TC;
         text-decoration: underline;
       }
     }
