@@ -69,6 +69,7 @@ export default {
       this.day = false
     }
     this.updateTime = this.data[0].properties.updated
+    if (window.innerWidth < 760) this.toggle = true
   },
   methods: {
     getDistricts() {
