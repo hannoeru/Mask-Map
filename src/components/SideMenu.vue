@@ -249,6 +249,7 @@
       > .nav_title {
         @extend .center;
         margin-right: auto;
+        padding-bottom: 2px;
       }
       > .nav_toggler {
         @extend .center;
