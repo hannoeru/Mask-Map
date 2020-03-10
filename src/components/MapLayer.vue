@@ -19,6 +19,7 @@ import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 import { LMap, LTileLayer, LGeoJson, LControlZoom } from 'vue2-leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
+import Vue2LeafletLocatecontrol from 'vue2-leaflet-locatecontrol'
 
 delete L.Icon.Default.prototype._getIconUrl
 L.Icon.Default.mergeOptions({
@@ -33,7 +34,8 @@ export default {
     LTileLayer,
     LGeoJson,
     LControlZoom,
-    'v-marker-cluster': Vue2LeafletMarkerCluster
+    'v-marker-cluster': Vue2LeafletMarkerCluster,
+    'v-locatecontrol': Vue2LeafletLocatecontrol
   },
   data() {
     return {
@@ -134,7 +136,9 @@ export default {
 }
 </script>
 <style lang="scss">
+@import '~leaflet/dist/leaflet.css';
 @import '~leaflet.markercluster/dist/MarkerCluster.css';
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
 #map {
   height: 100%;
   width: 100%;
