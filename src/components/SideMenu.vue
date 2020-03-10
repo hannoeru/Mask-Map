@@ -310,6 +310,7 @@
         width: 96px;
         border: 2px solid #34495e;
         border-radius: 100px;
+        background: #fafafa;
         opacity: 1;
         font: 14px/20px Noto Sans TC;
         letter-spacing: 0;
