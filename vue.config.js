@@ -1,4 +1,4 @@
 module.exports = {
-  publicPath: '/Mask-Map/dist',
+  publicPath: '/Mask-Map/',
   transpileDependencies: ['vuetify']
 }
