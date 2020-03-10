@@ -44,7 +44,7 @@ export default {
       isLoading: true,
       center: [25.03746, 121.564558],
       zoom: 12,
-      url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+      url: 'https://{s}.tile.osm.org/{z}/{x}/{y}.png',
       attribution:
         'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a>',
       api: process.env.VUE_APP_MASK_API,
@@ -131,6 +131,7 @@ export default {
       L.control
         .locate({ position: 'topright', flyTo: true, showPopup: false })
         .addTo(mapObject)
+        .start()
     }
   },
   watch: {
