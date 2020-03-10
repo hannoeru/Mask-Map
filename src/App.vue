@@ -106,8 +106,8 @@ button {
 }
 #show-box {
   position: absolute;
-  bottom: 15px;
-  right: 15px;
-  z-index: 10;
+  right: 0;
+  bottom: 0;
+  z-index: 8;
 }
 </style>
