@@ -11,18 +11,21 @@
     </div>
     <div class="search">
       <select name="" v-model="selectedCity">
-        <option
-          v-for="(item, key) in cities.counties"
-          :key="key"
-          :value="item"
-          >{{ item }}</option
-        >
+        <option v-for="(item, key) in cities.counties" :key="key" :value="item">
+          {{ item }}
+        </option>
       </select>
     </div>
     <div class="title_day">
-      <div class="text_big">偶數</div>
+      <div class="text_big">{{ day ? '奇' : '偶' }}數</div>
       <div class="text">購買日</div>
-      <div class="info"><img src="@/assets/ic_help@2x.png" alt="" /></div>
+      <div class="info">
+        <a
+          href="https://www.facebook.com/mohw.gov.tw/photos/a.484593545040402/1470252826474464/?type=3&theater"
+          target="_blank"
+          ><img src="@/assets/ic_help@2x.png" alt=""
+        /></a>
+      </div>
     </div>
     <div class="data_info">
       <div class="info">
@@ -53,8 +56,17 @@ export default {
     return {
       cities: cities,
       toggle: false,
+      day: true,
       selectedCity: '臺北市',
       updateTime: '20:22:22'
+    }
+  },
+  created() {
+    let day = new Date().getDay()
+    if (day % 2 != 0) {
+      this.day = true
+    } else {
+      this.day = false
     }
   },
   methods: {
