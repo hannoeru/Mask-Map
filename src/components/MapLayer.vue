@@ -2,7 +2,9 @@
   <div id="map">
     <l-map
       :zoom="zoom"
+      :minZoom="minZoom"
       :center="center"
+      :maxBounds="bounds"
       ref="mymap"
       :options="{ zoomControl: false }"
       @ready="onReady"
@@ -44,7 +46,9 @@ export default {
     return {
       isLoading: true,
       center: [25.03746, 121.564558],
+      bounds: L.latLngBounds([20.72799, 118.1036], [26.60305, 122.9312]),
       zoom: 12,
+      minZoom: 8,
       url: 'https://{s}.tile.osm.org/{z}/{x}/{y}.png',
       attribution:
         'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a>',
