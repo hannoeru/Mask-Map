@@ -11,8 +11,8 @@
       v-if="maskData !== null"
       :data="maskData"
       :show.sync="show"
-      @update-selected="updateSelected"
       :selected.sync="selected"
+      @update-selected="updateSelected"
     />
     <ShowBox :selected.sync="selected" />
   </div>
