@@ -84,6 +84,7 @@ export default {
             childClass = 'good'
           }
           const html = `<div class="adult ${adultClass}">${adult}</div><div class="child ${childClass}">${child}</div>`
+          // Add points icon
           const options = {
             icon: L.divIcon({
               html: html,
@@ -119,9 +120,10 @@ export default {
             className: 'marker-cluster marker-cluster-' + c,
             iconSize: L.point(50, 50)
           })
-        }
+        },
         // //Disable all of the defaults:
-        // spiderfyOnMaxZoom: false
+        spiderfyOnMaxZoom: false,
+        disableClusteringAtZoom: 17
         // showCoverageOnHover: false,
         // zoomToBoundsOnClick: false
       }
