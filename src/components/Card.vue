@@ -39,7 +39,9 @@
       </div>
       <div class="line">
         <div class="title">備註</div>
-        <div class="data">{{ data.properties.note }}</div>
+        <div class="data">
+          {{ data.properties.custom_note || data.properties.note }}
+        </div>
       </div>
     </div>
   </div>

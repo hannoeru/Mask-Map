@@ -6,6 +6,7 @@
       ref="mymap"
       :options="{ zoomControl: false }"
       @ready="onReady"
+      @mousedown="onUserMoved"
     >
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
       <l-control-zoom position="topright"></l-control-zoom>
@@ -131,7 +132,9 @@ export default {
       L.control
         .locate({ position: 'topright', flyTo: true, showPopup: false })
         .addTo(mapObject)
-        .start()
+    },
+    onUserMoved() {
+      this.$emit('update-selected', null)
     }
   },
   watch: {
