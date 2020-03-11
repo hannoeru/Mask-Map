@@ -1,24 +1,29 @@
-# vue-mask
+# 口罩即時查
 
-## Project setup
+![口罩即時查]()
+
+## 建構
+
+### Project setup
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+#### Compiles and hot-reloads for development
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+#### Compiles and minifies for production
+
 ```
 npm run build
 ```
 
-### Lints and fixes files
+#### Lints and fixes files
+
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
