@@ -2,7 +2,12 @@ import Vue from 'vue'
 import App from './App.vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VueAnalytics from 'vue-analytics'
 
+// Configuration VueAnalytics
+Vue.use(VueAnalytics, {
+  id: 'UA-55184798-7'
+})
 // Vue Use
 Vue.use(VueAxios, axios)
 
