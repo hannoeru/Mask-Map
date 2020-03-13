@@ -112,13 +112,21 @@
       } else {
         this.day = false;
       }
-      this.updateTime = this.data[0].properties.updated;
+      this.updateTime = this.getUpdateTime();
       if (window.innerWidth < 760) this.toggle = true;
     },
     methods: {
       updateShow(item) {
         if (window.screen.availWidth < 768) this.toggle = true;
         this.$emit("update-show", item);
+      },
+      getUpdateTime() {
+        for (let i = 0; i < this.data.length; i++) {
+          const time = this.data[i].properties.updated;
+          if (time != "") {
+            return time;
+          }
+        }
       }
     },
     computed: {
