@@ -28,7 +28,7 @@ export default {
   flex-direction: column;
   background: rgba(250, 250, 250, 10);
   h2 {
-    margin-top: -110px;
+    margin-top: -100px;
   }
   .logo {
     margin-bottom: 20px;
