@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <Loading :active.sync="isLoading"></Loading>
+    <!-- <Loading :active.sync="isLoading"></Loading> -->
+    <Loader :loading="isLoading" />
     <SideMenu
       v-if="maskData !== null"
       :data="maskData"
@@ -19,13 +20,11 @@
 </template>
 
 <script>
-import Loading from 'vue-loading-overlay'
-// Import stylesheet
-import 'vue-loading-overlay/dist/vue-loading.css'
 // Import component
 import MapLayer from './components/MapLayer.vue'
 import ShowBox from './components/ShowBox.vue'
 import SideMenu from './components/SideMenu.vue'
+import Loader from './components/Loader.vue'
 
 export default {
   name: 'App',
@@ -40,10 +39,11 @@ export default {
     }
   },
   components: {
-    Loading,
+    // Loading,
     MapLayer,
     ShowBox,
-    SideMenu
+    SideMenu,
+    Loader
   },
   created() {
     this.getMaskData()
@@ -96,6 +96,7 @@ button {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background: rgba(250, 250, 250, 10);
   font: 16px/19px Noto Sans TC;
 }
 #map {
