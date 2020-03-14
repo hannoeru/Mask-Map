@@ -1,8 +1,12 @@
-# 口罩即時查
+# 口罩即時查 Mask Map (Taiwan)
 
 ![口罩即時查](https://raw.githubusercontent.com/hannoeru/Mask-Map/master/doce/img/screenshot.png)
 
-## 建構
+## Data from
+
+https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json
+
+## Build
 
 ### Project setup
 
