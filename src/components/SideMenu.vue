@@ -131,10 +131,6 @@
       this.updateTime = this.getUpdateTime();
       if (window.innerWidth < 760) this.toggle = true;
     },
-    mounted() {
-      this.$refs.scroll.$el.style.height = window.innerHeight - 65 + "px";
-      console.log(this.$refs.scroll.$el.style.height);
-    },
     methods: {
       updateShow(item) {
         if (window.screen.availWidth < 768) this.toggle = true;
@@ -274,7 +270,7 @@
     left: 0px;
     z-index: 10;
     width: 375px;
-    height: 100vh;
+    height: 100%;
     background: #fafafa;
     transition-property: all;
     transition-duration: 300ms;
@@ -282,7 +278,6 @@
     transition-timing-function: ease;
     font: 16px/24px Noto Sans TC;
     overflow: hidden;
-
     &.close {
       transform: translateX(-310px);
       height: 65px;
@@ -310,7 +305,7 @@
       }
     }
     > .ps {
-      height: calc(100vh - 65px);
+      height: calc(100% - 65px);
     }
     .search {
       margin-top: 16px;
