@@ -48,7 +48,7 @@ export default {
   margin-right: 15px;
   margin-bottom: 15px;
 }
-@media only screen and (min-width: 321px) and (max-width: 768px) {
+@media only screen and (min-width: 321px) and (max-width: 720px) {
   #show-box {
     width: 100%;
   }
