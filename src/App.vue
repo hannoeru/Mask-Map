@@ -49,6 +49,9 @@
       this.getMaskData();
     },
     methods: {
+      track() {
+        this.$ga.page("/");
+      },
       async getMaskData() {
         this.isLoading = true;
         const response = await this.axios.get(this.api);

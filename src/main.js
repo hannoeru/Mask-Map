@@ -6,10 +6,7 @@ import VueAnalytics from 'vue-analytics'
 
 // Configuration VueAnalytics
 Vue.use(VueAnalytics, {
-  id: 'UA-55184798-7',
-  autoTracking: {
-    screenview: true
-  }
+  id: 'UA-55184798-7'
 })
 // Vue Use
 Vue.use(VueAxios, axios)
