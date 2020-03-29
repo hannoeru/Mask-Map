@@ -64,7 +64,7 @@
         <div class="text">購買日</div>
         <div class="info">
           <a
-            href="https://www.facebook.com/mohw.gov.tw/photos/a.484593545040402/1470252826474464/?type=3&theater"
+            href="https://g0vhackmd.blob.core.windows.net/g0v-hackmd-images/upload_9d7620679dcf6fd6e5b9bad48dacbf85"
             target="_blank"
           ><img
               src="@/assets/ic_help@2x.png"
