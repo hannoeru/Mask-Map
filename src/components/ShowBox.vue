@@ -7,35 +7,37 @@
   </div>
 </template>
 <script>
-import Card from './Card'
+import Card from './Card';
 export default {
   components: { Card },
   props: ['selected'],
   data() {
     return {
-      show: false
-    }
+      show: false,
+    };
   },
   watch: {
-    selected: function(val) {
+    selected: function (val) {
       if (val !== null) {
-        this.show = false
-        setTimeout(() => {
-          this.show = true
-        }, 200)
+        if (!this.show) {
+          setTimeout(() => {
+            this.show = true;
+          }, 10);
+        }
       } else {
-        this.show = false
+        this.show = false;
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 <style lang="scss">
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.2s;
+  transition: opacity 0.05s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
 #show-box {
