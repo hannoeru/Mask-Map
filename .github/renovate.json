@@ -1,8 +1,4 @@
 {
-  "packageRules": [
-    {
-      "depTypeList": ["devDependencies"],
-      "automerge": true
-    }
-  ]
+  "automerge": true,
+  "lockFileMaintenance": { "enabled": true }
 }
