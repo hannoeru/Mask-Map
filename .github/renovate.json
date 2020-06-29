@@ -1,4 +1,16 @@
 {
-  "automerge": true,
-  "lockFileMaintenance": { "enabled": true }
+  "extends": ["config:base"],
+  "separateMinorPatch": true,
+  "digest": {
+    "automerge": true
+  },
+  "patch": {
+    "automerge": true
+  },
+  "pin": {
+    "automerge": true
+  },
+  "lockFileMaintenance": {
+    "automerge": true
+  }
 }
