@@ -1,16 +1,10 @@
 {
   "extends": ["config:base"],
-  "separateMinorPatch": true,
-  "digest": {
-    "automerge": true
-  },
-  "patch": {
-    "automerge": true
-  },
-  "pin": {
-    "automerge": true
+  "automerge": true,
+  "vulnerabilityAlerts": {
+    "enabled": true
   },
   "lockFileMaintenance": {
-    "automerge": true
+    "enabled": true
   }
 }
