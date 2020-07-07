@@ -1,7 +1,8 @@
 name: renovate
 
 on:
-  - push
+  push:
+    branches: [ master ]
 
 jobs:
   run:
