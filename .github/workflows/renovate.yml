@@ -3,6 +3,9 @@ name: renovate
 on:
   schedule:
     - cron: '15 * * * *'
+  pull_request:
+    branches:
+      - master
 
 jobs:
   run:
