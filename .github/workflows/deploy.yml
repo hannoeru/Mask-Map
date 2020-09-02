@@ -17,7 +17,7 @@ jobs:
           node-version: '12'
 
       - run: npm i -g pnpm
-      - run: pnpm i
+      - run: pnpm i --shamefully-hoist
       - run: pnpm run build
 
       - name: deploy
