@@ -1148,7 +1148,6 @@ packages:
     resolution:
       integrity: sha512-wLhcKh3PMlyA2cNAB9sjM1BntnhPMiM0JOBwPBqttjHev2428MLEB4AYVN+d8s2iyCVZac+o41Pflm/ZH5vLXQ==
   /@types/geojson/7946.0.7:
-    dev: true
     resolution:
       integrity: sha512-wE2v81i4C4Ol09RtsWFAqg3BUitWbHSpSlIo+bNdsCJijO9sjme+zm+73ZMCa/qMC8UEERxzGbvmr1cffo2SiQ==
   /@types/glob/7.1.3:
@@ -1179,7 +1178,6 @@ packages:
   /@types/leaflet/1.5.17:
     dependencies:
       '@types/geojson': 7946.0.7
-    dev: true
     resolution:
       integrity: sha512-2XYq9k6kNjhNI7PaTz8Rdxcc8Vzwu97OaS9CtcrTxnTSxFUGwjlGjTDvhTLJU+JRSfZ4lBwGcl0SjZHALdVr6g==
   /@types/mime/2.0.3:
@@ -1190,7 +1188,6 @@ packages:
     dependencies:
       '@types/webpack': 4.41.21
     dev: true
-    optional: true
     resolution:
       integrity: sha512-+mN04Oszdz9tGjUP/c1ReVwJXxSniLd7lF++sv+8dkABxVNthg6uccei+4ssKxRHGoMmPxdn7uBdJWONSJGTGQ==
   /@types/minimatch/3.0.3:
@@ -1479,6 +1476,7 @@ packages:
       thread-loader: 2.1.3_webpack@4.44.1
       url-loader: 2.3.0_file-loader@4.3.0+webpack@4.44.1
       vue-loader: 15.9.3_b61fd53126d8a76b25cc5244d186282f
+      vue-loader-v16: /vue-loader/16.0.0-beta.5
       vue-style-loader: 4.1.2
       vue-template-compiler: 2.6.12
       webpack: 4.44.1_webpack@4.44.1
@@ -8973,7 +8971,6 @@ packages:
       merge-source-map: 1.1.0
       source-map: 0.6.1
     dev: true
-    optional: true
     resolution:
       integrity: sha512-ciWfzNefqWlmzKznCWY9hl+fPP4KlQ0A9MtHbJ/8DpyY+dAM8gDrjufIdxwTgC4szE4EZC3A6ip/BbrqM84GqA==
   /vue-spinner/1.0.4:
@@ -8999,7 +8996,6 @@ packages:
     resolution:
       integrity: sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
   /vue/2.6.12:
-    dev: false
     resolution:
       integrity: sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg==
   /vue2-leaflet-markercluster/3.1.0_leaflet@1.6.0:
@@ -9401,7 +9397,7 @@ packages:
     resolution:
       integrity: sha512-jcKpkthap6x63MB4TxwCyuIGkV0oYP/YRyuQU5UO0Yz/E/ZAu+653/uov+phdmO54n6BcvFRyyt0RRrWdN2mpw==
 specifiers:
-  '@babel/runtime': ^7.11.2
+  '@babel/runtime': 7.11.2
   '@types/leaflet': 1.5.17
   '@vue/cli-plugin-babel': 4.5.4
   '@vue/cli-plugin-eslint': 4.5.4
