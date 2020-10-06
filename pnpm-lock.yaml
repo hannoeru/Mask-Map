@@ -6,7 +6,7 @@ dependencies:
   leaflet.markercluster: 1.4.1_leaflet@1.7.1
   vue: 2.6.12
   vue-analytics: 5.22.1
-  vue-axios: 3.0.0
+  vue-axios: 3.0.1
   vue-spinner: 1.0.4
   vue2-leaflet: 2.5.2_664b1509d535554f994803e0f069695f
   vue2-leaflet-markercluster: 3.1.0_leaflet@1.7.1
@@ -9001,13 +9001,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-HPKQMN7gfcUqS5SxoO0VxqLRRSPkG1H1FqglsHccz6BatBatNtm/Vyy8brApktZxNCfnAkrSVDpxg3/FNDeOgQ==
-  /vue-axios/3.0.0:
+  /vue-axios/3.0.1:
     dependencies:
       axios: 0.20.0
       vue: 3.0.0
     dev: false
     resolution:
-      integrity: sha512-KGcbUi56r81zm0vmAiaE+KnvC/E4GOfNdq8AA1ANirIGBeJrA4E9SNcLbO2b3hetm2HRXkvQMONW81PS4ChC3A==
+      integrity: sha512-hOOv99D0CxgtP5GCt8Fo4u+LglJdhHAA6tnHMpk+AKIQBKqJZDITolCLTlFvmc1Vxhhlo0EMXVzPL/DiNDsCjw==
   /vue-eslint-parser/7.1.0_eslint@7.10.0:
     dependencies:
       debug: 4.2.0
@@ -9512,7 +9512,7 @@ specifiers:
   sass-loader: 10.0.2
   vue: 2.6.12
   vue-analytics: 5.22.1
-  vue-axios: 3.0.0
+  vue-axios: 3.0.1
   vue-spinner: 1.0.4
   vue-template-compiler: 2.6.12
   vue2-leaflet: 2.5.2
