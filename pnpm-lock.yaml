@@ -1,5 +1,5 @@
 dependencies:
-  axios: 0.20.0
+  axios: 0.21.0
   core-js: 3.6.5
   leaflet: 1.7.1
   leaflet.locatecontrol: 0.72.0
@@ -2048,12 +2048,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-zg7Hz2k5lI8kb7U32998pRRFin7zJlkfezGJjUc2heaD4Pw2wObakCDVzkKztTm/Ln7eiVvYsjqak0Ed4LkMDA==
-  /axios/0.20.0:
+  /axios/0.21.0:
     dependencies:
       follow-redirects: 1.13.0
     dev: false
     resolution:
-      integrity: sha512-ANA4rr2BDcmmAQLOKft2fufrtuvlqR+cXNNinUmvfeSNCOF98PZL+7M/v1zIdGo7OLjEA9J2gXJL+j4zGsl0bA==
+      integrity: sha512-fmkJBknJKoZwem3/IKSSLpkdNXZeBu5Q7GA/aRsr2btgrptmSCxi2oFjZHqGdK9DoTil9PIHlPIZw2EcRJXRvw==
   /babel-eslint/10.1.0_eslint@7.11.0:
     dependencies:
       '@babel/code-frame': 7.10.4
@@ -9449,7 +9449,7 @@ specifiers:
   '@vue/cli-plugin-babel': 4.5.8
   '@vue/cli-plugin-eslint': 4.5.8
   '@vue/cli-service': 4.5.8
-  axios: 0.20.0
+  axios: 0.21.0
   babel-eslint: 10.1.0
   core-js: 3.6.5
   eslint: 7.11.0
