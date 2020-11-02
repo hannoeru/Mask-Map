@@ -16,13 +16,13 @@ devDependencies:
   '@types/leaflet': 1.5.19
   '@vue/cli-plugin-babel': 4.5.8_5b7752e5c9d4bf3fd64f7a4cf6aa43d8
   '@vue/cli-plugin-eslint': 4.5.8_6dfa686ab18a1143888eb2f70241fac2
-  '@vue/cli-service': 4.5.8_53a432c35cfbca0e16fb5249e4a5a9a3
+  '@vue/cli-service': 4.5.8_97fbc010f5eb40d730f6254a3dd7a7ec
   babel-eslint: 10.1.0_eslint@7.12.1
   eslint: 7.12.1
   eslint-plugin-vue: 7.1.0_eslint@7.12.1
   node-sass: 5.0.0
   sass: 1.28.0
-  sass-loader: 10.0.4_node-sass@5.0.0+sass@1.28.0
+  sass-loader: 10.0.5_node-sass@5.0.0+sass@1.28.0
   vue-template-compiler: 2.6.12
 lockfileVersion: 5.2
 packages:
@@ -1386,7 +1386,7 @@ packages:
     dependencies:
       '@babel/core': 7.12.3
       '@vue/babel-preset-app': 4.5.8_vue@2.6.12
-      '@vue/cli-service': 4.5.8_53a432c35cfbca0e16fb5249e4a5a9a3
+      '@vue/cli-service': 4.5.8_97fbc010f5eb40d730f6254a3dd7a7ec
       '@vue/cli-shared-utils': 4.5.8
       babel-loader: 8.1.0_427212bc1158d185e577033f19ca0757
       cache-loader: 4.1.0_webpack@4.44.2
@@ -1400,7 +1400,7 @@ packages:
       integrity: sha512-2quuLuCZq2vH29xfp66L5YfUxQvyMX9te5jMslfQGVzvUmFpPbz8ceioZYW9+VqWjg8pzqSuBE+ANJLWdy2RtQ==
   /@vue/cli-plugin-eslint/4.5.8_6dfa686ab18a1143888eb2f70241fac2:
     dependencies:
-      '@vue/cli-service': 4.5.8_53a432c35cfbca0e16fb5249e4a5a9a3
+      '@vue/cli-service': 4.5.8_97fbc010f5eb40d730f6254a3dd7a7ec
       '@vue/cli-shared-utils': 4.5.8
       eslint: 7.12.1
       eslint-loader: 2.2.1_eslint@7.12.1+webpack@4.44.2
@@ -1416,7 +1416,7 @@ packages:
       integrity: sha512-1lg3K2D/harXbN4FvRoA1b0X9947H+G4Ql/43rxJY39OqswfK/d1ck438Fo9M4l1+zhBSUNDmcjn7Q2EH6qWmA==
   /@vue/cli-plugin-router/4.5.8_@vue+cli-service@4.5.8:
     dependencies:
-      '@vue/cli-service': 4.5.8_53a432c35cfbca0e16fb5249e4a5a9a3
+      '@vue/cli-service': 4.5.8_97fbc010f5eb40d730f6254a3dd7a7ec
       '@vue/cli-shared-utils': 4.5.8
     dev: true
     peerDependencies:
@@ -1425,13 +1425,13 @@ packages:
       integrity: sha512-tJwVLdX4jj0Ia/1hsBejRbo4gs0hb2z1z5ert+4Ve5RNdpOKUG69OaPQgXPqvuYSQh9MW7bqG0iJmYtVD+KBNw==
   /@vue/cli-plugin-vuex/4.5.8_@vue+cli-service@4.5.8:
     dependencies:
-      '@vue/cli-service': 4.5.8_53a432c35cfbca0e16fb5249e4a5a9a3
+      '@vue/cli-service': 4.5.8_97fbc010f5eb40d730f6254a3dd7a7ec
     dev: true
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
     resolution:
       integrity: sha512-wU9WPhay1zBxtdd/HLRYhFRLBbG9lw3YTBJep9sTnYwUeXiEgum4O88Q2j6cwBBPPHMgeMrKMPHS85Jf4hMc0g==
-  /@vue/cli-service/4.5.8_53a432c35cfbca0e16fb5249e4a5a9a3:
+  /@vue/cli-service/4.5.8_97fbc010f5eb40d730f6254a3dd7a7ec:
     dependencies:
       '@intervolga/optimize-cssnano-plugin': 1.0.6_webpack@4.44.2
       '@soda/friendly-errors-webpack-plugin': 1.7.1_webpack@4.44.2
@@ -1477,7 +1477,7 @@ packages:
       pnp-webpack-plugin: 1.6.4
       portfinder: 1.0.28
       postcss-loader: 3.0.0
-      sass-loader: 10.0.4_node-sass@5.0.0+sass@1.28.0
+      sass-loader: 10.0.5_node-sass@5.0.0+sass@1.28.0
       ssri: 7.1.0
       terser-webpack-plugin: 2.3.8_webpack@4.44.2
       thread-loader: 2.1.3_webpack@4.44.2
@@ -7726,7 +7726,7 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-VFWDAHOe6mRuT4mZRd4eKE+d8Uedrk6Xnh7Sh9b4NGufQLQjOrvf/MQoOdx+0s92L89FeyUUNfU597j/3uNpag==
-  /sass-loader/10.0.4_node-sass@5.0.0+sass@1.28.0:
+  /sass-loader/10.0.5_node-sass@5.0.0+sass@1.28.0:
     dependencies:
       klona: 2.0.4
       loader-utils: 2.0.0
@@ -7740,7 +7740,7 @@ packages:
       node: '>= 10.13.0'
     peerDependencies:
       fibers: '>= 3.1.0'
-      node-sass: ^4.0.0
+      node-sass: ^4.0.0 || ^5.0.0
       sass: ^1.3.0
       webpack: ^4.36.0 || ^5.0.0
     peerDependenciesMeta:
@@ -7751,7 +7751,7 @@ packages:
       sass:
         optional: true
     resolution:
-      integrity: sha512-zhdZ8qvZM4iL5XjLVEjJLvKWvC+MB+hHgzL2x/Nf7UHpUNmPYsJvypW79bW39g4LZ603dH/dRSsRYzJJIljtdA==
+      integrity: sha512-2LqoNPtKkZq/XbXNQ4C64GFEleSEHKv6NPSI+bMC/l+jpEXGJhiRYkAQToO24MR7NU4JRY2RpLpJ/gjo2Uf13w==
   /sass/1.28.0:
     dependencies:
       chokidar: 3.4.3
@@ -9468,7 +9468,7 @@ specifiers:
   leaflet.markercluster: 1.4.1
   node-sass: 5.0.0
   sass: 1.28.0
-  sass-loader: 10.0.4
+  sass-loader: 10.0.5
   vue: 2.6.12
   vue-analytics: 5.22.1
   vue-axios: 2.1.4
