@@ -1,6 +1,6 @@
 dependencies:
   axios: 0.21.0
-  core-js: 3.7.0
+  core-js: 3.8.0
   leaflet: 1.7.1
   leaflet.locatecontrol: 0.72.0
   leaflet.markercluster: 1.4.1_leaflet@1.7.1
@@ -2936,9 +2936,15 @@ packages:
     resolution:
       integrity: sha512-V8yBI3+ZLDVomoWICO6kq/CD28Y4r1M7CWeO4AGpMdMfseu8bkSubBmUPySMGKRTS+su4XQ07zUkAsiu9FCWTg==
   /core-js/3.7.0:
+    dev: true
     requiresBuild: true
     resolution:
       integrity: sha512-NwS7fI5M5B85EwpWuIwJN4i/fbisQUwLwiSNUWeXlkAZ0sbBjLEvLvFLf1uzAUV66PcEPt4xCGCmOZSxVf3xzA==
+  /core-js/3.8.0:
+    dev: false
+    requiresBuild: true
+    resolution:
+      integrity: sha512-W2VYNB0nwQQE7tKS7HzXd7r2y/y2SVJl4ga6oH/dnaLFzM0o2lB2P3zCkWj5Wc/zyMYjtgd5Hmhk0ObkQFZOIA==
   /core-util-is/1.0.2:
     dev: true
     resolution:
@@ -9447,7 +9453,7 @@ specifiers:
   '@vue/cli-service': 4.5.9
   axios: 0.21.0
   babel-eslint: 10.1.0
-  core-js: 3.7.0
+  core-js: 3.8.0
   eslint: 7.14.0
   eslint-plugin-vue: 7.1.0
   leaflet: 1.7.1
