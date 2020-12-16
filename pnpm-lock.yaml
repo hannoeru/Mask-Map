@@ -19,7 +19,7 @@ devDependencies:
   '@vue/cli-service': 4.5.9_bef24f377f0077865f33ae38d11939b0
   babel-eslint: 10.1.0_eslint@7.15.0
   eslint: 7.15.0
-  eslint-plugin-vue: 7.2.0_eslint@7.15.0
+  eslint-plugin-vue: 7.3.0_eslint@7.15.0
   node-sass: 5.0.0
   sass: 1.30.0
   sass-loader: 10.1.0_node-sass@5.0.0+sass@1.30.0
@@ -3693,20 +3693,20 @@ packages:
       webpack: '>=2.0.0 <5.0.0'
     resolution:
       integrity: sha512-RLgV9hoCVsMLvOxCuNjdqOrUqIj9oJg8hF44vzJaYqsAHuY9G2YAeN3joQ9nxP0p5Th9iFSIpKo+SD8KISxXRg==
-  /eslint-plugin-vue/7.2.0_eslint@7.15.0:
+  /eslint-plugin-vue/7.3.0_eslint@7.15.0:
     dependencies:
       eslint: 7.15.0
       eslint-utils: 2.1.0
       natural-compare: 1.4.0
       semver: 7.3.4
-      vue-eslint-parser: 7.2.0_eslint@7.15.0
+      vue-eslint-parser: 7.3.0_eslint@7.15.0
     dev: true
     engines:
       node: '>=8.10'
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0
     resolution:
-      integrity: sha512-4mt0yIv6rBDNtvis/g22a0ozJ12GfcdEzX77u0ICYjKlxOVtGrKGEvo0cbOObHaKDg9a9kJcoaNodqE4TPfS2A==
+      integrity: sha512-4rc9xrZgwT4aLz3XE6lrHu+FZtDLWennYvtzVvvS81kW9c65U4DUzQQWAFjDCgCFvN6HYWxi7ueEtxZVSB+f0g==
   /eslint-scope/4.0.3:
     dependencies:
       esrecurse: 4.3.0
@@ -8982,7 +8982,7 @@ packages:
       vue: '>= 1.0.0'
     resolution:
       integrity: sha512-DS8Q+WFT3i7nS0aZ/NMmTPf2yhbtlXhj4QEZmY69au/BshsGzGjC6dXaniZaPQlErP3J3Sv1HtQ4RVrXaUTkxA==
-  /vue-eslint-parser/7.2.0_eslint@7.15.0:
+  /vue-eslint-parser/7.3.0_eslint@7.15.0:
     dependencies:
       debug: 4.3.1
       eslint: 7.15.0
@@ -8997,7 +8997,7 @@ packages:
     peerDependencies:
       eslint: '>=5.0.0'
     resolution:
-      integrity: sha512-uVcQqe8sUNzdHGcRHMd2Z/hl6qEaWrAmglTKP92Fnq9TYU9un8xsyFgEdFJaXh/1rd7h8Aic1GaiQow5nVneow==
+      integrity: sha512-n5PJKZbyspD0+8LnaZgpEvNCrjQx1DyDHw8JdWwoxhhC+yRip4TAvSDpXGf9SWX6b0umeB5aR61gwUo6NVvFxw==
   /vue-hot-reload-api/2.3.4:
     dev: true
     resolution:
@@ -9458,7 +9458,7 @@ specifiers:
   babel-eslint: 10.1.0
   core-js: 3.8.1
   eslint: 7.15.0
-  eslint-plugin-vue: 7.2.0
+  eslint-plugin-vue: 7.3.0
   leaflet: 1.7.1
   leaflet.locatecontrol: 0.72.0
   leaflet.markercluster: 1.4.1
