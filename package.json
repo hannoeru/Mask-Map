@@ -10,7 +10,7 @@
     "test": "echo 'skip tests (there is no test)'"
   },
   "dependencies": {
-    "axios": "0.21.0",
+    "axios": "0.21.1",
     "core-js": "3.8.1",
     "leaflet": "1.7.1",
     "leaflet.locatecontrol": "0.72.0",
