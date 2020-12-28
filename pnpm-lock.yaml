@@ -16,7 +16,7 @@ devDependencies:
   '@types/leaflet': 1.5.19
   '@vue/cli-plugin-babel': 4.5.9_8ae91920fb9b3c76895c2e8acb765728
   '@vue/cli-plugin-eslint': 4.5.9_60d4e09967bc17144ebbe9729db53f05
-  '@vue/cli-service': 4.5.9_b8b2776a966c2dba21b8f26b5def67f9
+  '@vue/cli-service': 4.5.9_bef24f377f0077865f33ae38d11939b0
   babel-eslint: 10.1.0_eslint@7.16.0
   eslint: 7.16.0
   eslint-plugin-vue: 7.4.0_eslint@7.16.0
@@ -24,7 +24,7 @@ devDependencies:
   sass: 1.30.0
   sass-loader: 10.1.0_node-sass@5.0.0+sass@1.30.0
   vue-template-compiler: 2.6.12
-lockfileVersion: 5.1
+lockfileVersion: 5.2
 packages:
   /@babel/code-frame/7.12.11:
     dependencies:
@@ -1032,7 +1032,7 @@ packages:
       cssnano: 4.1.10
       cssnano-preset-default: 4.0.7
       postcss: 7.0.35
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
     dev: true
     peerDependencies:
       webpack: ^4.0.0
@@ -1059,7 +1059,7 @@ packages:
       error-stack-parser: 2.0.6
       string-width: 2.1.1
       strip-ansi: 5.2.0
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
     dev: true
     engines:
       node: '>=8.0.0'
@@ -1113,6 +1113,7 @@ packages:
     resolution:
       integrity: sha512-SDzEIZInC4sivGIFY4Sz1GG6J9UObPwCInYJjko2jzOf/Imx/dlpume6Xxwj1ORL82tBbmN4cPDIDkLbWHk9hw==
   /@types/geojson/7946.0.7:
+    dev: true
     resolution:
       integrity: sha512-wE2v81i4C4Ol09RtsWFAqg3BUitWbHSpSlIo+bNdsCJijO9sjme+zm+73ZMCa/qMC8UEERxzGbvmr1cffo2SiQ==
   /@types/glob/7.1.3:
@@ -1143,6 +1144,7 @@ packages:
   /@types/leaflet/1.5.19:
     dependencies:
       '@types/geojson': 7946.0.7
+    dev: true
     resolution:
       integrity: sha512-ZAKqfvdU/+KFoCpf8aUba09F8mfSc8R2esq++Cha3E2DgwS5K/I/4eJ+0JylrVHZivgY7PSAeXFv/izP+81/MQ==
   /@types/mime/2.0.3:
@@ -1378,12 +1380,12 @@ packages:
     dependencies:
       '@babel/core': 7.12.10
       '@vue/babel-preset-app': 4.5.9_vue@2.6.12
-      '@vue/cli-service': 4.5.9_b8b2776a966c2dba21b8f26b5def67f9
+      '@vue/cli-service': 4.5.9_bef24f377f0077865f33ae38d11939b0
       '@vue/cli-shared-utils': 4.5.9
       babel-loader: 8.2.2_cb0b35cdd86d43ae111e54bfa48070d7
       cache-loader: 4.1.0_webpack@4.44.2
       thread-loader: 2.1.3_webpack@4.44.2
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
     dev: true
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
@@ -1392,13 +1394,13 @@ packages:
       integrity: sha512-2tzaJU5yqAfXVhg1aYyd/Yfif6brv+tDZ49D1aOk7ZgMIwH5YUa0yo5HPcPOcmfpoVoNYcpqVYRfyT4EXIYSpg==
   /@vue/cli-plugin-eslint/4.5.9_60d4e09967bc17144ebbe9729db53f05:
     dependencies:
-      '@vue/cli-service': 4.5.9_b8b2776a966c2dba21b8f26b5def67f9
+      '@vue/cli-service': 4.5.9_bef24f377f0077865f33ae38d11939b0
       '@vue/cli-shared-utils': 4.5.9
       eslint: 7.16.0
       eslint-loader: 2.2.1_eslint@7.16.0+webpack@4.44.2
       globby: 9.2.0
       inquirer: 7.3.3
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
       yorkie: 2.0.0
     dev: true
     peerDependencies:
@@ -1408,7 +1410,7 @@ packages:
       integrity: sha512-wTsWRiRWPW5ik4bgtlh4P4h63Zgjsyvqx2FY0kcj+bSAnQGPJ3bKUOMU9KQP5EyNH6pAXMVGh2LEXK9WwJMf1w==
   /@vue/cli-plugin-router/4.5.9_@vue+cli-service@4.5.9:
     dependencies:
-      '@vue/cli-service': 4.5.9_b8b2776a966c2dba21b8f26b5def67f9
+      '@vue/cli-service': 4.5.9_bef24f377f0077865f33ae38d11939b0
       '@vue/cli-shared-utils': 4.5.9
     dev: true
     peerDependencies:
@@ -1417,13 +1419,13 @@ packages:
       integrity: sha512-eBBfbZpQ1sJrdlx8i7iReFxSnuzwmrv+s2OCT3kjBd6uWRqGnD4VihpS4srC7vZLzDQrDplumSn0a93L9Qf3wQ==
   /@vue/cli-plugin-vuex/4.5.9_@vue+cli-service@4.5.9:
     dependencies:
-      '@vue/cli-service': 4.5.9_b8b2776a966c2dba21b8f26b5def67f9
+      '@vue/cli-service': 4.5.9_bef24f377f0077865f33ae38d11939b0
     dev: true
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
     resolution:
       integrity: sha512-mFNIJhYiJjzCgytkDHX00ROy5Yzl7prkZpUbeDE0biwcLteMf2s3qZVbESOQl6GcviqcfEt2f3tHQQtLNa+OLg==
-  /@vue/cli-service/4.5.9_b8b2776a966c2dba21b8f26b5def67f9:
+  /@vue/cli-service/4.5.9_bef24f377f0077865f33ae38d11939b0:
     dependencies:
       '@intervolga/optimize-cssnano-plugin': 1.0.6_webpack@4.44.2
       '@soda/friendly-errors-webpack-plugin': 1.8.0_webpack@4.44.2
@@ -1475,10 +1477,9 @@ packages:
       thread-loader: 2.1.3_webpack@4.44.2
       url-loader: 2.3.0_file-loader@4.3.0+webpack@4.44.2
       vue-loader: 15.9.6_e6f9754d45536372aa6e5c6b320144db
-      vue-loader-v16: /vue-loader/16.1.2
       vue-style-loader: 4.1.2
       vue-template-compiler: 2.6.12
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
       webpack-bundle-analyzer: 3.9.0
       webpack-chain: 6.5.1
       webpack-dev-server: 3.11.0_webpack@4.44.2
@@ -1487,8 +1488,9 @@ packages:
     engines:
       node: '>=8'
     hasBin: true
+    optionalDependencies:
+      vue-loader-v16: /vue-loader/16.1.2
     peerDependencies:
-      '@vue/cli-service': '*'
       '@vue/compiler-sfc': ^3.0.0-beta.14
       less-loader: '*'
       pug-plain-loader: '*'
@@ -1548,7 +1550,7 @@ packages:
   /@vue/preload-webpack-plugin/1.1.2_e19cda6b5f21e6c518504c22be752ae4:
     dependencies:
       html-webpack-plugin: 3.2.0_webpack@4.44.2
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
     dev: true
     engines:
       node: '>=6.0.0'
@@ -2069,7 +2071,7 @@ packages:
       loader-utils: 1.4.0
       make-dir: 3.1.0
       schema-utils: 2.7.1
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
     dev: true
     engines:
       node: '>= 8.9'
@@ -2409,7 +2411,7 @@ packages:
       mkdirp: 0.5.5
       neo-async: 2.6.2
       schema-utils: 2.7.1
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
     dev: true
     engines:
       node: '>= 8.9.0'
@@ -2918,7 +2920,7 @@ packages:
       p-limit: 2.3.0
       schema-utils: 1.0.0
       serialize-javascript: 4.0.0
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
       webpack-log: 2.0.0
     dev: true
     engines:
@@ -3052,7 +3054,7 @@ packages:
       postcss-value-parser: 4.1.0
       schema-utils: 2.7.1
       semver: 6.3.0
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
     dev: true
     engines:
       node: '>= 8.9.0'
@@ -3683,7 +3685,7 @@ packages:
       object-assign: 4.1.1
       object-hash: 1.3.1
       rimraf: 2.7.1
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
     deprecated: This loader has been deprecated. Please use eslint-webpack-plugin
     dev: true
     peerDependencies:
@@ -4098,7 +4100,7 @@ packages:
     dependencies:
       loader-utils: 1.4.0
       schema-utils: 2.7.1
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
     dev: true
     engines:
       node: '>= 8.9.0'
@@ -4227,20 +4229,6 @@ packages:
     resolution:
       integrity: sha512-3Z4XhFZ3992uIq0XOqb9AreonueSYphE6oYbpt5+3u06JWklbsPkNv3ZKkP9Bz/r+1MWCaMoSQ28P85+1Yc77w==
   /follow-redirects/1.13.1:
-    dev: false
-    engines:
-      node: '>=4.0'
-    peerDependencies:
-      debug: '*'
-    peerDependenciesMeta:
-      debug:
-        optional: true
-    resolution:
-      integrity: sha512-SSG5xmZh1mkPGyKzjZP8zLjltIfpW32Y5QpdNJyjcfGxK3qo3NDDkZOZSFiGn1A6SclQxY9GzEwAHQ3dmYRWpg==
-  /follow-redirects/1.13.1_debug@4.3.1:
-    dependencies:
-      debug: 4.3.1_supports-color@6.1.0
-    dev: true
     engines:
       node: '>=4.0'
     peerDependencies:
@@ -4749,7 +4737,7 @@ packages:
       tapable: 1.1.3
       toposort: 1.0.7
       util.promisify: 1.0.0
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
     dev: true
     engines:
       node: '>=6.9'
@@ -4827,7 +4815,7 @@ packages:
   /http-proxy/1.18.1_debug@4.3.1:
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.13.1_debug@4.3.1
+      follow-redirects: 1.13.1
       requires-port: 1.0.0
     dev: true
     engines:
@@ -5921,7 +5909,7 @@ packages:
       loader-utils: 1.4.0
       normalize-url: 1.9.1
       schema-utils: 1.0.0
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
       webpack-sources: 1.4.3
     dev: true
     engines:
@@ -8501,7 +8489,7 @@ packages:
       serialize-javascript: 4.0.0
       source-map: 0.6.1
       terser: 4.8.0
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
       webpack-sources: 1.4.3
       worker-farm: 1.7.0
     dev: true
@@ -8521,7 +8509,7 @@ packages:
       serialize-javascript: 4.0.0
       source-map: 0.6.1
       terser: 4.8.0
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
       webpack-sources: 1.4.3
     dev: true
     engines:
@@ -8564,7 +8552,7 @@ packages:
       loader-runner: 2.4.0
       loader-utils: 1.4.0
       neo-async: 2.6.2
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
     dev: true
     engines:
       node: '>= 6.9.0 <7.0.0 || >= 8.9.0'
@@ -8872,7 +8860,7 @@ packages:
       loader-utils: 1.4.0
       mime: 2.4.7
       schema-utils: 2.7.1
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
     dev: true
     engines:
       node: '>= 8.9.0'
@@ -9025,7 +9013,7 @@ packages:
       vue-hot-reload-api: 2.3.4
       vue-style-loader: 4.1.2
       vue-template-compiler: 2.6.12
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
     dev: true
     peerDependencies:
       cache-loader: '*'
@@ -9045,6 +9033,7 @@ packages:
       hash-sum: 2.0.0
       loader-utils: 2.0.0
     dev: true
+    optional: true
     resolution:
       integrity: sha512-8QTxh+Fd+HB6fiL52iEVLKqE9N1JSlMXLR92Ijm6g8PZrwIxckgpqjPDWRP5TWxdiPaHR+alUWsnu1ShQOwt+Q==
   /vue-spinner/1.0.4:
@@ -9070,6 +9059,7 @@ packages:
     resolution:
       integrity: sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
   /vue/2.6.12:
+    dev: false
     resolution:
       integrity: sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg==
   /vue2-leaflet-markercluster/3.1.0_leaflet@1.7.1:
@@ -9166,7 +9156,7 @@ packages:
       mime: 2.4.7
       mkdirp: 0.5.5
       range-parser: 1.2.1
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
       webpack-log: 2.0.0
     dev: true
     engines:
@@ -9206,7 +9196,7 @@ packages:
       strip-ansi: 3.0.1
       supports-color: 6.1.0
       url: 0.11.0
-      webpack: 4.44.2_webpack@4.44.2
+      webpack: 4.44.2
       webpack-dev-middleware: 3.7.3_webpack@4.44.2
       webpack-log: 2.0.0
       ws: 6.2.1
@@ -9245,7 +9235,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-lgTS3Xhv1lCOKo7SA5TjKXMjpSM4sBjNV5+q2bqesbSPs5FjGmU6jjtBSkX9b4qW87vDIsCIlUPOEhbZrMdjeQ==
-  /webpack/4.44.2_webpack@4.44.2:
+  /webpack/4.44.2:
     dependencies:
       '@webassemblyjs/ast': 1.9.0
       '@webassemblyjs/helper-module-context': 1.9.0
@@ -9275,7 +9265,6 @@ packages:
       node: '>=6.11.5'
     hasBin: true
     peerDependencies:
-      webpack: '*'
       webpack-cli: '*'
       webpack-command: '*'
     peerDependenciesMeta:
