@@ -21,8 +21,8 @@ devDependencies:
   eslint: 7.16.0
   eslint-plugin-vue: 7.4.0_eslint@7.16.0
   node-sass: 5.0.0
-  sass: 1.30.0
-  sass-loader: 10.1.0_node-sass@5.0.0+sass@1.30.0
+  sass: 1.32.0
+  sass-loader: 10.1.0_node-sass@5.0.0+sass@1.32.0
   vue-template-compiler: 2.6.12
 lockfileVersion: 5.2
 packages:
@@ -1471,7 +1471,7 @@ packages:
       pnp-webpack-plugin: 1.6.4
       portfinder: 1.0.28
       postcss-loader: 3.0.0
-      sass-loader: 10.1.0_node-sass@5.0.0+sass@1.30.0
+      sass-loader: 10.1.0_node-sass@5.0.0+sass@1.32.0
       ssri: 7.1.0
       terser-webpack-plugin: 2.3.8_webpack@4.44.2
       thread-loader: 2.1.3_webpack@4.44.2
@@ -7731,13 +7731,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-VFWDAHOe6mRuT4mZRd4eKE+d8Uedrk6Xnh7Sh9b4NGufQLQjOrvf/MQoOdx+0s92L89FeyUUNfU597j/3uNpag==
-  /sass-loader/10.1.0_node-sass@5.0.0+sass@1.30.0:
+  /sass-loader/10.1.0_node-sass@5.0.0+sass@1.32.0:
     dependencies:
       klona: 2.0.4
       loader-utils: 2.0.0
       neo-async: 2.6.2
       node-sass: 5.0.0
-      sass: 1.30.0
+      sass: 1.32.0
       schema-utils: 3.0.0
       semver: 7.3.4
     dev: true
@@ -7757,7 +7757,7 @@ packages:
         optional: true
     resolution:
       integrity: sha512-ZCKAlczLBbFd3aGAhowpYEy69Te3Z68cg8bnHHl6WnSCvnKpbM6pQrz957HWMa8LKVuhnD9uMplmMAHwGQtHeg==
-  /sass/1.30.0:
+  /sass/1.32.0:
     dependencies:
       chokidar: 3.4.3
     dev: true
@@ -7765,7 +7765,7 @@ packages:
       node: '>=8.9.0'
     hasBin: true
     resolution:
-      integrity: sha512-26EUhOXRLaUY7+mWuRFqGeGGNmhB1vblpTENO1Z7mAzzIZeVxZr9EZoaY1kyGLFWdSOZxRMAufiN2mkbO6dAlw==
+      integrity: sha512-fhyqEbMIycQA4blrz/C0pYhv2o4x2y6FYYAH0CshBw3DXh5D5wyERgxw0ptdau1orc/GhNrhF7DFN2etyOCEng==
   /sax/1.2.4:
     resolution:
       integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
@@ -9464,7 +9464,7 @@ specifiers:
   leaflet.locatecontrol: 0.72.0
   leaflet.markercluster: 1.4.1
   node-sass: 5.0.0
-  sass: 1.30.0
+  sass: 1.32.0
   sass-loader: 10.1.0
   vue: 2.6.12
   vue-analytics: 5.22.1
