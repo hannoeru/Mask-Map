@@ -14,9 +14,9 @@ dependencies:
 devDependencies:
   '@babel/runtime': 7.12.5
   '@types/leaflet': 1.5.19
-  '@vue/cli-plugin-babel': 4.5.9_8ae91920fb9b3c76895c2e8acb765728
-  '@vue/cli-plugin-eslint': 4.5.9_b735961a48c18117a3279093424f955c
-  '@vue/cli-service': 4.5.9_bef24f377f0077865f33ae38d11939b0
+  '@vue/cli-plugin-babel': 4.5.10_dabf20fabaf63c3f959ce5b63391b3e6
+  '@vue/cli-plugin-eslint': 4.5.10_494278c8ea5f5e6b2d65b8c71263119c
+  '@vue/cli-service': 4.5.10_bef24f377f0077865f33ae38d11939b0
   babel-eslint: 10.1.0_eslint@7.17.0
   eslint: 7.17.0
   eslint-plugin-vue: 7.4.1_eslint@7.17.0
@@ -1266,7 +1266,7 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-HJuqwACYehQwh1fNT8f4kyzqlNMpBuUK4rSiSES5D4QsYncv5fxFsLyrxFPG2ksO7t5WP+Vgix6tt6yKClwPzA==
-  /@vue/babel-preset-app/4.5.9_vue@2.6.12:
+  /@vue/babel-preset-app/4.5.10_vue@2.6.12:
     dependencies:
       '@babel/core': 7.12.10
       '@babel/helper-compilation-targets': 7.12.5_@babel+core@7.12.10
@@ -1294,7 +1294,7 @@ packages:
       vue:
         optional: true
     resolution:
-      integrity: sha512-d2H4hFnJsGnZtJAAZIbo1dmQJ2SI1MYix1Tc9/etlnJtCDPRHeCNodCSeuLgDwnoAyT3unzyHmTtaO56KRDuOQ==
+      integrity: sha512-IHOyfWqgNNM863NjGmX6s2MIF+ILkJZardHcr7bGrxu5mNBT+p0GOGRQU4sN/adDkEQ9cyAxokm/GIeeoRrnOg==
   /@vue/babel-preset-jsx/1.2.4_@babel+core@7.12.10:
     dependencies:
       '@babel/core': 7.12.10
@@ -1372,16 +1372,16 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-kt12VJdz/37D3N3eglBywV8GStKNUhNrsxChXIV+o0MwVXORYuhDTHJRKPgLJRb/EY3vM2aRFQdxJBp9CLikjw==
-  /@vue/cli-overlay/4.5.9:
+  /@vue/cli-overlay/4.5.10:
     dev: true
     resolution:
-      integrity: sha512-E2PWv6tCdUz+eEDj2Th2oxiKmzMe02qi0PcxiNaO7oaqggmEOrp1rLgop7DWpiLDBiqUZk2x0vjK/q2Tz8z/eg==
-  /@vue/cli-plugin-babel/4.5.9_8ae91920fb9b3c76895c2e8acb765728:
+      integrity: sha512-BydPsWJTXHTzH8wBcN1rinwLe5QRee52sf/Tceixpn4VVZCio2k8VkNG/o6hRTA+MeGuetXOhmAz0UQfIxfX8w==
+  /@vue/cli-plugin-babel/4.5.10_dabf20fabaf63c3f959ce5b63391b3e6:
     dependencies:
       '@babel/core': 7.12.10
-      '@vue/babel-preset-app': 4.5.9_vue@2.6.12
-      '@vue/cli-service': 4.5.9_bef24f377f0077865f33ae38d11939b0
-      '@vue/cli-shared-utils': 4.5.9
+      '@vue/babel-preset-app': 4.5.10_vue@2.6.12
+      '@vue/cli-service': 4.5.10_bef24f377f0077865f33ae38d11939b0
+      '@vue/cli-shared-utils': 4.5.10
       babel-loader: 8.2.2_cb0b35cdd86d43ae111e54bfa48070d7
       cache-loader: 4.1.0_webpack@4.44.2
       thread-loader: 2.1.3_webpack@4.44.2
@@ -1391,11 +1391,11 @@ packages:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
       vue: '*'
     resolution:
-      integrity: sha512-2tzaJU5yqAfXVhg1aYyd/Yfif6brv+tDZ49D1aOk7ZgMIwH5YUa0yo5HPcPOcmfpoVoNYcpqVYRfyT4EXIYSpg==
-  /@vue/cli-plugin-eslint/4.5.9_b735961a48c18117a3279093424f955c:
+      integrity: sha512-vWEGj3w9mbV27WBJslCmQP1l+hmdOiCHn0hmmHOrCdELm/WK/2/iXQEsPSXujtVd7TQgiaFgvvHmHurBlC/+3w==
+  /@vue/cli-plugin-eslint/4.5.10_494278c8ea5f5e6b2d65b8c71263119c:
     dependencies:
-      '@vue/cli-service': 4.5.9_bef24f377f0077865f33ae38d11939b0
-      '@vue/cli-shared-utils': 4.5.9
+      '@vue/cli-service': 4.5.10_bef24f377f0077865f33ae38d11939b0
+      '@vue/cli-shared-utils': 4.5.10
       eslint: 7.17.0
       eslint-loader: 2.2.1_eslint@7.17.0+webpack@4.44.2
       globby: 9.2.0
@@ -1407,25 +1407,25 @@ packages:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
       eslint: '>= 1.6.0 < 7.0.0'
     resolution:
-      integrity: sha512-wTsWRiRWPW5ik4bgtlh4P4h63Zgjsyvqx2FY0kcj+bSAnQGPJ3bKUOMU9KQP5EyNH6pAXMVGh2LEXK9WwJMf1w==
-  /@vue/cli-plugin-router/4.5.9_@vue+cli-service@4.5.9:
+      integrity: sha512-2ud8lurlMJCtcErjhYBcTWhu5eN79sCBGz5dHBAmtLP0k7p7xZq7/1mo2ahnZioUskYrfz94Vo9i+D3pOUMuMQ==
+  /@vue/cli-plugin-router/4.5.10_@vue+cli-service@4.5.10:
     dependencies:
-      '@vue/cli-service': 4.5.9_bef24f377f0077865f33ae38d11939b0
-      '@vue/cli-shared-utils': 4.5.9
+      '@vue/cli-service': 4.5.10_bef24f377f0077865f33ae38d11939b0
+      '@vue/cli-shared-utils': 4.5.10
     dev: true
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
     resolution:
-      integrity: sha512-eBBfbZpQ1sJrdlx8i7iReFxSnuzwmrv+s2OCT3kjBd6uWRqGnD4VihpS4srC7vZLzDQrDplumSn0a93L9Qf3wQ==
-  /@vue/cli-plugin-vuex/4.5.9_@vue+cli-service@4.5.9:
+      integrity: sha512-roiZTx2W59kTRaqNzHEnjnakP89MS+pVf3zWBlwsNXZpQuvqwFvoNfH/nBSJjqGRgZTRtCUe6vGgVPUEFYi/cg==
+  /@vue/cli-plugin-vuex/4.5.10_@vue+cli-service@4.5.10:
     dependencies:
-      '@vue/cli-service': 4.5.9_bef24f377f0077865f33ae38d11939b0
+      '@vue/cli-service': 4.5.10_bef24f377f0077865f33ae38d11939b0
     dev: true
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
     resolution:
-      integrity: sha512-mFNIJhYiJjzCgytkDHX00ROy5Yzl7prkZpUbeDE0biwcLteMf2s3qZVbESOQl6GcviqcfEt2f3tHQQtLNa+OLg==
-  /@vue/cli-service/4.5.9_bef24f377f0077865f33ae38d11939b0:
+      integrity: sha512-Z5pnL3Eg2uwkKqP09NoM46/rwQCJ1j/1cZMgO4JF817O9n5AsFgV456UE6lK2cVCvIfvt7+S3HLrSPZUsYNQjQ==
+  /@vue/cli-service/4.5.10_bef24f377f0077865f33ae38d11939b0:
     dependencies:
       '@intervolga/optimize-cssnano-plugin': 1.0.6_webpack@4.44.2
       '@soda/friendly-errors-webpack-plugin': 1.8.0_webpack@4.44.2
@@ -1433,10 +1433,10 @@ packages:
       '@types/minimist': 1.2.1
       '@types/webpack': 4.41.25
       '@types/webpack-dev-server': 3.11.1
-      '@vue/cli-overlay': 4.5.9
-      '@vue/cli-plugin-router': 4.5.9_@vue+cli-service@4.5.9
-      '@vue/cli-plugin-vuex': 4.5.9_@vue+cli-service@4.5.9
-      '@vue/cli-shared-utils': 4.5.9
+      '@vue/cli-overlay': 4.5.10
+      '@vue/cli-plugin-router': 4.5.10_@vue+cli-service@4.5.10
+      '@vue/cli-plugin-vuex': 4.5.10_@vue+cli-service@4.5.10
+      '@vue/cli-shared-utils': 4.5.10
       '@vue/component-compiler-utils': 3.2.0
       '@vue/preload-webpack-plugin': 1.1.2_e19cda6b5f21e6c518504c22be752ae4
       '@vue/web-component-wrapper': 1.2.0
@@ -1514,8 +1514,8 @@ packages:
       vue-template-compiler:
         optional: true
     resolution:
-      integrity: sha512-E3XlfM0q+UnnjbC9rwLIWNo2umZCRwnlMJY0KOhY1hFvqisGIYzFmQQ4o01KGyTx2BZNMuQg7Kw+BZ5gyM1Wig==
-  /@vue/cli-shared-utils/4.5.9:
+      integrity: sha512-HnVkbc+Zb6J1lu0ojuKC6aQ4PjCW2fqlJE0G9Zqg+7VsUZ2e15UVRoIXj2hcIWtQiFF6n2FDxEkvZLslht9rkg==
+  /@vue/cli-shared-utils/4.5.10:
     dependencies:
       '@hapi/joi': 15.1.1
       chalk: 2.4.2
@@ -1531,7 +1531,7 @@ packages:
       strip-ansi: 6.0.0
     dev: true
     resolution:
-      integrity: sha512-anvsrv+rkQC+hgxaT2nQQxnSWSsIzyysZ36LO7qPjXvDRBvcvKLAAviFlUkYbZ+ntbV8puzJ3zw+gUhQw4SEVA==
+      integrity: sha512-Lid6FflDqcvo/JBIBjUriAQ1RkQaKbBpzXSLEK/JmoKkQRHW/rRhDLGI1dEVyOLYnDEiL1m8o1xPJaplUUiXpA==
   /@vue/component-compiler-utils/3.2.0:
     dependencies:
       consolidate: 0.15.1
@@ -9429,9 +9429,9 @@ packages:
 specifiers:
   '@babel/runtime': 7.12.5
   '@types/leaflet': 1.5.19
-  '@vue/cli-plugin-babel': 4.5.9
-  '@vue/cli-plugin-eslint': 4.5.9
-  '@vue/cli-service': 4.5.9
+  '@vue/cli-plugin-babel': 4.5.10
+  '@vue/cli-plugin-eslint': 4.5.10
+  '@vue/cli-service': 4.5.10
   axios: 0.21.1
   babel-eslint: 10.1.0
   core-js: 3.8.2
