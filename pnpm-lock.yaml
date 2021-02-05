@@ -2,7 +2,7 @@ dependencies:
   axios: 0.21.1
   core-js: 3.8.3
   leaflet: 1.7.1
-  leaflet.locatecontrol: 0.72.0
+  leaflet.locatecontrol: 0.72.2
   leaflet.markercluster: 1.4.1_leaflet@1.7.1
   vue: 2.6.12
   vue-analytics: 5.22.1
@@ -5541,10 +5541,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-On+V7K2uZK6wK7x691ycSUbLD/FyKKelArkbaAMSSJU8JmqmhwN2+mnJDNINuJWSrh2L0kDk+ZQtbC/gOWUwLw==
-  /leaflet.locatecontrol/0.72.0:
+  /leaflet.locatecontrol/0.72.2:
     dev: false
     resolution:
-      integrity: sha512-enAf10UG9Z1bV0siTP/+vG/ZVncDqSA3V8c6iZ3s6KWL5Ngkk4A4mk9Ssefj46ey98I9HSYWqoS+k2Y7EaKjwQ==
+      integrity: sha512-MNi7m+TlQFwiz5jq5W9vcGjwBHsh1PGxjKjONYd0NezuSLdj9dNjRsupLXtF2fNnX+s+tPNzP7V+Nmg6TKvhHA==
   /leaflet.markercluster/1.4.1_leaflet@1.7.1:
     dependencies:
       leaflet: 1.7.1
@@ -9463,7 +9463,7 @@ specifiers:
   eslint: 7.19.0
   eslint-plugin-vue: 7.5.0
   leaflet: 1.7.1
-  leaflet.locatecontrol: 0.72.0
+  leaflet.locatecontrol: 0.72.2
   leaflet.markercluster: 1.4.1
   node-sass: 5.0.0
   sass: 1.32.6
