@@ -8,12 +8,12 @@ dependencies:
   vue-analytics: 5.22.1
   vue-axios: 2.1.4_vue@2.6.12
   vue-spinner: 1.0.4
-  vue2-leaflet: 2.6.0_27807b352bc266d3f0d0d4e0f5973433
+  vue2-leaflet: 2.6.0_a5b6ab034f8c1375a9dd9d2efc43d8b0
   vue2-leaflet-markercluster: 3.1.0_leaflet@1.7.1
   vue2-perfect-scrollbar: 1.5.0
 devDependencies:
   '@babel/runtime': 7.12.13
-  '@types/leaflet': 1.5.21
+  '@types/leaflet': 1.5.22
   '@vue/cli-plugin-babel': 4.5.11_7fd1c33fe171018602ad64aa8e04225c
   '@vue/cli-plugin-eslint': 4.5.11_c16ffba3cf6db74b0168d417ea19917b
   '@vue/cli-service': 4.5.11_8b562d2a16503669b1fa940b13e399ac
@@ -1138,12 +1138,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-cxWFQVseBm6O9Gbw1IWb8r6OS4OhSt3hPZLkFApLjM8TEXROBuQGLAH2i2gZpcXdLBIrpXuTDhH7Vbm1iXmNGA==
-  /@types/leaflet/1.5.21:
+  /@types/leaflet/1.5.22:
     dependencies:
       '@types/geojson': 7946.0.7
     dev: true
     resolution:
-      integrity: sha512-b+BOkwJDq6DK4m+jFUOHNCFinIkO4CF1MjnOwYgZFX+oElpYpXCCIsxZ3+zQWIRSLVUbRXvaQq2K935jGIyp7A==
+      integrity: sha512-SYHabmJuWDsSo4OshhbTT4+QOaNuSW77hl4vjJ7jqaiZUNipaMrYjUHASD1L+sHLkMx9fuD0a0tOeeFO4d3w6Q==
   /@types/mime/1.3.2:
     dev: true
     resolution:
@@ -9052,9 +9052,9 @@ packages:
       leaflet: ^1.3.4
     resolution:
       integrity: sha512-v94tns6/PmBlFaPY2XvCUL69yUwRO43qYAP7T9hLmPDdu3Vgl15SDcC1qara8M56aNzWMPAcfP/uy4toUE5wcA==
-  /vue2-leaflet/2.6.0_27807b352bc266d3f0d0d4e0f5973433:
+  /vue2-leaflet/2.6.0_a5b6ab034f8c1375a9dd9d2efc43d8b0:
     dependencies:
-      '@types/leaflet': 1.5.21
+      '@types/leaflet': 1.5.22
       leaflet: 1.7.1
       vue: 2.6.12
     dev: false
@@ -9433,7 +9433,7 @@ packages:
       integrity: sha512-jcKpkthap6x63MB4TxwCyuIGkV0oYP/YRyuQU5UO0Yz/E/ZAu+653/uov+phdmO54n6BcvFRyyt0RRrWdN2mpw==
 specifiers:
   '@babel/runtime': 7.12.13
-  '@types/leaflet': 1.5.21
+  '@types/leaflet': 1.5.22
   '@vue/cli-plugin-babel': 4.5.11
   '@vue/cli-plugin-eslint': 4.5.11
   '@vue/cli-service': 4.5.11
