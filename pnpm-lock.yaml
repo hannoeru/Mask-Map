@@ -13,7 +13,7 @@ dependencies:
   vue2-perfect-scrollbar: 1.5.0
 devDependencies:
   '@babel/eslint-parser': 7.13.4_eslint@7.20.0
-  '@babel/runtime': 7.13.6
+  '@babel/runtime': 7.13.7
   '@types/leaflet': 1.5.23
   '@vue/cli-plugin-babel': 4.5.11_7fd1c33fe171018602ad64aa8e04225c
   '@vue/cli-plugin-eslint': 4.5.11_c16ffba3cf6db74b0168d417ea19917b
@@ -959,12 +959,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-8+3UMPBrjFa/6TtKi/7sehPKqfAm4g6K+YQjyyFOLUTxzOngcRZTlAVY8sc2CORJYqdHQY8gRPHmn+qo15rCBw==
-  /@babel/runtime/7.13.6:
+  /@babel/runtime/7.13.7:
     dependencies:
       regenerator-runtime: 0.13.7
     dev: true
     resolution:
-      integrity: sha512-Y/DEVhSQ91u27rxq7D0EH/sewS6+x06p/MgO1VppbDHMzYXLZrAR5cFjCom78e9RUw1BQAq6qJg6fXc/ep7glA==
+      integrity: sha512-h+ilqoX998mRVM5FtB5ijRuHUDVt5l3yfoOi2uh18Z/O3hvyaHQ39NpxVkCIG5yFs+mLq/ewFp8Bss6zmWv6ZA==
   /@babel/template/7.12.13:
     dependencies:
       '@babel/code-frame': 7.12.13
@@ -9469,7 +9469,7 @@ packages:
       integrity: sha512-jcKpkthap6x63MB4TxwCyuIGkV0oYP/YRyuQU5UO0Yz/E/ZAu+653/uov+phdmO54n6BcvFRyyt0RRrWdN2mpw==
 specifiers:
   '@babel/eslint-parser': 7.13.4
-  '@babel/runtime': 7.13.6
+  '@babel/runtime': 7.13.7
   '@types/leaflet': 1.5.23
   '@vue/cli-plugin-babel': 4.5.11
   '@vue/cli-plugin-eslint': 4.5.11
