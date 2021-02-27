@@ -12,14 +12,14 @@ dependencies:
   vue2-leaflet-markercluster: 3.1.0_leaflet@1.7.1
   vue2-perfect-scrollbar: 1.5.0
 devDependencies:
-  '@babel/eslint-parser': 7.13.8_eslint@7.20.0
+  '@babel/eslint-parser': 7.13.8_eslint@7.21.0
   '@babel/runtime': 7.13.8
   '@types/leaflet': 1.5.23
   '@vue/cli-plugin-babel': 4.5.11_7fd1c33fe171018602ad64aa8e04225c
-  '@vue/cli-plugin-eslint': 4.5.11_c16ffba3cf6db74b0168d417ea19917b
+  '@vue/cli-plugin-eslint': 4.5.11_9fda969a513e1814449ba255c1b89354
   '@vue/cli-service': 4.5.11_8f6e5590e44ab551afb35fa0b9cd7abd
-  eslint: 7.20.0
-  eslint-plugin-vue: 7.6.0_eslint@7.20.0
+  eslint: 7.21.0
+  eslint-plugin-vue: 7.6.0_eslint@7.21.0
   node-sass: 5.0.0
   sass: 1.32.8
   sass-loader: 10.1.1_node-sass@5.0.0+sass@1.32.8
@@ -64,9 +64,9 @@ packages:
       node: '>=6.9.0'
     resolution:
       integrity: sha512-t/hHIB504wWceOeaOoONOhu+gX+hpjfeN6YRBT209X/4sibZQfSF1I0HFRRlBe97UZZosGx5XwUg1ZgNbelmNw==
-  /@babel/eslint-parser/7.13.8_eslint@7.20.0:
+  /@babel/eslint-parser/7.13.8_eslint@7.21.0:
     dependencies:
-      eslint: 7.20.0
+      eslint: 7.21.0
       eslint-scope: 5.1.0
       eslint-visitor-keys: 1.3.0
       semver: 6.3.0
@@ -995,7 +995,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-oKrdZTld2im1z8bDwTOQvUbxKwE+854zc16qWZQlcTqMN00pWxHQ4ZeOq0yDMnisOpRykH2/5Qqcrk/OlbAjiQ==
-  /@eslint/eslintrc/0.3.0:
+  /@eslint/eslintrc/0.4.0:
     dependencies:
       ajv: 6.12.6
       debug: 4.3.1
@@ -1004,14 +1004,13 @@ packages:
       ignore: 4.0.6
       import-fresh: 3.3.0
       js-yaml: 3.14.1
-      lodash: 4.17.20
       minimatch: 3.0.4
       strip-json-comments: 3.1.1
     dev: true
     engines:
       node: ^10.12.0 || >=12.0.0
     resolution:
-      integrity: sha512-1JTKgrOKAHVivSvOYw+sJOunkBjUOvjqWk1DPja7ZFhIS2mX/4EgTT8M7eTK9jrKhL/FvXXEbQwIs3pg1xp3dg==
+      integrity: sha512-2ZPCc+uNbjV5ERJr+aKSPRwZgKd2z11x0EgLvb1PURmUrn9QNRXFqje0Ldq454PfAVyaJYyrDvvIKSFP4NnBog==
   /@hapi/address/2.1.4:
     deprecated: Moved to 'npm install @sideway/address'
     dev: true
@@ -1409,12 +1408,12 @@ packages:
       vue: '*'
     resolution:
       integrity: sha512-ogUMeO2waDtghIWwmuAzMJAnnPdmqRdJlwJDca9u6BK9jX1bxNThBSFS/MN2VmlYzulOnqH4zAC87jTWNg/czg==
-  /@vue/cli-plugin-eslint/4.5.11_c16ffba3cf6db74b0168d417ea19917b:
+  /@vue/cli-plugin-eslint/4.5.11_9fda969a513e1814449ba255c1b89354:
     dependencies:
       '@vue/cli-service': 4.5.11_8f6e5590e44ab551afb35fa0b9cd7abd
       '@vue/cli-shared-utils': 4.5.11
-      eslint: 7.20.0
-      eslint-loader: 2.2.1_eslint@7.20.0+webpack@4.46.0
+      eslint: 7.21.0
+      eslint-loader: 2.2.1_eslint@7.21.0+webpack@4.46.0
       globby: 9.2.0
       inquirer: 7.3.3
       webpack: 4.46.0
@@ -3683,9 +3682,9 @@ packages:
       node: '>=0.8.0'
     resolution:
       integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
-  /eslint-loader/2.2.1_eslint@7.20.0+webpack@4.46.0:
+  /eslint-loader/2.2.1_eslint@7.21.0+webpack@4.46.0:
     dependencies:
-      eslint: 7.20.0
+      eslint: 7.21.0
       loader-fs-cache: 1.0.3
       loader-utils: 1.4.0
       object-assign: 4.1.1
@@ -3699,13 +3698,13 @@ packages:
       webpack: '>=2.0.0 <5.0.0'
     resolution:
       integrity: sha512-RLgV9hoCVsMLvOxCuNjdqOrUqIj9oJg8hF44vzJaYqsAHuY9G2YAeN3joQ9nxP0p5Th9iFSIpKo+SD8KISxXRg==
-  /eslint-plugin-vue/7.6.0_eslint@7.20.0:
+  /eslint-plugin-vue/7.6.0_eslint@7.21.0:
     dependencies:
-      eslint: 7.20.0
+      eslint: 7.21.0
       eslint-utils: 2.1.0
       natural-compare: 1.4.0
       semver: 7.3.4
-      vue-eslint-parser: 7.5.0_eslint@7.20.0
+      vue-eslint-parser: 7.5.0_eslint@7.21.0
     dev: true
     engines:
       node: '>=8.10'
@@ -3760,10 +3759,10 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-QudtT6av5WXels9WjIM7qz1XD1cWGvX4gGXvp/zBn9nXG02D0utdU3Em2m/QjTnrsk6bBjmCygl3rmj118msQQ==
-  /eslint/7.20.0:
+  /eslint/7.21.0:
     dependencies:
       '@babel/code-frame': 7.12.11
-      '@eslint/eslintrc': 0.3.0
+      '@eslint/eslintrc': 0.4.0
       ajv: 6.12.6
       chalk: 4.1.0
       cross-spawn: 7.0.3
@@ -3776,7 +3775,7 @@ packages:
       espree: 7.3.1
       esquery: 1.4.0
       esutils: 2.0.3
-      file-entry-cache: 6.0.0
+      file-entry-cache: 6.0.1
       functional-red-black-tree: 1.0.1
       glob-parent: 5.1.1
       globals: 12.4.0
@@ -3804,7 +3803,7 @@ packages:
       node: ^10.12.0 || >=12.0.0
     hasBin: true
     resolution:
-      integrity: sha512-qGi0CTcOGP2OtCQBgWZlQjcTuP0XkIpYFj25XtRTQSHC+umNnp7UMshr2G8SLsRFYDdAPFeHOsiteadmMH02Yw==
+      integrity: sha512-W2aJbXpMNofUp0ztQaF40fveSsJBjlSCSWpy//gzfTvwC+USs/nceBrKmlJOiM8r1bLwP2EuYkCqArn/6QTIgg==
   /espree/6.2.1:
     dependencies:
       acorn: 7.4.1
@@ -4095,14 +4094,14 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg==
-  /file-entry-cache/6.0.0:
+  /file-entry-cache/6.0.1:
     dependencies:
       flat-cache: 3.0.4
     dev: true
     engines:
       node: ^10.12.0 || >=12.0.0
     resolution:
-      integrity: sha512-fqoO76jZ3ZnYrXLDRxBR1YvOvc0k844kcOg40bgsPrE25LAb/PDqTY+ho64Xh2c8ZXgIKldchCFHczG2UVRcWA==
+      integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==
   /file-loader/4.3.0_webpack@4.46.0:
     dependencies:
       loader-utils: 1.4.0
@@ -9000,10 +8999,10 @@ packages:
       vue: '>= 1.0.0'
     resolution:
       integrity: sha512-th5xVbInVoyIoe+qY+9GCflEVezxAvztD4xpFF39SRQYqpoKD2qkmX8yv08jJG9a2SgNOCjirjJGSwg/wTrbmA==
-  /vue-eslint-parser/7.5.0_eslint@7.20.0:
+  /vue-eslint-parser/7.5.0_eslint@7.21.0:
     dependencies:
       debug: 4.3.1
-      eslint: 7.20.0
+      eslint: 7.21.0
       eslint-scope: 5.1.1
       eslint-visitor-keys: 1.3.0
       espree: 6.2.1
@@ -9476,7 +9475,7 @@ specifiers:
   '@vue/cli-service': 4.5.11
   axios: 0.21.1
   core-js: 3.9.0
-  eslint: 7.20.0
+  eslint: 7.21.0
   eslint-plugin-vue: 7.6.0
   leaflet: 1.7.1
   leaflet.locatecontrol: 0.72.2
