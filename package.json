@@ -26,7 +26,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "7.13.10",
     "@babel/runtime": "7.13.10",
-    "@types/leaflet": "1.5.23",
+    "@types/leaflet": "1.7.0",
     "@vue/cli-plugin-babel": "4.5.11",
     "@vue/cli-plugin-eslint": "4.5.11",
     "@vue/cli-service": "4.5.11",
