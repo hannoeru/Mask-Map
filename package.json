@@ -13,7 +13,7 @@
     "axios": "0.21.1",
     "core-js": "3.9.1",
     "leaflet": "1.7.1",
-    "leaflet.locatecontrol": "0.72.2",
+    "leaflet.locatecontrol": "0.73.0",
     "leaflet.markercluster": "1.5.0",
     "vue": "2.6.12",
     "vue-analytics": "5.22.1",
