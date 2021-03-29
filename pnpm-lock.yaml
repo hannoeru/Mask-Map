@@ -1818,7 +1818,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==
-  /ajv/7.2.4:
+  /ajv/8.0.1:
     dependencies:
       fast-deep-equal: 3.1.3
       json-schema-traverse: 1.0.0
@@ -1826,7 +1826,7 @@ packages:
       uri-js: 4.4.1
     dev: true
     resolution:
-      integrity: sha512-nBeQgg/ZZA3u3SYxyaDvpvDtgZ/EZPF547ARgZBrG9Bhu1vKDwAIjtIf+sDtJUKa2zOcEbmRLBRSyMraS/Oy1A==
+      integrity: sha512-46ZA4TalFcLLqX1dEU3dhdY38wAtDydJ4e7QQTVekLUTzXkb1LfqU6VOBXC/a9wiv4T094WURqJH6ZitF92Kqw==
   /alphanum-sort/1.0.2:
     resolution:
       integrity: sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
@@ -3827,7 +3827,7 @@ packages:
       semver: 7.3.5
       strip-ansi: 6.0.0
       strip-json-comments: 3.1.1
-      table: 6.0.7
+      table: 6.0.8
       text-table: 0.2.0
       v8-compile-cache: 2.3.0
     dev: true
@@ -5735,6 +5735,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==
+  /lodash.clonedeep/4.5.0:
+    dev: true
+    resolution:
+      integrity: sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
   /lodash.debounce/4.0.8:
     dev: true
     resolution:
@@ -5743,6 +5747,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-3j8wdDzYuWO3lM3Reg03MuQR957t287Rpcxp1njpEa8oDrikb+FwGdW3n+FELh/A6qib6yPit0j/pv9G/yeAqA==
+  /lodash.flatten/4.4.0:
+    dev: true
+    resolution:
+      integrity: sha1-8xwiIlqWMtK7+OSt2+8kCqdlph8=
   /lodash.kebabcase/4.1.1:
     dev: true
     resolution:
@@ -5758,6 +5766,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-EjBkIvYzJK7YSD0/ODMrX2cFR6A=
+  /lodash.truncate/4.4.2:
+    dev: true
+    resolution:
+      integrity: sha1-WjUNoLERO4N+z//VgSy+WNbq4ZM=
   /lodash.uniq/4.5.0:
     resolution:
       integrity: sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
@@ -8558,17 +8570,22 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-yhy/sQYxR5BkC98CY7o31VGsg014AKLEPxdfhora76l36hD9Rdy5NZA/Ocn6yayNPgSamYdtX2rFJdcv07AYVw==
-  /table/6.0.7:
+  /table/6.0.8:
     dependencies:
-      ajv: 7.2.4
-      lodash: 4.17.21
+      ajv: 8.0.1
+      is-boolean-object: 1.1.0
+      is-number-object: 1.0.4
+      is-string: 1.0.5
+      lodash.clonedeep: 4.5.0
+      lodash.flatten: 4.4.0
+      lodash.truncate: 4.4.2
       slice-ansi: 4.0.0
       string-width: 4.2.2
     dev: true
     engines:
       node: '>=10.0.0'
     resolution:
-      integrity: sha512-rxZevLGTUzWna/qBLObOe16kB2RTnnbhciwgPbMMlazz1yZGVEgnZK762xyVdVznhqxrfCeBMmMkgOOaPwjH7g==
+      integrity: sha512-OBAdezyozae8IvjHGXBDHByVkLCcsmffXUSj8LXkNb0SluRd4ug3GFCjk6JynZONIPhOkyr0Nnvbq1rlIspXyQ==
   /tapable/1.1.3:
     dev: true
     engines:
