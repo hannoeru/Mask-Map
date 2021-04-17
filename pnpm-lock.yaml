@@ -15,7 +15,7 @@ specifiers:
   leaflet.locatecontrol: 0.73.0
   leaflet.markercluster: 1.5.0
   node-sass: 5.0.0
-  sass: 1.32.8
+  sass: 1.32.10
   sass-loader: 10.1.1
   vue: 2.6.12
   vue-analytics: 5.22.1
@@ -50,8 +50,8 @@ devDependencies:
   eslint: 7.24.0
   eslint-plugin-vue: 7.9.0_eslint@7.24.0
   node-sass: 5.0.0
-  sass: 1.32.8
-  sass-loader: 10.1.1_node-sass@5.0.0+sass@1.32.8
+  sass: 1.32.10
+  sass-loader: 10.1.1_node-sass@5.0.0+sass@1.32.10
   vue-template-compiler: 2.6.12
 
 packages:
@@ -1615,7 +1615,7 @@ packages:
       pnp-webpack-plugin: 1.6.4
       portfinder: 1.0.28
       postcss-loader: 3.0.0
-      sass-loader: 10.1.1_node-sass@5.0.0+sass@1.32.8
+      sass-loader: 10.1.1_node-sass@5.0.0+sass@1.32.10
       ssri: 7.1.0
       terser-webpack-plugin: 2.3.8_webpack@4.46.0
       thread-loader: 2.1.3_webpack@4.46.0
@@ -7429,7 +7429,7 @@ packages:
       yargs: 13.3.2
     dev: true
 
-  /sass-loader/10.1.1_node-sass@5.0.0+sass@1.32.8:
+  /sass-loader/10.1.1_node-sass@5.0.0+sass@1.32.10:
     resolution: {integrity: sha512-W6gVDXAd5hR/WHsPicvZdjAWHBcEJ44UahgxcIE196fW2ong0ZHMPO1kZuI5q0VlvMQZh32gpv69PLWQm70qrw==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
@@ -7449,13 +7449,13 @@ packages:
       loader-utils: 2.0.0
       neo-async: 2.6.2
       node-sass: 5.0.0
-      sass: 1.32.8
+      sass: 1.32.10
       schema-utils: 3.0.0
       semver: 7.3.5
     dev: true
 
-  /sass/1.32.8:
-    resolution: {integrity: sha512-Sl6mIeGpzjIUZqvKnKETfMf0iDAswD9TNlv13A7aAF3XZlRPMq4VvJWBC2N2DXbp94MQVdNSFG6LfF/iOXrPHQ==}
+  /sass/1.32.10:
+    resolution: {integrity: sha512-Nx0pcWoonAkn7CRp0aE/hket1UP97GiR1IFw3kcjV3pnenhWgZEWUf0ZcfPOV2fK52fnOcK3JdC/YYZ9E47DTQ==}
     engines: {node: '>=8.9.0'}
     hasBin: true
     dependencies:
