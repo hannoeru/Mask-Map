@@ -3770,7 +3770,7 @@ packages:
       semver: 7.3.5
       strip-ansi: 6.0.0
       strip-json-comments: 3.1.1
-      table: 6.1.0
+      table: 6.2.0
       text-table: 0.2.0
       v8-compile-cache: 2.3.0
     transitivePeerDependencies:
@@ -8096,8 +8096,8 @@ packages:
       unquote: 1.1.1
       util.promisify: 1.0.1
 
-  /table/6.1.0:
-    resolution: {integrity: sha512-T4G5KMmqIk6X87gLKWyU5exPpTjLjY5KyrFWaIjv3SvgaIUGXV7UEzGEnZJdTA38/yUS6f9PlKezQ0bYXG3iIQ==}
+  /table/6.2.0:
+    resolution: {integrity: sha512-WMBBLuauiLXJjth35K4vOnd/xkaZ/dxEcyoZ+YhxSwfxFqvh+av06+oRqIwbR14m1lENB1egSWOFv/bNEt2D8A==}
     engines: {node: '>=10.0.0'}
     dependencies:
       ajv: 8.1.0
