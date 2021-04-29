@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@babel/eslint-parser': 7.13.14
-  '@babel/runtime': 7.13.17
+  '@babel/runtime': 7.14.0
   '@types/leaflet': 1.7.0
   '@vue/cli-plugin-babel': 4.5.12
   '@vue/cli-plugin-eslint': 4.5.12
@@ -42,7 +42,7 @@ dependencies:
 
 devDependencies:
   '@babel/eslint-parser': 7.13.14_eslint@7.25.0
-  '@babel/runtime': 7.13.17
+  '@babel/runtime': 7.14.0
   '@types/leaflet': 1.7.0
   '@vue/cli-plugin-babel': 4.5.12_08f6923167e8915a6e44610899c9e3f1
   '@vue/cli-plugin-eslint': 4.5.12_1ec10f3c0df1966ae67bd262c572430b
@@ -1060,6 +1060,12 @@ packages:
 
   /@babel/runtime/7.13.17:
     resolution: {integrity: sha512-NCdgJEelPTSh+FEFylhnP1ylq848l1z9t9N0j1Lfbcw0+KXGjsTvUmkxy+voLLXB5SOKMbLLx4jxYliGrYQseA==}
+    dependencies:
+      regenerator-runtime: 0.13.7
+    dev: true
+
+  /@babel/runtime/7.14.0:
+    resolution: {integrity: sha512-JELkvo/DlpNdJ7dlyw/eY7E0suy5i5GQH+Vlxaq1nsNJ+H7f4Vtv3jMeCEgRhZZQFXTjldYfQgv2qmM6M1v5wA==}
     dependencies:
       regenerator-runtime: 0.13.7
     dev: true
