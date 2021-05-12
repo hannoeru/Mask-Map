@@ -16,7 +16,7 @@ specifiers:
   leaflet.markercluster: 1.5.0
   node-sass: 6.0.0
   sass: 1.32.12
-  sass-loader: ^11.1.0
+  sass-loader: 11.1.0
   vue: 2.6.12
   vue-analytics: 5.22.1
   vue-axios: 2.1.5
