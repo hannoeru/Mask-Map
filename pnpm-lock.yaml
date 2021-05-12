@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@babel/eslint-parser': 7.13.14
+  '@babel/eslint-parser': 7.14.2
   '@babel/runtime': 7.14.0
   '@types/leaflet': 1.7.0
   '@vue/cli-plugin-babel': 4.5.13
@@ -41,7 +41,7 @@ dependencies:
   vue2-perfect-scrollbar: 1.5.0
 
 devDependencies:
-  '@babel/eslint-parser': 7.13.14_eslint@7.26.0
+  '@babel/eslint-parser': 7.14.2_eslint@7.26.0
   '@babel/runtime': 7.14.0
   '@types/leaflet': 1.7.0
   '@vue/cli-plugin-babel': 4.5.13_873a9ffdf7854442b9acc2f5aa2a81d5
@@ -95,8 +95,8 @@ packages:
       - supports-color
     dev: true
 
-  /@babel/eslint-parser/7.13.14_eslint@7.26.0:
-    resolution: {integrity: sha512-I0HweR36D73Ibn/FfrRDMKlMqJHFwidIUgYdMpH+aXYuQC+waq59YaJ6t9e9N36axJ82v1jR041wwqDrDXEwRA==}
+  /@babel/eslint-parser/7.14.2_eslint@7.26.0:
+    resolution: {integrity: sha512-g1YXHASb84MvEkReG/nZ74emTPAMjip1Ey6azZqKTEWidpgEzPGl/uoc6IPJjaMGw424u40sNm1V70tuYOQmeA==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': '>=7.11.0'
@@ -104,7 +104,7 @@ packages:
     dependencies:
       eslint: 7.26.0
       eslint-scope: 5.1.1
-      eslint-visitor-keys: 1.3.0
+      eslint-visitor-keys: 2.1.0
       semver: 6.3.0
     dev: true
 
