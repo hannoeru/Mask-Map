@@ -4,6 +4,5 @@ module.exports = {
       entry: 'src/main.js',
       title: '口罩即時查'
     }
-  },
-  publicPath: '/Mask-Map/'
+  }
 }
