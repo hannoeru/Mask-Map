@@ -17,11 +17,11 @@ specifiers:
   node-sass: 6.0.0
   sass: 1.34.0
   sass-loader: 10.2.0
-  vue: 2.6.12
+  vue: 2.6.13
   vue-analytics: 5.22.1
   vue-axios: 2.1.5
   vue-spinner: 1.0.4
-  vue-template-compiler: 2.6.12
+  vue-template-compiler: 2.6.13
   vue2-leaflet: 2.7.0
   vue2-leaflet-markercluster: 3.1.0
   vue2-perfect-scrollbar: 1.5.0
@@ -32,11 +32,11 @@ dependencies:
   leaflet: 1.7.1
   leaflet.locatecontrol: 0.73.0
   leaflet.markercluster: 1.5.0_leaflet@1.7.1
-  vue: 2.6.12
+  vue: 2.6.13
   vue-analytics: 5.22.1
-  vue-axios: 2.1.5_vue@2.6.12
+  vue-axios: 2.1.5_vue@2.6.13
   vue-spinner: 1.0.4
-  vue2-leaflet: 2.7.0_6df0fd0f5d341b9c3e6da76ca93a44d2
+  vue2-leaflet: 2.7.0_5e0e5a14d949cd675c19399e8aca182a
   vue2-leaflet-markercluster: 3.1.0_leaflet@1.7.1
   vue2-perfect-scrollbar: 1.5.0
 
@@ -44,15 +44,15 @@ devDependencies:
   '@babel/eslint-parser': 7.14.4_eslint@7.27.0
   '@babel/runtime': 7.14.0
   '@types/leaflet': 1.7.0
-  '@vue/cli-plugin-babel': 4.5.13_873a9ffdf7854442b9acc2f5aa2a81d5
+  '@vue/cli-plugin-babel': 4.5.13_2bd87d693304b41e50bbf07d3921c62a
   '@vue/cli-plugin-eslint': 4.5.13_484d0f9d6c1b78ed430d6398b4d560b0
-  '@vue/cli-service': 4.5.13_8af0fc47c4a92487b000b9dfbc8756db
+  '@vue/cli-service': 4.5.13_313ed6c5e021de215b6714ce051fdbc9
   eslint: 7.27.0
   eslint-plugin-vue: 7.10.0_eslint@7.27.0
   node-sass: 6.0.0
   sass: 1.34.0
   sass-loader: 10.2.0_node-sass@6.0.0+sass@1.34.0
-  vue-template-compiler: 2.6.12
+  vue-template-compiler: 2.6.13
 
 packages:
 
@@ -1420,7 +1420,7 @@ packages:
       svg-tags: 1.0.0
     dev: true
 
-  /@vue/babel-preset-app/4.5.13_vue@2.6.12:
+  /@vue/babel-preset-app/4.5.13_vue@2.6.13:
     resolution: {integrity: sha512-pM7CR3yXB6L8Gfn6EmX7FLNE3+V/15I3o33GkSNsWvgsMp6HVGXKkXgojrcfUUauyL1LZOdvTmu4enU2RePGHw==}
     peerDependencies:
       vue: ^2 || ^3.0.0-0
@@ -1446,7 +1446,7 @@ packages:
       core-js: 3.13.1
       core-js-compat: 3.13.1
       semver: 6.3.0
-      vue: 2.6.12
+      vue: 2.6.13
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1532,14 +1532,14 @@ packages:
     resolution: {integrity: sha512-jhUIg3klgi5Cxhs8dnat5hi/W2tQJvsqCxR0u6hgfSob0ORODgUBlN+F/uwq7cKIe/pzedVUk1y07F13GQvPqg==}
     dev: true
 
-  /@vue/cli-plugin-babel/4.5.13_873a9ffdf7854442b9acc2f5aa2a81d5:
+  /@vue/cli-plugin-babel/4.5.13_2bd87d693304b41e50bbf07d3921c62a:
     resolution: {integrity: sha512-ykvEAfD8PgGs+dGMGqr7l/nRmIS39NRzWLhMluPLTvDV1L+IxcoB73HNLGA/aENDpl8CuWrTE+1VgydcOhp+wg==}
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
     dependencies:
       '@babel/core': 7.14.3
-      '@vue/babel-preset-app': 4.5.13_vue@2.6.12
-      '@vue/cli-service': 4.5.13_8af0fc47c4a92487b000b9dfbc8756db
+      '@vue/babel-preset-app': 4.5.13_vue@2.6.13
+      '@vue/cli-service': 4.5.13_313ed6c5e021de215b6714ce051fdbc9
       '@vue/cli-shared-utils': 4.5.13
       babel-loader: 8.2.2_105470dfa535e5f605a4a54ef7d81e87
       cache-loader: 4.1.0_webpack@4.46.0
@@ -1558,7 +1558,7 @@ packages:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
       eslint: '>= 1.6.0 < 7.0.0'
     dependencies:
-      '@vue/cli-service': 4.5.13_8af0fc47c4a92487b000b9dfbc8756db
+      '@vue/cli-service': 4.5.13_313ed6c5e021de215b6714ce051fdbc9
       '@vue/cli-shared-utils': 4.5.13
       eslint: 7.27.0
       eslint-loader: 2.2.1_eslint@7.27.0+webpack@4.46.0
@@ -1576,7 +1576,7 @@ packages:
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
     dependencies:
-      '@vue/cli-service': 4.5.13_8af0fc47c4a92487b000b9dfbc8756db
+      '@vue/cli-service': 4.5.13_313ed6c5e021de215b6714ce051fdbc9
       '@vue/cli-shared-utils': 4.5.13
     dev: true
 
@@ -1585,10 +1585,10 @@ packages:
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
     dependencies:
-      '@vue/cli-service': 4.5.13_8af0fc47c4a92487b000b9dfbc8756db
+      '@vue/cli-service': 4.5.13_313ed6c5e021de215b6714ce051fdbc9
     dev: true
 
-  /@vue/cli-service/4.5.13_8af0fc47c4a92487b000b9dfbc8756db:
+  /@vue/cli-service/4.5.13_313ed6c5e021de215b6714ce051fdbc9:
     resolution: {integrity: sha512-CKAZN4iokMMsaUyJRU22oUAz3oS/X9sVBSKAF2/shFBV5xh3jqAlKl8OXZYz4cXGFLA6djNuYrniuLAo7Ku97A==}
     engines: {node: '>=8'}
     hasBin: true
@@ -1665,9 +1665,9 @@ packages:
       terser-webpack-plugin: 1.4.5_webpack@4.46.0
       thread-loader: 2.1.3_webpack@4.46.0
       url-loader: 2.3.0_file-loader@4.3.0+webpack@4.46.0
-      vue-loader: 15.9.7_fb85a9817f99bdf862e5e3a442a1fb91
+      vue-loader: 15.9.7_f8120bf4018254fb790a4ad11cd23679
       vue-style-loader: 4.1.3
-      vue-template-compiler: 2.6.12
+      vue-template-compiler: 2.6.13
       webpack: 4.46.0
       webpack-bundle-analyzer: 3.9.0
       webpack-chain: 6.5.1
@@ -8556,12 +8556,12 @@ packages:
     deprecated: Sorry but vue-analytics is no longer maintained. I would suggest you switch to vue-gtag, with love, the guy who made the package.
     dev: false
 
-  /vue-axios/2.1.5_vue@2.6.12:
+  /vue-axios/2.1.5_vue@2.6.13:
     resolution: {integrity: sha512-th5xVbInVoyIoe+qY+9GCflEVezxAvztD4xpFF39SRQYqpoKD2qkmX8yv08jJG9a2SgNOCjirjJGSwg/wTrbmA==}
     peerDependencies:
       vue: '>= 1.0.0'
     dependencies:
-      vue: 2.6.12
+      vue: 2.6.13
     dev: false
 
   /vue-eslint-parser/7.6.0_eslint@7.27.0:
@@ -8585,7 +8585,7 @@ packages:
     resolution: {integrity: sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==}
     dev: true
 
-  /vue-loader/15.9.7_fb85a9817f99bdf862e5e3a442a1fb91:
+  /vue-loader/15.9.7_f8120bf4018254fb790a4ad11cd23679:
     resolution: {integrity: sha512-qzlsbLV1HKEMf19IqCJqdNvFJRCI58WNbS6XbPqK13MrLz65es75w392MSQ5TsARAfIjUw+ATm3vlCXUJSOH9Q==}
     peerDependencies:
       cache-loader: '*'
@@ -8605,7 +8605,7 @@ packages:
       loader-utils: 1.4.0
       vue-hot-reload-api: 2.3.4
       vue-style-loader: 4.1.3
-      vue-template-compiler: 2.6.12
+      vue-template-compiler: 2.6.13
       webpack: 4.46.0
     dev: true
 
@@ -8629,8 +8629,8 @@ packages:
       loader-utils: 1.4.0
     dev: true
 
-  /vue-template-compiler/2.6.12:
-    resolution: {integrity: sha512-OzzZ52zS41YUbkCBfdXShQTe69j1gQDZ9HIX8miuC9C3rBCk9wIRjLiZZLrmX9V+Ftq/YEyv1JaVr5Y/hNtByg==}
+  /vue-template-compiler/2.6.13:
+    resolution: {integrity: sha512-latKAqpUjCkovB8XppW5gnZbSdYQzkf8pavsMBZYZrQcG6lAnj0EH4Ty7jMwAwFw5Cf4mybKBHlp1UTjnLPOWw==}
     dependencies:
       de-indent: 1.0.2
       he: 1.2.0
@@ -8640,8 +8640,8 @@ packages:
     resolution: {integrity: sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==}
     dev: true
 
-  /vue/2.6.12:
-    resolution: {integrity: sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg==}
+  /vue/2.6.13:
+    resolution: {integrity: sha512-O+pAdJkce1ooYS1XyoQtpBQr9An+Oys3w39rkqxukVO3ZD1ilYJkWBGoRuadiQEm2LLJnCL2utV4TMSf52ubjw==}
     dev: false
 
   /vue2-leaflet-markercluster/3.1.0_leaflet@1.7.1:
@@ -8653,7 +8653,7 @@ packages:
       leaflet.markercluster: 1.5.0_leaflet@1.7.1
     dev: false
 
-  /vue2-leaflet/2.7.0_6df0fd0f5d341b9c3e6da76ca93a44d2:
+  /vue2-leaflet/2.7.0_5e0e5a14d949cd675c19399e8aca182a:
     resolution: {integrity: sha512-uT7lpFoVEDhINMyTpiAthh6aiKFGHuYWLoVH8JJ0YNNSch+XMZFl4YBQ0S2hHYDquQIsh8zx+yINeUI01y9ugw==}
     peerDependencies:
       '@types/leaflet': ^1.5.7
@@ -8662,7 +8662,7 @@ packages:
     dependencies:
       '@types/leaflet': 1.7.0
       leaflet: 1.7.1
-      vue: 2.6.12
+      vue: 2.6.13
     dev: false
 
   /vue2-perfect-scrollbar/1.5.0:
