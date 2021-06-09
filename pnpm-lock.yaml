@@ -1,8 +1,8 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@babel/eslint-parser': 7.14.4
-  '@babel/runtime': 7.14.0
+  '@babel/eslint-parser': 7.14.5
+  '@babel/runtime': 7.14.5
   '@types/leaflet': 1.7.1
   '@vue/cli-plugin-babel': 4.5.13
   '@vue/cli-plugin-eslint': 4.5.13
@@ -41,8 +41,8 @@ dependencies:
   vue2-perfect-scrollbar: 1.5.0
 
 devDependencies:
-  '@babel/eslint-parser': 7.14.4_eslint@7.28.0
-  '@babel/runtime': 7.14.0
+  '@babel/eslint-parser': 7.14.5_eslint@7.28.0
+  '@babel/runtime': 7.14.5
   '@types/leaflet': 1.7.1
   '@vue/cli-plugin-babel': 4.5.13_ff590b0de5aca690f3f4042d35869c4a
   '@vue/cli-plugin-eslint': 4.5.13_ee67d58e6b8137a61a54674aa56542c9
@@ -95,8 +95,8 @@ packages:
       - supports-color
     dev: true
 
-  /@babel/eslint-parser/7.14.4_eslint@7.28.0:
-    resolution: {integrity: sha512-7CTckFLPBGEfCKqlrnJq2PIId3UmJ5hW+D4dsv/VvuA5DapgqyZFCttq+8oeRIJMZQizFIe5gel3xm2SbrqlYA==}
+  /@babel/eslint-parser/7.14.5_eslint@7.28.0:
+    resolution: {integrity: sha512-20BlOHuGf3UXS7z1QPyllM9Gz8SEgcp/UcKeUmdHIFZO6HF1n+3KaLpeyfwWvjY/Os/ynPX3k8qXE/nZ5dw/0g==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': '>=7.11.0'
@@ -1110,6 +1110,13 @@ packages:
 
   /@babel/runtime/7.14.0:
     resolution: {integrity: sha512-JELkvo/DlpNdJ7dlyw/eY7E0suy5i5GQH+Vlxaq1nsNJ+H7f4Vtv3jMeCEgRhZZQFXTjldYfQgv2qmM6M1v5wA==}
+    dependencies:
+      regenerator-runtime: 0.13.7
+    dev: true
+
+  /@babel/runtime/7.14.5:
+    resolution: {integrity: sha512-121rumjddw9c3NCQ55KGkyE1h/nzWhU/owjhw0l4mQrkzz4x9SGS1X8gFLraHwX7td3Yo4QTL+qj0NcIzN87BA==}
+    engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.7
     dev: true
