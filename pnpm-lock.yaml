@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@babel/eslint-parser': 7.14.7
   '@babel/runtime': 7.14.6
-  '@types/leaflet': 1.7.3
+  '@types/leaflet': 1.7.4
   '@vue/cli-plugin-babel': 4.5.13
   '@vue/cli-plugin-eslint': 4.5.13
   '@vue/cli-service': 4.5.13
@@ -36,14 +36,14 @@ dependencies:
   vue-analytics: 5.22.1
   vue-axios: 2.1.5_vue@2.6.14
   vue-spinner: 1.0.4
-  vue2-leaflet: 2.7.1_a745ad17ba84343432f4c1f4fab6b889
+  vue2-leaflet: 2.7.1_0a9b3e9a05e1d1fce6170c0754b07b55
   vue2-leaflet-markercluster: 3.1.0_leaflet@1.7.1
   vue2-perfect-scrollbar: 1.5.0
 
 devDependencies:
   '@babel/eslint-parser': 7.14.7_eslint@7.30.0
   '@babel/runtime': 7.14.6
-  '@types/leaflet': 1.7.3
+  '@types/leaflet': 1.7.4
   '@vue/cli-plugin-babel': 4.5.13_ff590b0de5aca690f3f4042d35869c4a
   '@vue/cli-plugin-eslint': 4.5.13_8f131e54f08de8fd4a917380b9660328
   '@vue/cli-service': 4.5.13_6ea0837a110d10d5b4a7839bd1d980f3
@@ -1391,8 +1391,8 @@ packages:
     resolution: {integrity: sha512-cxWFQVseBm6O9Gbw1IWb8r6OS4OhSt3hPZLkFApLjM8TEXROBuQGLAH2i2gZpcXdLBIrpXuTDhH7Vbm1iXmNGA==}
     dev: true
 
-  /@types/leaflet/1.7.3:
-    resolution: {integrity: sha512-uIAUQbzow2NxFsKmgOnogUA5A6oQ4ZCJoAet4hhe1RwUw54Tydn1tkpHKMZKbqloTMYAZ0CtCF3MoITAwMJWHw==}
+  /@types/leaflet/1.7.4:
+    resolution: {integrity: sha512-a3qYlMwJ62+WRoiDmYODUD4KywA14jP2XohAkAWtELGuMAD3MohZa/MmIvQDqF52xNI9OYaY8BMsL+9z7yf2HQ==}
     dependencies:
       '@types/geojson': 7946.0.7
     dev: true
@@ -8755,14 +8755,14 @@ packages:
       leaflet.markercluster: 1.5.0_leaflet@1.7.1
     dev: false
 
-  /vue2-leaflet/2.7.1_a745ad17ba84343432f4c1f4fab6b889:
+  /vue2-leaflet/2.7.1_0a9b3e9a05e1d1fce6170c0754b07b55:
     resolution: {integrity: sha512-K7HOlzRhjt3Z7+IvTqEavIBRbmCwSZSCVUlz9u4Rc+3xGCLsHKz4TAL4diAmfHElCQdPPVdZdJk8wPUt2fu6WQ==}
     peerDependencies:
       '@types/leaflet': ^1.5.7
       leaflet: ^1.3.4
       vue: ^2.5.17
     dependencies:
-      '@types/leaflet': 1.7.3
+      '@types/leaflet': 1.7.4
       leaflet: 1.7.1
       vue: 2.6.14
     dev: false
