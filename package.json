@@ -24,7 +24,7 @@
     "vue2-perfect-scrollbar": "1.5.0"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.14.7",
+    "@babel/eslint-parser": "7.14.9",
     "@babel/runtime": "7.14.8",
     "@types/leaflet": "1.7.4",
     "@vue/cli-plugin-babel": "4.5.13",
