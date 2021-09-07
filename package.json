@@ -17,7 +17,7 @@
     "leaflet.markercluster": "1.5.1",
     "vue": "2.6.14",
     "vue-analytics": "5.22.1",
-    "vue-axios": "3.2.5",
+    "vue-axios": "3.3.4",
     "vue-spinner": "1.0.4",
     "vue2-leaflet": "2.7.1",
     "vue2-leaflet-markercluster": "3.1.0",
