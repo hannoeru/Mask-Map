@@ -19,7 +19,7 @@ specifiers:
   sass-loader: 10.2.0
   vue: 2.6.14
   vue-analytics: 5.22.1
-  vue-axios: 3.3.4
+  vue-axios: 3.3.6
   vue-spinner: 1.0.4
   vue-template-compiler: 2.6.14
   vue2-leaflet: 2.7.1
@@ -34,7 +34,7 @@ dependencies:
   leaflet.markercluster: 1.5.1_leaflet@1.7.1
   vue: 2.6.14
   vue-analytics: 5.22.1
-  vue-axios: 3.3.4_axios@0.21.4+vue@2.6.14
+  vue-axios: 3.3.6_axios@0.21.4+vue@2.6.14
   vue-spinner: 1.0.4
   vue2-leaflet: 2.7.1_916cf13bc79c61b02273adcd5d0ea7bf
   vue2-leaflet-markercluster: 3.1.0_leaflet@1.7.1
@@ -4360,6 +4360,19 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
+    dev: false
+
+  /follow-redirects/1.14.3_debug@4.3.2:
+    resolution: {integrity: sha512-3MkHxknWMUtb23apkgz/83fDoe+y+qr0TdgacGIA7bew+QLBo3vdgEN2xEsuXNivpFy4CyDhBBZnNZOtalmenw==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dependencies:
+      debug: 4.3.2_supports-color@6.1.0
+    dev: true
 
   /for-in/1.0.2:
     resolution: {integrity: sha1-gQaNKVqBQuwKxybG4iAMMPttXoA=}
@@ -4930,7 +4943,7 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.14.3
+      follow-redirects: 1.14.3_debug@4.3.2
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -5873,7 +5886,6 @@ packages:
 
   /merge-stream/2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
-    dev: true
 
   /merge2/1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
@@ -8785,13 +8797,14 @@ packages:
     deprecated: Sorry but vue-analytics is no longer maintained. I would suggest you switch to vue-gtag, with love, the guy who made the package.
     dev: false
 
-  /vue-axios/3.3.4_axios@0.21.4+vue@2.6.14:
-    resolution: {integrity: sha512-xzga/z/hAhdLNQDPMBEkmB9poR+FjBjLF6Dt+M/yZzRzMTxO0lOJIHCeOscdIaowHMi8n+AHsbbPSGXFUZFg9g==}
+  /vue-axios/3.3.6_axios@0.21.4+vue@2.6.14:
+    resolution: {integrity: sha512-CnAnbyVqD4b1/IBz9lJQDOnBFX+AZLi0ZsPGy7i9Vo5z4QnquiN2FhCX1HDFGd5RNVwAhZrNY+PycRa6jrUmFw==}
     peerDependencies:
       axios: '>= 0.20.0'
       vue: ^ 3.0.0 || ^ 2.0.0
     dependencies:
       axios: 0.21.4
+      merge-stream: 2.0.0
       vue: 2.6.14
     dev: false
 
