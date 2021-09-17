@@ -10,7 +10,7 @@ specifiers:
   axios: 0.21.4
   core-js: 3.17.3
   eslint: 7.32.0
-  eslint-plugin-vue: 7.17.0
+  eslint-plugin-vue: 7.18.0
   leaflet: 1.7.1
   leaflet.locatecontrol: 0.74.0
   leaflet.markercluster: 1.5.1
@@ -48,7 +48,7 @@ devDependencies:
   '@vue/cli-plugin-eslint': 4.5.13_d1fc8462f3ba80b86b66bf192b30a86e
   '@vue/cli-service': 4.5.13_6ea0837a110d10d5b4a7839bd1d980f3
   eslint: 7.32.0
-  eslint-plugin-vue: 7.17.0_eslint@7.32.0
+  eslint-plugin-vue: 7.18.0_eslint@7.32.0
   node-sass: 6.0.1
   sass: 1.41.1
   sass-loader: 10.2.0_node-sass@6.0.1+sass@1.41.1
@@ -3858,8 +3858,8 @@ packages:
       webpack: 4.46.0
     dev: true
 
-  /eslint-plugin-vue/7.17.0_eslint@7.32.0:
-    resolution: {integrity: sha512-Rq5R2QetDCgC+kBFQw1+aJ5B93tQ4xqZvoCUxuIzwTonngNArsdP8ChM8PowIzsJvRtWl4ltGh/bZcN3xhFWSw==}
+  /eslint-plugin-vue/7.18.0_eslint@7.32.0:
+    resolution: {integrity: sha512-ceDXlXYMMPMSXw7tdKUR42w9jlzthJGJ3Kvm3YrZ0zuQfvAySNxe8sm6VHuksBW0+060GzYXhHJG6IHVOfF83Q==}
     engines: {node: '>=8.10'}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0-0
