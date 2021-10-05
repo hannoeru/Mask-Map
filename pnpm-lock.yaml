@@ -8,7 +8,7 @@ specifiers:
   '@vue/cli-plugin-eslint': 4.5.13
   '@vue/cli-service': 4.5.13
   axios: 0.22.0
-  core-js: 3.18.1
+  core-js: 3.18.2
   eslint: 7.32.0
   eslint-plugin-vue: 7.19.0
   leaflet: 1.7.1
@@ -28,7 +28,7 @@ specifiers:
 
 dependencies:
   axios: 0.22.0
-  core-js: 3.18.1
+  core-js: 3.18.2
   leaflet: 1.7.1
   leaflet.locatecontrol: 0.74.0
   leaflet.markercluster: 1.5.1_leaflet@1.7.1
@@ -3124,6 +3124,12 @@ packages:
   /core-js/3.18.1:
     resolution: {integrity: sha512-vJlUi/7YdlCZeL6fXvWNaLUPh/id12WXj3MbkMw5uOyF0PfWPBNOCNbs53YqgrvtujLNlt9JQpruyIKkUZ+PKA==}
     requiresBuild: true
+    dev: true
+
+  /core-js/3.18.2:
+    resolution: {integrity: sha512-zNhPOUoSgoizoSQFdX1MeZO16ORRb9FFQLts8gSYbZU5FcgXhp24iMWMxnOQo5uIaIG7/6FA/IqJPwev1o9ZXQ==}
+    requiresBuild: true
+    dev: false
 
   /core-util-is/1.0.2:
     resolution: {integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=}
