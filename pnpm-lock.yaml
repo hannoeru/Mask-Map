@@ -1,8 +1,8 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@babel/eslint-parser': 7.15.8
-  '@babel/runtime': 7.15.4
+  '@babel/eslint-parser': 7.16.0
+  '@babel/runtime': 7.16.0
   '@types/leaflet': 1.7.5
   '@vue/cli-plugin-babel': 4.5.15
   '@vue/cli-plugin-eslint': 4.5.15
@@ -41,8 +41,8 @@ dependencies:
   vue2-perfect-scrollbar: 1.5.2
 
 devDependencies:
-  '@babel/eslint-parser': 7.15.8_eslint@7.32.0
-  '@babel/runtime': 7.15.4
+  '@babel/eslint-parser': 7.16.0_eslint@7.32.0
+  '@babel/runtime': 7.16.0
   '@types/leaflet': 1.7.5
   '@vue/cli-plugin-babel': 4.5.15_4c1e5ebbf041a85328f9984e4ede8f8a
   '@vue/cli-plugin-eslint': 4.5.15_62e16dd60e13dba96d3ac430272b4676
@@ -97,12 +97,12 @@ packages:
       - supports-color
     dev: true
 
-  /@babel/eslint-parser/7.15.8_eslint@7.32.0:
-    resolution: {integrity: sha512-fYP7QFngCvgxjUuw8O057SVH5jCXsbFFOoE77CFDcvzwBVgTOkMD/L4mIC5Ud1xf8chK/no2fRbSSn1wvNmKuQ==}
+  /@babel/eslint-parser/7.16.0_eslint@7.32.0:
+    resolution: {integrity: sha512-c+AsYOHjI+FgCa+ifLd8sDXp4U4mjkfFgL9NdQWhuA731kAUJs0WdJIXET4A14EJAR9Jv9FFF/MzPWJfV9Oirw==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': '>=7.11.0'
-      eslint: '>=7.5.0'
+      eslint: ^7.5.0 || ^8.0.0
     dependencies:
       eslint: 7.32.0
       eslint-scope: 5.1.1
@@ -1187,8 +1187,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /@babel/runtime/7.15.4:
-    resolution: {integrity: sha512-99catp6bHCaxr4sJ/DbTGgHS4+Rs2RVd2g7iOap6SLGPDknRK9ztKNsE/Fg6QhSeh1FGE5f6gHGQmvvn3I3xhw==}
+  /@babel/runtime/7.16.0:
+    resolution: {integrity: sha512-Nht8L0O8YCktmsDV6FqFue7vQLRx3Hb0B37lS5y0jDRqRxlBG4wIJHnf9/bgSE2UyipKFA01YtS+npRdTWBUyw==}
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.9
@@ -1538,7 +1538,7 @@ packages:
       '@babel/plugin-syntax-jsx': 7.14.5_@babel+core@7.15.8
       '@babel/plugin-transform-runtime': 7.15.8_@babel+core@7.15.8
       '@babel/preset-env': 7.15.8_@babel+core@7.15.8
-      '@babel/runtime': 7.15.4
+      '@babel/runtime': 7.16.0
       '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.15.8
       '@vue/babel-preset-jsx': 1.2.4_@babel+core@7.15.8
       babel-plugin-dynamic-import-node: 2.3.3
@@ -7326,7 +7326,7 @@ packages:
   /regenerator-transform/0.14.5:
     resolution: {integrity: sha512-eOf6vka5IO151Jfsw2NO9WpGX58W6wWmefK3I1zEGr0lOD0u8rwPaNqQL1aRxUaxLeKO3ArNh3VYg1KbaD+FFw==}
     dependencies:
-      '@babel/runtime': 7.15.4
+      '@babel/runtime': 7.16.0
     dev: true
 
   /regex-not/1.0.2:
