@@ -19,7 +19,7 @@ specifiers:
   sass-loader: 10.2.0
   vue: 2.6.14
   vue-analytics: 5.22.1
-  vue-axios: 3.3.7
+  vue-axios: 3.4.0
   vue-spinner: 1.0.4
   vue-template-compiler: 2.6.14
   vue2-leaflet: 2.7.1
@@ -34,7 +34,7 @@ dependencies:
   leaflet.markercluster: 1.5.3_leaflet@1.7.1
   vue: 2.6.14
   vue-analytics: 5.22.1
-  vue-axios: 3.3.7_axios@0.24.0+vue@2.6.14
+  vue-axios: 3.4.0_axios@0.24.0+vue@2.6.14
   vue-spinner: 1.0.4
   vue2-leaflet: 2.7.1_916cf13bc79c61b02273adcd5d0ea7bf
   vue2-leaflet-markercluster: 3.1.0_leaflet@1.7.1
@@ -8741,8 +8741,8 @@ packages:
     deprecated: Sorry but vue-analytics is no longer maintained. I would suggest you switch to vue-gtag, with love, the guy who made the package.
     dev: false
 
-  /vue-axios/3.3.7_axios@0.24.0+vue@2.6.14:
-    resolution: {integrity: sha512-SmNFJIkM5YF4eWfaWfmCmORy52ZP5b8ml9PCTi7C0VsuQK4vwZON6ToNWuyFGCL6U/Fp/pzfIgdLLh/O/qKzYQ==}
+  /vue-axios/3.4.0_axios@0.24.0+vue@2.6.14:
+    resolution: {integrity: sha512-S3YTCJeEndzmtaYzyz919Z54wY1D2OftWEhioGbHED3VUSta8ti0OHjDipTPkb1StxOzQLAAO2hSUq830i14KA==}
     peerDependencies:
       axios: '>= 0.20.0'
       vue: ^3.0.0 || ^2.0.0
