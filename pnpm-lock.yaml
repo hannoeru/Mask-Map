@@ -15,7 +15,7 @@ specifiers:
   leaflet.locatecontrol: 0.76.0
   leaflet.markercluster: 1.5.3
   node-sass: 7.0.0
-  sass: 1.44.0
+  sass: 1.45.0
   sass-loader: 10.2.0
   vue: 2.6.14
   vue-analytics: 5.22.1
@@ -50,8 +50,8 @@ devDependencies:
   eslint: 7.32.0
   eslint-plugin-vue: 7.20.0_eslint@7.32.0
   node-sass: 7.0.0
-  sass: 1.44.0
-  sass-loader: 10.2.0_node-sass@7.0.0+sass@1.44.0
+  sass: 1.45.0
+  sass-loader: 10.2.0_node-sass@7.0.0+sass@1.45.0
   vue-template-compiler: 2.6.14
 
 packages:
@@ -1770,7 +1770,7 @@ packages:
       pnp-webpack-plugin: 1.7.0
       portfinder: 1.0.28
       postcss-loader: 3.0.0
-      sass-loader: 10.2.0_node-sass@7.0.0+sass@1.44.0
+      sass-loader: 10.2.0_node-sass@7.0.0+sass@1.45.0
       ssri: 8.0.1
       terser-webpack-plugin: 1.4.5_webpack@4.46.0
       thread-loader: 2.1.3_webpack@4.46.0
@@ -7601,7 +7601,7 @@ packages:
       yargs: 13.3.2
     dev: true
 
-  /sass-loader/10.2.0_node-sass@7.0.0+sass@1.44.0:
+  /sass-loader/10.2.0_node-sass@7.0.0+sass@1.45.0:
     resolution: {integrity: sha512-kUceLzC1gIHz0zNJPpqRsJyisWatGYNFRmv2CKZK2/ngMJgLqxTbXwe/hJ85luyvZkgqU3VlJ33UVF2T/0g6mw==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
@@ -7621,18 +7621,19 @@ packages:
       loader-utils: 2.0.2
       neo-async: 2.6.2
       node-sass: 7.0.0
-      sass: 1.44.0
+      sass: 1.45.0
       schema-utils: 3.1.1
       semver: 7.3.5
     dev: true
 
-  /sass/1.44.0:
-    resolution: {integrity: sha512-0hLREbHFXGQqls/K8X+koeP+ogFRPF4ZqetVB19b7Cst9Er8cOR0rc6RU7MaI4W1JmUShd1BPgPoeqmmgMMYFw==}
+  /sass/1.45.0:
+    resolution: {integrity: sha512-ONy5bjppoohtNkFJRqdz1gscXamMzN3wQy1YH9qO2FiNpgjLhpz/IPRGg0PpCjyz/pWfCOaNEaiEGCcjOFAjqw==}
     engines: {node: '>=8.9.0'}
     hasBin: true
     dependencies:
       chokidar: 3.5.2
       immutable: 4.0.0
+      source-map-js: 1.0.1
     dev: true
 
   /sax/1.2.4:
@@ -7908,6 +7909,11 @@ packages:
 
   /source-list-map/2.0.1:
     resolution: {integrity: sha512-qnQ7gVMxGNxsiL4lEuJwe/To8UnK7fAnmbGEEH8RpLouuKbeEm0lhbQVFIrNSuB+G7tVrAlVsZgETT5nljf+Iw==}
+    dev: true
+
+  /source-map-js/1.0.1:
+    resolution: {integrity: sha512-4+TN2b3tqOCd/kaGRJ/sTYA0tR0mdXx26ipdolxcwtJVqEnqNYvlCAt1q3ypy4QMlYus+Zh34RNtYLoq2oQ4IA==}
+    engines: {node: '>=0.10.0'}
     dev: true
 
   /source-map-resolve/0.5.3:
