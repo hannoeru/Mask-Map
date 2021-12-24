@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@babel/eslint-parser': 7.16.5
   '@babel/runtime': 7.16.5
-  '@types/leaflet': 1.7.6
+  '@types/leaflet': 1.7.7
   '@vue/cli-plugin-babel': 4.5.15
   '@vue/cli-plugin-eslint': 4.5.15
   '@vue/cli-service': 4.5.15
@@ -36,14 +36,14 @@ dependencies:
   vue-analytics: 5.22.1
   vue-axios: 3.4.0_axios@0.24.0+vue@2.6.14
   vue-spinner: 1.0.4
-  vue2-leaflet: 2.7.1_e5edd2ead907f50ade810bcc2e1995ac
+  vue2-leaflet: 2.7.1_7fe89191c15943761cdf8817635616be
   vue2-leaflet-markercluster: 3.1.0_leaflet@1.7.1
   vue2-perfect-scrollbar: 1.5.2
 
 devDependencies:
   '@babel/eslint-parser': 7.16.5_eslint@7.32.0
   '@babel/runtime': 7.16.5
-  '@types/leaflet': 1.7.6
+  '@types/leaflet': 1.7.7
   '@vue/cli-plugin-babel': 4.5.15_4c1e5ebbf041a85328f9984e4ede8f8a
   '@vue/cli-plugin-eslint': 4.5.15_62e16dd60e13dba96d3ac430272b4676
   '@vue/cli-service': 4.5.15_6ea0837a110d10d5b4a7839bd1d980f3
@@ -1413,8 +1413,8 @@ packages:
     resolution: {integrity: sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ==}
     dev: true
 
-  /@types/leaflet/1.7.6:
-    resolution: {integrity: sha512-Emkz3V08QnlelSbpT46OEAx+TBZYTOX2r1yM7W+hWg5+djHtQ1GbEXBDRLaqQDOYcDI51Ss0ayoqoKD4CtLUDA==}
+  /@types/leaflet/1.7.7:
+    resolution: {integrity: sha512-5/nNqTviSqUwPxbS3PlHl8ODjfnlpOXSFtUAi7dexnisO8E3pfyotChRY/hlIYGvbBiBcKNd6V18xA8O4OpHiQ==}
     dependencies:
       '@types/geojson': 7946.0.8
     dev: true
@@ -8853,14 +8853,14 @@ packages:
       leaflet.markercluster: 1.5.3_leaflet@1.7.1
     dev: false
 
-  /vue2-leaflet/2.7.1_e5edd2ead907f50ade810bcc2e1995ac:
+  /vue2-leaflet/2.7.1_7fe89191c15943761cdf8817635616be:
     resolution: {integrity: sha512-K7HOlzRhjt3Z7+IvTqEavIBRbmCwSZSCVUlz9u4Rc+3xGCLsHKz4TAL4diAmfHElCQdPPVdZdJk8wPUt2fu6WQ==}
     peerDependencies:
       '@types/leaflet': ^1.5.7
       leaflet: ^1.3.4
       vue: ^2.5.17
     dependencies:
-      '@types/leaflet': 1.7.6
+      '@types/leaflet': 1.7.7
       leaflet: 1.7.1
       vue: 2.6.14
     dev: false
