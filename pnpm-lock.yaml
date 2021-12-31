@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@babel/eslint-parser': 7.16.5
-  '@babel/runtime': 7.16.5
+  '@babel/runtime': 7.16.7
   '@types/leaflet': 1.7.7
   '@vue/cli-plugin-babel': 4.5.15
   '@vue/cli-plugin-eslint': 4.5.15
@@ -42,7 +42,7 @@ dependencies:
 
 devDependencies:
   '@babel/eslint-parser': 7.16.5_eslint@7.32.0
-  '@babel/runtime': 7.16.5
+  '@babel/runtime': 7.16.7
   '@types/leaflet': 1.7.7
   '@vue/cli-plugin-babel': 4.5.15_4c1e5ebbf041a85328f9984e4ede8f8a
   '@vue/cli-plugin-eslint': 4.5.15_62e16dd60e13dba96d3ac430272b4676
@@ -1208,8 +1208,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /@babel/runtime/7.16.5:
-    resolution: {integrity: sha512-TXWihFIS3Pyv5hzR7j6ihmeLkZfrXGxAr5UfSl8CHf+6q/wpiYDkUau0czckpYG8QmnCIuPpdLtuA9VmuGGyMA==}
+  /@babel/runtime/7.16.7:
+    resolution: {integrity: sha512-9E9FJowqAsytyOY6LG+1KuueckRL+aQW+mKvXRXnuFGyRAyepJPmEo9vgMfXUA6O9u3IeEdv9MAkppFcaQwogQ==}
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.9
@@ -1585,7 +1585,7 @@ packages:
       '@babel/plugin-syntax-jsx': 7.16.5_@babel+core@7.16.5
       '@babel/plugin-transform-runtime': 7.16.5_@babel+core@7.16.5
       '@babel/preset-env': 7.16.5_@babel+core@7.16.5
-      '@babel/runtime': 7.16.5
+      '@babel/runtime': 7.16.7
       '@vue/babel-plugin-jsx': 1.1.1_@babel+core@7.16.5
       '@vue/babel-preset-jsx': 1.2.4_@babel+core@7.16.5
       babel-plugin-dynamic-import-node: 2.3.3
@@ -7547,7 +7547,7 @@ packages:
   /regenerator-transform/0.14.5:
     resolution: {integrity: sha512-eOf6vka5IO151Jfsw2NO9WpGX58W6wWmefK3I1zEGr0lOD0u8rwPaNqQL1aRxUaxLeKO3ArNh3VYg1KbaD+FFw==}
     dependencies:
-      '@babel/runtime': 7.16.5
+      '@babel/runtime': 7.16.7
     dev: true
 
   /regex-not/1.0.2:
