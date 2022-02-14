@@ -10,7 +10,7 @@ dependencies:
   vue-spinner: 1.0.4
   vue2-leaflet: 2.7.1_03ea871b1b08c5baa4d5d6a779c728fe
   vue2-leaflet-markercluster: 3.1.0_leaflet@1.7.1
-  vue2-perfect-scrollbar: 1.5.2
+  vue2-perfect-scrollbar: 1.5.5
 devDependencies:
   '@babel/eslint-parser': 7.16.5_eslint@8.7.0
   '@babel/runtime': 7.16.7
@@ -9644,14 +9644,14 @@ packages:
       vue: ^2.5.17
     resolution:
       integrity: sha512-K7HOlzRhjt3Z7+IvTqEavIBRbmCwSZSCVUlz9u4Rc+3xGCLsHKz4TAL4diAmfHElCQdPPVdZdJk8wPUt2fu6WQ==
-  /vue2-perfect-scrollbar/1.5.2:
+  /vue2-perfect-scrollbar/1.5.5:
     dependencies:
       cssnano: 4.1.11
       perfect-scrollbar: 1.5.5
       postcss-import: 12.0.1
     dev: false
     resolution:
-      integrity: sha512-3TSBuRUgeLmiwM7bcqQ7OIoOIcltjNocGWwoHfwgHUhkVjVUVNRun2XFdwvN9hZFfjDDW9cHYsEoIQwvgsSCbw==
+      integrity: sha512-po1QGUlgGFL1aS8xC7IcGEUeySKFjk+qT7aVU9htOfGeVcmwOqZuFV3vIQaizDDBNwsbSE8kOO/p4DjAej0zNQ==
   /watchpack-chokidar2/2.0.1:
     dependencies:
       chokidar: 2.1.8
@@ -10066,4 +10066,4 @@ specifiers:
   vue-template-compiler: 2.6.14
   vue2-leaflet: 2.7.1
   vue2-leaflet-markercluster: 3.1.0
-  vue2-perfect-scrollbar: 1.5.2
+  vue2-perfect-scrollbar: 1.5.5
