@@ -21,8 +21,8 @@ devDependencies:
   eslint: 8.7.0_eslint@8.7.0
   eslint-plugin-vue: 7.20.0_eslint@8.7.0
   node-sass: 7.0.1
-  sass: 1.48.0
-  sass-loader: 10.2.0_node-sass@7.0.1+sass@1.48.0
+  sass: 1.49.8
+  sass-loader: 10.2.0_node-sass@7.0.1+sass@1.49.8
   vue-template-compiler: 2.6.14
 lockfileVersion: 5.1
 packages:
@@ -1783,7 +1783,7 @@ packages:
       pnp-webpack-plugin: 1.7.0
       portfinder: 1.0.28
       postcss-loader: 3.0.0
-      sass-loader: 10.2.0_node-sass@7.0.1+sass@1.48.0
+      sass-loader: 10.2.0_node-sass@7.0.1+sass@1.49.8
       ssri: 8.0.1
       terser-webpack-plugin: 1.4.5_webpack@4.46.0
       thread-loader: 2.1.3_webpack@4.46.0
@@ -8300,13 +8300,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-WSO/MfXqKH7/TS8RdkCX3lVkPFQzCgbqdGsmSKq6tlPU+GpGEsa/5aW18JqItnqh+lPtcjifqdZ/VmiILkKckQ==
-  /sass-loader/10.2.0_node-sass@7.0.1+sass@1.48.0:
+  /sass-loader/10.2.0_node-sass@7.0.1+sass@1.49.8:
     dependencies:
       klona: 2.0.5
       loader-utils: 2.0.2
       neo-async: 2.6.2
       node-sass: 7.0.1
-      sass: 1.48.0
+      sass: 1.49.8
       schema-utils: 3.1.1
       semver: 7.3.5
     dev: true
@@ -8326,17 +8326,17 @@ packages:
         optional: true
     resolution:
       integrity: sha512-kUceLzC1gIHz0zNJPpqRsJyisWatGYNFRmv2CKZK2/ngMJgLqxTbXwe/hJ85luyvZkgqU3VlJ33UVF2T/0g6mw==
-  /sass/1.48.0:
+  /sass/1.49.8:
     dependencies:
       chokidar: 3.5.2
       immutable: 4.0.0
       source-map-js: 1.0.1
     dev: true
     engines:
-      node: '>=8.9.0'
+      node: '>=12.0.0'
     hasBin: true
     resolution:
-      integrity: sha512-hQi5g4DcfjcipotoHZ80l7GNJHGqQS5LwMBjVYB/TaT0vcSSpbgM8Ad7cgfsB2M0MinbkEQQPO9+sjjSiwxqmw==
+      integrity: sha512-NoGOjvDDOU9og9oAxhRnap71QaTjjlzrvLnKecUJ3GxhaQBrV6e7gPuSPF28u1OcVAArVojPAe4ZhOXwwC4tGw==
   /sax/1.2.4:
     resolution:
       integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
@@ -10057,7 +10057,7 @@ specifiers:
   leaflet.locatecontrol: 0.76.0
   leaflet.markercluster: 1.5.3
   node-sass: 7.0.1
-  sass: 1.48.0
+  sass: 1.49.8
   sass-loader: 10.2.0
   vue: 2.6.14
   vue-analytics: 5.22.1
