@@ -12,8 +12,8 @@ dependencies:
   vue2-leaflet-markercluster: 3.1.0_leaflet@1.7.1
   vue2-perfect-scrollbar: 1.5.2
 devDependencies:
-  '@babel/eslint-parser': 7.16.5_eslint@8.7.0
-  '@babel/runtime': 7.16.7
+  '@babel/eslint-parser': 7.17.0_eslint@8.7.0
+  '@babel/runtime': 7.17.2
   '@types/leaflet': 1.7.8
   '@vue/cli-plugin-babel': 4.5.15_4c1e5ebbf041a85328f9984e4ede8f8a
   '@vue/cli-plugin-eslint': 4.5.15_8eff0583e49906b341b28621e6647402
@@ -64,7 +64,7 @@ packages:
       '@babel/core': '*'
     resolution:
       integrity: sha512-aeLaqcqThRNZYmbMqtulsetOQZ/5gbR/dWruUCJcpas4Qoyy+QeagfDsPdMrqwsPRDNxJvBlRiZxxX7THO7qtA==
-  /@babel/eslint-parser/7.16.5_eslint@8.7.0:
+  /@babel/eslint-parser/7.17.0_eslint@8.7.0:
     dependencies:
       eslint: 8.7.0_eslint@8.7.0
       eslint-scope: 5.1.1
@@ -77,7 +77,7 @@ packages:
       '@babel/core': '>=7.11.0'
       eslint: ^7.5.0 || ^8.0.0
     resolution:
-      integrity: sha512-mUqYa46lgWqHKQ33Q6LNCGp/wPR3eqOYTUixHFsfrSQqRxH0+WOzca75iEjFr5RDGH1dDz622LaHhLOzOuQRUA==
+      integrity: sha512-PUEJ7ZBXbRkbq3qqM/jZ2nIuakUBqCYc7Qf52Lj7dlZ6zERnqisdHioL0l4wwQZnmskMeasqUNzLBFKs3nylXA==
   /@babel/generator/7.16.8:
     dependencies:
       '@babel/types': 7.16.8
@@ -1225,6 +1225,14 @@ packages:
       node: '>=6.9.0'
     resolution:
       integrity: sha512-9E9FJowqAsytyOY6LG+1KuueckRL+aQW+mKvXRXnuFGyRAyepJPmEo9vgMfXUA6O9u3IeEdv9MAkppFcaQwogQ==
+  /@babel/runtime/7.17.2:
+    dependencies:
+      regenerator-runtime: 0.13.9
+    dev: true
+    engines:
+      node: '>=6.9.0'
+    resolution:
+      integrity: sha512-hzeyJyMA1YGdJTuWU0e/j4wKXrU4OMFvY2MSlaI9B7VQb0r5cxTE3EAIS2Q7Tn2RIcDkRvTA/v2JsAEhxe99uw==
   /@babel/template/7.16.7:
     dependencies:
       '@babel/code-frame': 7.16.7
@@ -10043,8 +10051,8 @@ packages:
     resolution:
       integrity: sha512-jcKpkthap6x63MB4TxwCyuIGkV0oYP/YRyuQU5UO0Yz/E/ZAu+653/uov+phdmO54n6BcvFRyyt0RRrWdN2mpw==
 specifiers:
-  '@babel/eslint-parser': 7.16.5
-  '@babel/runtime': 7.16.7
+  '@babel/eslint-parser': 7.17.0
+  '@babel/runtime': 7.17.2
   '@types/leaflet': 1.7.8
   '@vue/cli-plugin-babel': 4.5.15
   '@vue/cli-plugin-eslint': 4.5.15
