@@ -1,12 +1,12 @@
 dependencies:
-  axios: 0.24.0
+  axios: 0.28.0
   core-js: 3.20.3
   leaflet: 1.7.1
   leaflet.locatecontrol: 0.76.0
   leaflet.markercluster: 1.5.3_leaflet@1.7.1
   vue: 2.6.14
   vue-analytics: 5.22.1
-  vue-axios: 3.4.1_axios@0.24.0+vue@2.6.14
+  vue-axios: 3.4.1_axios@0.28.0+vue@2.6.14
   vue-spinner: 1.0.4
   vue2-leaflet: 2.7.1_03ea871b1b08c5baa4d5d6a779c728fe
   vue2-leaflet-markercluster: 3.1.0_leaflet@1.7.1
@@ -1433,6 +1433,7 @@ packages:
     resolution:
       integrity: sha512-6bSZTPaTIACxn48l50SR+axgrqm6qXFIxrdAKaG6PaJk3+zuUr35hBlgT7vOmJcum+OEaIBLtHV/qloEAFITeA==
   /@types/geojson/7946.0.8:
+    dev: true
     resolution:
       integrity: sha512-1rkryxURpr6aWP7R786/UQOkJ3PcpQiWkAXBmdWc7ryFWqN6a4xfK7BtjXvFBKO9LjQ+MWQSWxYeZX1OApnArA==
   /@types/glob/7.2.0:
@@ -1455,6 +1456,7 @@ packages:
   /@types/leaflet/1.7.8:
     dependencies:
       '@types/geojson': 7946.0.8
+    dev: true
     resolution:
       integrity: sha512-prZwhmUznkwTYCTZVGTR4U1GzgPP3PAWYYQ3wDgVkIoiuQTheWoycsXx4Rz9ARYhlDTl0Ycd8lvhH2/rNSkqIg==
   /@types/mime/1.3.2:
@@ -1801,6 +1803,8 @@ packages:
     engines:
       node: '>=8'
     hasBin: true
+    optionalDependencies:
+      vue-loader-v16: /vue-loader/16.8.3_webpack@4.46.0
     peerDependencies:
       '@vue/cli-service': '*'
       '@vue/compiler-sfc': ^3.0.0-beta.14
@@ -2336,9 +2340,8 @@ packages:
     resolution:
       integrity: sha512-zflvls11DCy+dQWzTW2dzuilv8Z5X/pjfmZOWba6TNIVDm+2UDaJmXSOXlasHKfNBs8oo3M0aT50fDEWfKZjXg==
   /asynckit/0.4.0:
-    dev: true
     resolution:
-      integrity: sha1-x57Zf380y48robyXkLzDZkdLS3k=
+      integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==
   /atob/2.1.2:
     dev: true
     engines:
@@ -2367,12 +2370,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
-  /axios/0.24.0:
+  /axios/0.28.0:
     dependencies:
-      follow-redirects: 1.14.7
+      follow-redirects: 1.15.5
+      form-data: 4.0.0
+      proxy-from-env: 1.1.0
     dev: false
     resolution:
-      integrity: sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==
+      integrity: sha512-Tu7NYoGY4Yoc7I+Npf9HhUMtEEpV7ZiLH9yndTCoNhcpBH0kwcvFbzYN9/u5QKI5A6uefjsNNWaz5olJVYS62Q==
   /babel-loader/8.2.3_174483de130731162278521ff93b7183:
     dependencies:
       '@babel/core': 7.16.7_@babel+core@7.16.7
@@ -3106,7 +3111,6 @@ packages:
   /combined-stream/1.0.8:
     dependencies:
       delayed-stream: 1.0.0
-    dev: true
     engines:
       node: '>= 0.8'
     resolution:
@@ -3696,7 +3700,6 @@ packages:
     resolution:
       integrity: sha512-QwGuEUouP2kVwQenAsOof5Fv8K9t3D8Ca8NxcXKrIpEHjTXK5J2nXLdP+ALI1cgv8wj7KuwBhTwBkOZSJKM5XQ==
   /delayed-stream/1.0.0:
-    dev: true
     engines:
       node: '>=0.4.0'
     resolution:
@@ -4597,17 +4600,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-3Z4XhFZ3992uIq0XOqb9AreonueSYphE6oYbpt5+3u06JWklbsPkNv3ZKkP9Bz/r+1MWCaMoSQ28P85+1Yc77w==
-  /follow-redirects/1.14.7:
-    dev: false
-    engines:
-      node: '>=4.0'
-    peerDependencies:
-      debug: '*'
-    peerDependenciesMeta:
-      debug:
-        optional: true
-    resolution:
-      integrity: sha512-+hbxoLbFMbRKDwohX8GkTataGqO6Jb7jGwpAlwgy2bIz25XtRm7KEzJM76R1WiNT5SwZkX4Y75SwBolkpmE7iQ==
   /follow-redirects/1.14.7_debug@4.3.3:
     dependencies:
       debug: 4.3.3
@@ -4621,6 +4613,17 @@ packages:
         optional: true
     resolution:
       integrity: sha512-+hbxoLbFMbRKDwohX8GkTataGqO6Jb7jGwpAlwgy2bIz25XtRm7KEzJM76R1WiNT5SwZkX4Y75SwBolkpmE7iQ==
+  /follow-redirects/1.15.5:
+    dev: false
+    engines:
+      node: '>=4.0'
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    resolution:
+      integrity: sha512-vSFWUON1B+yAw1VN4xMfxgn5fTUiaOzAJCKBwIIgT/+7CuGy9+r+5gITvP62j3RmaD5Ph65UaERdOSRGUzZtgw==
   /for-in/1.0.2:
     dev: true
     engines:
@@ -4641,6 +4644,16 @@ packages:
       node: '>= 0.12'
     resolution:
       integrity: sha512-1lLKB2Mu3aGP1Q/2eCOx0fNbRMe7XdwktwOruhfqqd0rIJWwN4Dh+E3hrPSlDCXnSR7UtZ1N38rVXm+6+MEhJQ==
+  /form-data/4.0.0:
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.34
+    dev: false
+    engines:
+      node: '>= 6'
+    resolution:
+      integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==
   /forwarded/0.2.0:
     dev: true
     engines:
@@ -6400,7 +6413,6 @@ packages:
     resolution:
       integrity: sha512-115fLhvZVqWwHPbClyntxEVfVDfl9DLLTuJvq3g2O/Oxi8AiNouAHvDSzHS0viUJc+V5vm3eq91Xwqn9dp4jRA==
   /mime-db/1.51.0:
-    dev: true
     engines:
       node: '>= 0.6'
     resolution:
@@ -6408,7 +6420,6 @@ packages:
   /mime-types/2.1.34:
     dependencies:
       mime-db: 1.51.0
-    dev: true
     engines:
       node: '>= 0.6'
     resolution:
@@ -7802,6 +7813,10 @@ packages:
       node: '>= 0.10'
     resolution:
       integrity: sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==
+  /proxy-from-env/1.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==
   /prr/1.0.1:
     dev: true
     resolution:
@@ -9531,9 +9546,9 @@ packages:
     dev: false
     resolution:
       integrity: sha512-HPKQMN7gfcUqS5SxoO0VxqLRRSPkG1H1FqglsHccz6BatBatNtm/Vyy8brApktZxNCfnAkrSVDpxg3/FNDeOgQ==
-  /vue-axios/3.4.1_axios@0.24.0+vue@2.6.14:
+  /vue-axios/3.4.1_axios@0.28.0+vue@2.6.14:
     dependencies:
-      axios: 0.24.0
+      axios: 0.28.0
       vue: 2.6.14
     dev: false
     peerDependencies:
@@ -9621,6 +9636,7 @@ packages:
     resolution:
       integrity: sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
   /vue/2.6.14:
+    dev: false
     resolution:
       integrity: sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==
   /vue2-leaflet-markercluster/3.1.0_leaflet@1.7.1:
@@ -10049,7 +10065,7 @@ specifiers:
   '@vue/cli-plugin-babel': 4.5.15
   '@vue/cli-plugin-eslint': 4.5.15
   '@vue/cli-service': 4.5.15
-  axios: 0.24.0
+  axios: 0.28.0
   core-js: 3.20.3
   eslint: 8.7.0
   eslint-plugin-vue: 7.20.0
