@@ -2,30 +2,48 @@
 defineProps<{
   loading: boolean
 }>()
+
+const size = '60px'
+const moon = 60 / 7
 </script>
 
 <template>
   <div
     v-if="loading"
-    class="loader absolute inset-0 z-[100] flex flex-col items-center justify-center bg-[#fafafa]"
+    class="loader"
   >
-    <h2 class="mb-5 mt-[-100px] text-[1.5em] font-bold">
-      口罩即時查
-    </h2>
-    <div class="mb-5">
+    <h2>口罩即時查</h2>
+    <div class="logo">
       <img
         src="@/assets/logo.png"
         alt=""
       >
     </div>
-    <div
-      class="relative h-[60px] w-[60px]"
-      aria-hidden="true"
-    >
-      <div class="absolute inset-0 animate-[mask-spin_0.6s_linear_infinite]">
-        <div class="absolute left-0 top-[25.715px] h-[8.57px] w-[8.57px] rounded-full bg-[#11787a] opacity-80" />
+    <div class="v-spinner">
+      <div
+        class="v-moon v-moon1"
+        :style="{ height: size, width: size, borderRadius: '100%' }"
+      >
+        <div
+          class="v-moon v-moon2"
+          :style="{
+            height: `${moon}px`,
+            width: `${moon}px`,
+            borderRadius: '100%',
+            top: `${30 - moon / 2}px`,
+            backgroundColor: '#11787a',
+          }"
+        />
+        <div
+          class="v-moon v-moon3"
+          :style="{
+            height: size,
+            width: size,
+            borderRadius: '100%',
+            border: `${moon}px solid #11787a`,
+          }"
+        />
       </div>
-      <div class="box-border h-[60px] w-[60px] border-[8.57px] border-[#11787a] rounded-full opacity-10" />
     </div>
   </div>
 </template>

@@ -41,7 +41,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font: bold 12px/12px "Noto Sans TC", sans-serif;
+  font: bold 12px/12px "Noto Sans CJK TC";
 }
 
 .marker-cluster > div > .adult {
@@ -58,7 +58,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font: bold 12px/28px "Noto Sans TC", sans-serif;
+  font: bold 12px/28px "Noto Sans CJK TC";
   color: white;
 }
 

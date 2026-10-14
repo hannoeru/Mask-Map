@@ -22,21 +22,13 @@ watch(selected, (value) => {
 </script>
 
 <template>
-  <div
-    id="show-box"
-    class="absolute bottom-0 right-0 z-[8] max-[720px]:w-full"
-  >
-    <Transition
-      mode="out-in"
-      enter-active-class="transition-opacity duration-[50ms]"
-      enter-from-class="opacity-0"
-      leave-active-class="transition-opacity duration-[50ms]"
-      leave-to-class="opacity-0"
-    >
+  <div id="show-box">
+    <div class="close" />
+    <Transition name="fade" mode="out-in">
       <PharmacyCard
         v-if="show && selected"
         :data="selected"
-        class="mb-[15px] max-[720px]:mx-auto min-[721px]:mr-[15px]"
+        class="box"
       />
     </Transition>
   </div>
