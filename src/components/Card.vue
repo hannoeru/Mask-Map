@@ -45,8 +45,8 @@
         <div class="title">電話</div>
         <div class="data">{{ data.properties.phone }}</div>
         <div class="check">
-          <a :href="'tel:' + data.properties.phone.replace(/\s*/g, '')"></a>
-          撥打電話
+          <a v-if="telHref" :href="telHref">撥打電話</a>
+          <span v-else>撥打電話</span>
         </div>
       </div>
       <div class="line">
@@ -59,53 +59,34 @@
   </div>
 </template>
 <script>
-  export default {
-    props: ["data"],
-    data() {
-      return {};
-    },
-    methods: {
-      maskClass(val) {
-        let c = "";
-        if (val == 0) {
-          c = "none";
-        } else if (val < 1000) {
-          c = "bad";
-        } else {
-          c = "good";
-        }
-        return c;
-      },
-      isOpen(val) {
-        if (val == "") return "未知";
-        const r = val.split("、");
-        for (let i = 0; i < r.length; i++) {
-          r[i] = r[i].substr(5) == "看診" ? true : false;
-        }
-        const timeArray = [r.splice(0, 7), r.splice(0, 7), r.splice(0, 7)];
-        const time = new Date();
-        const hour = time.getHours();
-        const min = time.getMinutes();
-        const day = time.getDay();
-        const t = hour * 60 + min;
-        let zone = 0;
+import { isOpen } from '../pharmacyStatus'
 
-        if (210 <= t && t <= 720) {
-          zone = 0;
-        } else if (810 <= t && t <= 1020) {
-          zone = 1;
-        } else if (1080 <= t && t <= 1230) {
-          zone = 2;
-        } else {
-          return "休息中";
-        }
-        return timeArray[zone][day] ? "營業中" : "休息中";
-      },
-      mapUrl(val) {
-        return `https://www.google.com/maps/search/?api=1&query=${val.name} ${val.address}`;
-      }
+export default {
+  name: 'PharmacyCard',
+  props: ['data'],
+  computed: {
+    telHref() {
+      const phone = this.data && this.data.properties && this.data.properties.phone
+      if (!phone) return ''
+      return `tel:${String(phone).replace(/\s*/g, '')}`
     }
-  };
+  },
+  methods: {
+    maskClass(val) {
+      const count = Number(val)
+      if (!Number.isFinite(count) || count === 0) return 'none'
+      if (count < 1000) return 'bad'
+      return 'good'
+    },
+    isOpen(val) {
+      return isOpen(val)
+    },
+    mapUrl(val) {
+      const query = `${val.name || ''} ${val.address || ''}`.trim()
+      return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`
+    }
+  }
+}
 </script>
 <style lang="scss">
   .center {
@@ -115,6 +96,7 @@
   }
   .card {
     width: 343px;
+    max-width: calc(100vw - 32px);
     padding-bottom: 20px;
     background: #ffffff 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 10px #0000001a;

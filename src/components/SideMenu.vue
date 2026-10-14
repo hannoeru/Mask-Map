@@ -21,10 +21,10 @@
         />
       </div>
     </div>
-    <perfect-scrollbar
-      :options="scrollOptions"
+    <div
+      class="ps"
       ref="scroll"
-      @ps-scroll-y="onScroll"
+      @scroll="onScroll"
     >
       <div class="search">
         <div class="select">
@@ -60,15 +60,16 @@
         </div>
       </div>
       <div class="title_day">
-        <div class="text_big">{{ day ? '奇' : '偶' }}數</div>
+        <div class="text_big">{{ purchaseLabel }}</div>
         <div class="text">購買日</div>
         <div class="info">
           <a
-            href="https://g0vhackmd.blob.core.windows.net/g0v-hackmd-images/upload_9d7620679dcf6fd6e5b9bad48dacbf85"
+            href="https://mohw.gov.tw/cp-4635-51370-1.html"
             target="_blank"
+            rel="noopener noreferrer"
           ><img
               src="@/assets/ic_help@2x.png"
-              alt=""
+              alt="購買日說明"
             /></a>
         </div>
       </div>
@@ -77,7 +78,7 @@
           <span>{{ selectedCity }} {{ selectedDistrict }} 內的供應商</span>
           <span>資訊更新時間 {{ updateTime }}</span>
         </div>
-        <button @click="$parent.getMaskData()">重整列表</button>
+        <button type="button" @click="$emit('refresh')">重整列表</button>
       </div>
       <div class="cards">
         <div class="card-list">
@@ -85,120 +86,128 @@
             v-for="item in filterData"
             :key="item.properties.id"
             :data="item"
-            @click.native="updateShow(item)"
+            @click="updateShow(item)"
           />
         </div>
       </div>
-    </perfect-scrollbar>
+    </div>
     <div
       class="page_top"
-      v-if="scroll > 500 && !toggle"
+      v-if="scrollTop > 500 && !toggle"
       @click="scrollToTop"
     >
-      <a href="#"></a>
+      <a href="#" @click.prevent="scrollToTop"></a>
     </div>
   </div>
 </template>
 <script>
-  import { PerfectScrollbar } from "vue2-perfect-scrollbar";
-  import "vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css";
-  import cities from "../data-zh";
-  import Card from "./Card";
-  export default {
-    components: { Card, PerfectScrollbar },
-    props: ["data"],
-    data() {
-      return {
-        cities: cities,
-        toggle: false,
-        day: true,
-        selectedCity: "台北市",
-        selectedDistrict: "",
-        updateTime: "None",
-        scrollOptions: {
-          minScrollbarLength: 30
-        },
-        scroll
-      };
-    },
-    created() {
-      const day = new Date().getDay();
-      if (day % 2 != 0) {
-        this.day = true;
-      } else {
-        this.day = false;
-      }
-      this.updateTime = this.getUpdateTime();
-      if (window.innerWidth < 760) this.toggle = true;
-    },
-    methods: {
-      updateShow(item) {
-        if (window.screen.availWidth < 768) this.toggle = true;
-        this.$emit("update-show", item);
-      },
-      getUpdateTime() {
-        for (let i = 0; i < this.data.length; i++) {
-          const time = this.data[i].properties.updated;
-          if (time != "") {
-            return time;
-          }
-        }
-      },
-      onScroll(e) {
-        this.scroll = e.target.scrollTop;
-      },
-      scrollToTop() {
-        this.$refs.scroll.$el.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-      }
-    },
-    computed: {
-      getDistricts: function() {
-        if (this.selectedCity == "") {
-          return [];
-        }
-        const data = this.cities.districts[
-          cities.counties.indexOf(this.selectedCity)
-        ];
-        return data[0];
-      },
-      filterData: function() {
-        if (this.selectedDistrict == "") {
-          return this.data
-            .filter(
-              item =>
-                item.properties.county.replace(/臺/g, "台") == this.selectedCity
-            )
-            .sort((a, b) => {
-              return b.properties.mask_adult - a.properties.mask_adult;
-            });
-        } else {
-          return this.data
-            .filter(item => {
-              const address = item.properties.address.replace(/臺/g, "台");
-              return (
-                item.properties.county.replace(/臺/g, "台") ==
-                  this.selectedCity && address.includes(this.selectedDistrict)
-              );
-            })
-            .sort((a, b) => {
-              return b.properties.mask_adult - a.properties.mask_adult;
-            });
-        }
-      }
-    },
-    watch: {
-      selectedCity: function() {
-        this.selectedDistrict = "";
-        this.$refs.scroll.$el.scrollTop = 0;
-      },
-      selectedDistrict: function() {
-        this.$refs.scroll.$el.scrollTop = 0;
-      }
+import PerfectScrollbar from 'perfect-scrollbar'
+import 'perfect-scrollbar/css/perfect-scrollbar.css'
+import cities from '../data-zh'
+import Card from './Card.vue'
+import { purchaseDayLabel } from '../pharmacyStatus'
+
+function countyName(item) {
+  return String((item.properties && item.properties.county) || '').replace(/臺/g, '台')
+}
+
+export default {
+  components: { Card },
+  props: ['data'],
+  emits: ['update-show', 'refresh'],
+  data() {
+    return {
+      cities,
+      toggle: false,
+      purchaseLabel: '奇數',
+      selectedCity: '台北市',
+      selectedDistrict: '',
+      updateTime: 'None',
+      scrollTop: 0
     }
-  };
+  },
+  created() {
+    this.purchaseLabel = purchaseDayLabel()
+    this.updateTime = this.getUpdateTime()
+    if (window.innerWidth < 760) this.toggle = true
+  },
+  mounted() {
+    this.scrollbar = new PerfectScrollbar(this.$refs.scroll, {
+      minScrollbarLength: 30
+    })
+  },
+  beforeUnmount() {
+    if (this.scrollbar) this.scrollbar.destroy()
+  },
+  methods: {
+    updateShow(item) {
+      if (window.innerWidth < 768) this.toggle = true
+      this.$emit('update-show', item)
+    },
+    getUpdateTime() {
+      const rows = this.data || []
+      for (let i = 0; i < rows.length; i++) {
+        const time = rows[i].properties && rows[i].properties.updated
+        if (time) return time
+      }
+      return 'None'
+    },
+    onScroll(e) {
+      this.scrollTop = e.target.scrollTop
+    },
+    resetScroll() {
+      const el = this.$refs.scroll
+      if (!el) return
+      el.scrollTop = 0
+      this.scrollTop = 0
+      if (this.scrollbar) this.scrollbar.update()
+    },
+    scrollToTop() {
+      const el = this.$refs.scroll
+      if (!el) return
+      el.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  },
+  computed: {
+    getDistricts() {
+      const index = this.cities.counties.indexOf(this.selectedCity)
+      const entry = this.cities.districts[index]
+      return (entry && entry[0]) || []
+    },
+    filterData() {
+      const rows = this.data || []
+      const city = this.selectedCity
+      const district = this.selectedDistrict
+      return rows
+        .filter((item) => {
+          if (countyName(item) !== city) return false
+          if (!district) return true
+          const address = String((item.properties && item.properties.address) || '').replace(/臺/g, '台')
+          return address.includes(district)
+        })
+        .sort((a, b) => {
+          return Number(b.properties.mask_adult) - Number(a.properties.mask_adult)
+        })
+    }
+  },
+  watch: {
+    data() {
+      this.updateTime = this.getUpdateTime()
+    },
+    selectedCity() {
+      this.selectedDistrict = ''
+      this.resetScroll()
+    },
+    selectedDistrict() {
+      this.resetScroll()
+    },
+    toggle() {
+      this.$nextTick(() => {
+        if (this.scrollbar) this.scrollbar.update()
+      })
+    }
+  }
+}
 </script>
 <style lang="scss">
   .select {
@@ -209,7 +218,7 @@
   }
   .select select {
     display: inline-block;
-    width: 343px;
+    width: min(343px, calc(100% - 32px));
     cursor: pointer;
     padding: 15px 20px;
     padding-top: 13px;
@@ -261,7 +270,7 @@
     align-items: center;
   }
   .close {
-    transform: translateX(-310px);
+    transform: translateX(calc(-100% + 65px));
     height: 65px;
   }
   #menu {
@@ -269,7 +278,7 @@
     top: 0px;
     left: 0px;
     z-index: 10;
-    width: 375px;
+    width: min(375px, 100%);
     height: 100%;
     background: #fafafa;
     transition-property: all;
@@ -279,13 +288,13 @@
     font: 16px/24px Noto Sans TC;
     overflow: hidden;
     &.close {
-      transform: translateX(-310px);
+      transform: translateX(calc(-100% + 65px));
       height: 65px;
     }
     > .nav {
       @extend .center;
       height: 65px;
-      width: 375px;
+      width: 100%;
       background: #ffffff;
       > .nav_logo {
         @extend .center;

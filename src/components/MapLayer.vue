@@ -1,34 +1,16 @@
 <template>
-  <div id="map">
-    <l-map
-      :zoom="zoom"
-      :minZoom="minZoom"
-      :center="center"
-      :maxBounds="bounds"
-      ref="mymap"
-      :options="{ zoomControl: false }"
-      @ready="onReady"
-      @mousedown="onUserMoved"
-    >
-      <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-      <l-control-zoom position="topright"></l-control-zoom>
-      <v-marker-cluster ref="clusterRef" :options="clusterOption">
-        <l-geo-json :geojson="data" :options="geoJsonOption"></l-geo-json>
-      </v-marker-cluster>
-    </l-map>
-  </div>
+  <div id="map" ref="mapEl"></div>
 </template>
 <script>
+import L from '../leaflet'
 import 'leaflet/dist/leaflet.css'
+import 'leaflet.markercluster'
 import 'leaflet.markercluster/dist/MarkerCluster.css'
+import { LocateControl } from 'leaflet.locatecontrol'
 import 'leaflet.locatecontrol/dist/L.Control.Locate.min.css'
-import L from 'leaflet'
-import 'leaflet.locatecontrol'
 import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png'
 import iconUrl from 'leaflet/dist/images/marker-icon.png'
 import shadowUrl from 'leaflet/dist/images/marker-shadow.png'
-import { LMap, LTileLayer, LGeoJson, LControlZoom } from 'vue2-leaflet'
-import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
 
 delete L.Icon.Default.prototype._getIconUrl
 L.Icon.Default.mergeOptions({
@@ -36,129 +18,128 @@ L.Icon.Default.mergeOptions({
   iconUrl,
   shadowUrl
 })
+
+function maskCount(value) {
+  const count = Number(value)
+  return Number.isFinite(count) ? count : 0
+}
+
+function stockClass(count) {
+  if (count === 0) return 'none'
+  if (count < 1000) return 'bad'
+  return 'good'
+}
+
 export default {
   props: ['data', 'show'],
-  components: {
-    LMap,
-    LTileLayer,
-    LGeoJson,
-    LControlZoom,
-    'v-marker-cluster': Vue2LeafletMarkerCluster
-  },
+  emits: ['update-selected'],
   data() {
     return {
-      isLoading: true,
       center: [25.03746, 121.564558],
       bounds: L.latLngBounds([20.72799, 118.1036], [26.60305, 122.9312]),
       zoom: 12,
       minZoom: 8,
       url: 'https://{s}.tile.osm.org/{z}/{x}/{y}.png',
-      attribution:
-        'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a>',
-      api: import.meta.env.VUE_APP_MASK_API,
-      adultTotal: 0,
-      childTotal: 0,
-      geoJsonOption: {
-        pointToLayer: (geoJsonPoint, latlng) => {
-          // Total Mask
-          // let adultTotal = 0;
-          // let childTotal = 0;
-          // for (let i = 0; i < this.data.length; i++) {
-          //   adultTotal += this.data[i].properties.mask_adult;
-          //   childTotal += this.data[i].properties.mask_child;
-          // }
-          // CSS Class
-          const adult = geoJsonPoint.properties.mask_adult
-          const child = geoJsonPoint.properties.mask_child
-          let adultClass = ''
-          let childClass = ''
-          if (adult == 0) {
-            adultClass = 'none'
-          } else if (adult < 1000) {
-            adultClass = 'bad'
-          } else {
-            adultClass = 'good'
-          }
-          if (child == 0) {
-            childClass = 'none'
-          } else if (child < 1000) {
-            childClass = 'bad'
-          } else {
-            childClass = 'good'
-          }
-          const html = `<div class="adult ${adultClass}">${adult}</div><div class="child ${childClass}">${child}</div>`
-          // Add points icon
-          const options = {
-            icon: L.divIcon({
-              html: html,
-              className: 'points',
-              iconSize: L.point(78, 36),
-              iconAnchor: L.point(39, 46)
-            })
-          }
-          return L.marker(latlng, options).on('click', this.markerCilckHandler)
+      attribution: 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a>'
+    }
+  },
+  mounted() {
+    this.map = L.map(this.$refs.mapEl, {
+      zoomControl: false,
+      minZoom: this.minZoom,
+      maxBounds: this.bounds
+    }).setView(this.center, this.zoom)
+
+    L.tileLayer(this.url, { attribution: this.attribution }).addTo(this.map)
+    L.control.zoom({ position: 'topright' }).addTo(this.map)
+    new LocateControl({ position: 'topright', flyTo: true, showPopup: false }).addTo(this.map)
+
+    this.cluster = L.markerClusterGroup({
+      iconCreateFunction(cluster) {
+        const markers = cluster.getAllChildMarkers()
+        let adult = 0
+        let child = 0
+        for (let i = 0; i < markers.length; i++) {
+          const properties = markers[i].feature && markers[i].feature.properties
+          adult += maskCount(properties && properties.mask_adult)
+          child += maskCount(properties && properties.mask_child)
         }
+        const total = adult + child
+        let size = 'large'
+        if (total < 3000) size = 'small'
+        else if (total < 5000) size = 'medium'
+        const html = `<div><div class="adult">${adult}</div><div class="child">${child}</div></div>`
+        return L.divIcon({
+          html,
+          className: `marker-cluster marker-cluster-${size}`,
+          iconSize: L.point(50, 50)
+        })
       },
-      clusterOption: {
-        iconCreateFunction: function(cluster) {
-          const markers = cluster.getAllChildMarkers()
-          let adult = 0
-          let child = 0
-          for (var i = 0; i < markers.length; i++) {
-            adult += markers[i].feature.properties.mask_adult
-            child += markers[i].feature.properties.mask_child
-          }
-          let html = `<div><div class="adult">${adult}</div><div class="child">${child}</div></div>`
-          const total = adult + child
-          let c = ''
-          if (total < 3000) {
-            c = 'small'
-          } else if (total < 5000) {
-            c = 'medium'
-          } else {
-            c = 'large'
-          }
-          return L.divIcon({
-            html: html,
-            className: 'marker-cluster marker-cluster-' + c,
-            iconSize: L.point(50, 50)
-          })
-        },
-        // //Disable all of the defaults:
-        spiderfyOnMaxZoom: false,
-        disableClusteringAtZoom: 17
-        // showCoverageOnHover: false,
-        // zoomToBoundsOnClick: false
-      }
+      spiderfyOnMaxZoom: false,
+      disableClusteringAtZoom: 17
+    })
+    this.map.addLayer(this.cluster)
+    this.map.on('mousedown', this.onUserMoved)
+    this.renderPharmacies()
+  },
+  beforeUnmount() {
+    if (this.map) {
+      this.map.off('mousedown', this.onUserMoved)
+      this.map.remove()
+      this.map = null
     }
   },
   methods: {
-    markerCilckHandler(e) {
-      const selected = e.target.feature
-      this.$emit('update-selected', selected)
-    },
-    onReady(mapObject) {
-      L.control
-        .locate({ position: 'topright', flyTo: true, showPopup: false })
-        .addTo(mapObject)
-    },
     onUserMoved() {
       this.$emit('update-selected', null)
+    },
+    pointToLayer(feature, latlng) {
+      const properties = (feature && feature.properties) || {}
+      const adult = maskCount(properties.mask_adult)
+      const child = maskCount(properties.mask_child)
+      const html = `<div class="adult ${stockClass(adult)}">${adult}</div><div class="child ${stockClass(child)}">${child}</div>`
+      const marker = L.marker(latlng, {
+        icon: L.divIcon({
+          html,
+          className: 'points',
+          iconSize: L.point(78, 36),
+          iconAnchor: L.point(39, 46)
+        })
+      })
+      marker.on('click', () => {
+        this.$emit('update-selected', feature)
+      })
+      return marker
+    },
+    renderPharmacies() {
+      if (!this.cluster) return
+      this.cluster.clearLayers()
+      const features = (this.data || []).filter((feature) => {
+        const coordinates = feature && feature.geometry && feature.geometry.coordinates
+        return coordinates && Number.isFinite(Number(coordinates[0])) && Number.isFinite(Number(coordinates[1]))
+      })
+      this.cluster.addLayer(L.geoJSON(features, { pointToLayer: this.pointToLayer }))
+    },
+    flyToFeature(item) {
+      if (!this.map || !item || !item.geometry) return
+      const coordinates = item.geometry.coordinates || []
+      const lng = Number(coordinates[0])
+      const lat = Number(coordinates[1])
+      if (!Number.isFinite(lat) || !Number.isFinite(lng)) return
+      this.map.flyTo([lat, lng], 17)
     }
   },
   watch: {
-    show: function(item) {
-      const map = this.$refs.mymap.mapObject
-      map.flyTo(
-        [item.geometry.coordinates[1], item.geometry.coordinates[0]],
-        17
-      )
+    data() {
+      this.renderPharmacies()
+    },
+    show(item) {
+      this.flyToFeature(item)
     }
   }
 }
 </script>
 <style lang="scss">
-@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
 #map {
   height: 100%;
   width: 100%;

@@ -1,42 +1,45 @@
 <template>
   <div id="show-box">
-    <div class="close"></div>
     <transition name="fade" mode="out-in">
       <Card v-if="show" :data="selected" class="box" />
     </transition>
   </div>
 </template>
 <script>
-import Card from './Card';
+import Card from './Card.vue'
 export default {
   components: { Card },
-  props: ['selected'],
+  props: {
+    selected: {
+      default: null
+    }
+  },
   data() {
     return {
-      show: false,
-    };
+      show: false
+    }
   },
   watch: {
-    selected: function (val) {
+    selected(val) {
       if (val !== null) {
         if (!this.show) {
           setTimeout(() => {
-            this.show = true;
-          }, 10);
+            this.show = true
+          }, 10)
         }
       } else {
-        this.show = false;
+        this.show = false
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 <style lang="scss">
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.05s;
 }
-.fade-enter,
+.fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
@@ -50,7 +53,7 @@ export default {
   margin-right: 15px;
   margin-bottom: 15px;
 }
-@media only screen and (min-width: 321px) and (max-width: 720px) {
+@media only screen and (max-width: 720px) {
   #show-box {
     width: 100%;
   }
