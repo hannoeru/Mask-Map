@@ -35,7 +35,7 @@ export default {
       selected: null,
       show: null,
       showInfo: false,
-      api: process.env.VUE_APP_MASK_API,
+      api: import.meta.env.VUE_APP_MASK_API,
     };
   },
   components: {

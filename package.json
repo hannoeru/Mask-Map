@@ -2,20 +2,24 @@
   "name": "vue-mask",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "npm@10.9.9",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "serve": "vue-cli-service serve --mode development",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
+    "serve": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint --ext .js,.vue src",
     "deploy": "git push origin :gh-pages && git subtree push --prefix dist origin gh-pages",
     "test": "echo 'skip tests (there is no test)'"
   },
   "dependencies": {
     "axios": "0.24.0",
-    "core-js": "3.20.3",
     "leaflet": "1.7.1",
     "leaflet.locatecontrol": "0.76.0",
     "leaflet.markercluster": "1.5.3",
-    "vue": "2.6.14",
+    "vue": "2.7.16",
     "vue-analytics": "5.22.1",
     "vue-axios": "3.4.1",
     "vue-spinner": "1.0.4",
@@ -24,22 +28,17 @@
     "vue2-perfect-scrollbar": "1.5.2"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.16.5",
-    "@babel/runtime": "7.16.7",
-    "@types/leaflet": "1.7.8",
-    "@vue/cli-plugin-babel": "4.5.15",
-    "@vue/cli-plugin-eslint": "4.5.15",
-    "@vue/cli-service": "4.5.15",
-    "eslint": "8.7.0",
+    "@vitejs/plugin-vue2": "2.3.4",
+    "eslint": "8.57.1",
     "eslint-plugin-vue": "7.20.0",
-    "node-sass": "7.0.1",
-    "sass": "1.48.0",
-    "sass-loader": "10.2.0",
-    "vue-template-compiler": "2.6.14"
+    "sass": "1.77.8",
+    "vite": "6.4.4"
   },
   "eslintConfig": {
     "root": true,
     "env": {
+      "browser": true,
+      "es2020": true,
       "node": true
     },
     "extends": [
@@ -47,12 +46,9 @@
       "eslint:recommended"
     ],
     "parserOptions": {
-      "parser": "@babel/eslint-parser"
+      "ecmaVersion": 2020,
+      "sourceType": "module"
     },
     "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+  }
 }
