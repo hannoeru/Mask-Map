@@ -1,65 +1,43 @@
+<script setup lang="ts">
+import { useTimeoutFn } from '@vueuse/core'
+import { ref, watch } from 'vue'
+import PharmacyCard from '@/components/PharmacyCard.vue'
+import { useMaskData } from '@/composables/useMaskData'
+
+const { selected } = useMaskData()
+const show = ref(false)
+const { start, stop } = useTimeoutFn(() => {
+  show.value = true
+}, 10, { immediate: false })
+
+watch(selected, (value) => {
+  if (value !== null) {
+    if (!show.value)
+      start()
+    return
+  }
+  stop()
+  show.value = false
+})
+</script>
+
 <template>
-  <div id="show-box">
-    <transition name="fade" mode="out-in">
-      <Card v-if="show" :data="selected" class="box" />
-    </transition>
+  <div
+    id="show-box"
+    class="absolute bottom-0 right-0 z-[8] max-[720px]:w-full"
+  >
+    <Transition
+      mode="out-in"
+      enter-active-class="transition-opacity duration-[50ms]"
+      enter-from-class="opacity-0"
+      leave-active-class="transition-opacity duration-[50ms]"
+      leave-to-class="opacity-0"
+    >
+      <PharmacyCard
+        v-if="show && selected"
+        :data="selected"
+        class="mb-[15px] max-[720px]:mx-auto min-[721px]:mr-[15px]"
+      />
+    </Transition>
   </div>
 </template>
-<script>
-import Card from './Card.vue'
-export default {
-  components: { Card },
-  props: {
-    selected: {
-      default: null
-    }
-  },
-  data() {
-    return {
-      show: false
-    }
-  },
-  watch: {
-    selected(val) {
-      if (val !== null) {
-        if (!this.show) {
-          setTimeout(() => {
-            this.show = true
-          }, 10)
-        }
-      } else {
-        this.show = false
-      }
-    }
-  }
-}
-</script>
-<style lang="scss">
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.05s;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-#show-box {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  z-index: 8;
-}
-.box {
-  margin-right: 15px;
-  margin-bottom: 15px;
-}
-@media only screen and (max-width: 720px) {
-  #show-box {
-    width: 100%;
-  }
-  .box {
-    margin: 0 auto;
-    margin-bottom: 15px;
-  }
-}
-</style>

@@ -1,0 +1,101 @@
+.marker-cluster-small {
+  background-color: rgba(181, 226, 140, 0.6);
+}
+
+.marker-cluster-small > div {
+  background-color: rgba(110, 204, 57, 0.6);
+}
+
+.marker-cluster-medium {
+  background-color: rgba(241, 211, 87, 0.6);
+}
+
+.marker-cluster-medium > div {
+  background-color: rgba(240, 194, 12, 0.6);
+}
+
+.marker-cluster-large {
+  background-color: rgba(253, 156, 115, 0.6);
+}
+
+.marker-cluster-large > div {
+  background-color: rgba(241, 128, 23, 0.6);
+}
+
+.marker-cluster {
+  width: 60px;
+  height: 60px;
+  background-clip: padding-box;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marker-cluster > div {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font: bold 12px/12px "Noto Sans TC", sans-serif;
+}
+
+.marker-cluster > div > .adult {
+  color: #11787a;
+}
+
+.marker-cluster > div > .child {
+  color: #70777c;
+}
+
+.points {
+  border-radius: 5px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: bold 12px/28px "Noto Sans TC", sans-serif;
+  color: white;
+}
+
+.points > div {
+  width: 32px;
+  height: 28px;
+  border-radius: 4px;
+}
+
+.points > .adult {
+  background: rgba(241, 128, 23, 0.6);
+  margin-right: 4px;
+}
+
+.points > .child {
+  background: rgba(241, 128, 23, 0.6);
+}
+
+.points .good {
+  background: #11787a;
+}
+
+.points .bad {
+  background: #e67e22;
+}
+
+.points .none {
+  background: #70777c;
+  opacity: 0.5;
+}
+
+.points::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border: 10px solid transparent;
+  border-top: 10px solid #ffffff;
+}
