@@ -1,110 +1,33 @@
-<template>
-  <div id="app">
-    <!-- <Loading :active.sync="isLoading"></Loading> -->
-    <Loader :loading="isLoading" />
-    <SideMenu
-      v-if="maskData !== null"
-      :data="maskData"
-      @update-show="updateShow"
-    />
-    <MapLayer
-      id="map"
-      v-if="maskData !== null"
-      :data="maskData"
-      :show.sync="show"
-      :selected.sync="selected"
-      @update-selected="updateSelected"
-    />
-    <ShowBox :selected.sync="selected" />
-  </div>
-</template>
+<script setup lang="ts">
+import MaskLoader from '@/components/MaskLoader.vue'
+import MaskMap from '@/components/MaskMap.vue'
+import ShowBox from '@/components/ShowBox.vue'
+import SideMenu from '@/components/SideMenu.vue'
+import { useMaskData } from '@/composables/useMaskData'
 
-<script>
-// Import component
-import MapLayer from './components/MapLayer.vue';
-import ShowBox from './components/ShowBox.vue';
-import SideMenu from './components/SideMenu.vue';
-import Loader from './components/Loader.vue';
+const { features, isLoading, loadError, load } = useMaskData()
 
-export default {
-  name: 'App',
-  data() {
-    return {
-      isLoading: false,
-      maskData: null,
-      selected: null,
-      show: null,
-      showInfo: false,
-      api: import.meta.env.VUE_APP_MASK_API,
-    };
-  },
-  components: {
-    // Loading,
-    MapLayer,
-    ShowBox,
-    SideMenu,
-    Loader,
-  },
-  created() {
-    this.getMaskData();
-  },
-  methods: {
-    track() {
-      this.$ga.page('/');
-    },
-    async getMaskData() {
-      this.isLoading = true;
-      const response = await this.axios.get(this.api);
-      this.maskData = await Object.freeze(response.data.features);
-      this.isLoading = false;
-    },
-    updateSelected(item) {
-      this.selected = item;
-    },
-    updateShow(item) {
-      this.show = item;
-      this.selected = item;
-    },
-  },
-};
+void load()
 </script>
 
-<style lang="scss">
-@import '@/assets/main.scss';
-html {
-  overflow: hidden;
-}
-* {
-  box-sizing: border-box;
-}
-html,
-body,
-#app {
-  height: 100%;
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-}
-p {
-  margin: 0;
-}
-button {
-  outline: none;
-}
-#app {
-  text-align: center;
-  color: #2c3e50;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: rgba(250, 250, 250, 10);
-  font: 16px/19px Noto Sans TC;
-}
-#map {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: 1;
-}
-</style>
+<template>
+  <div id="app">
+    <MaskLoader :loading="isLoading" />
+    <div
+      v-if="loadError && !isLoading"
+      class="load-error"
+      :class="{ blocking: features === null }"
+    >
+      <p>{{ loadError }}</p>
+      <button
+        type="button"
+        @click="load()"
+      >
+        重整列表
+      </button>
+    </div>
+    <SideMenu v-if="features !== null" />
+    <MaskMap v-if="features !== null" />
+    <ShowBox />
+  </div>
+</template>

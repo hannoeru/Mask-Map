@@ -1,0 +1,566 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,700|Roboto&display=swap");
+
+html,
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-style: italic;
+}
+
+html {
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  outline: none;
+}
+
+#app {
+  text-align: center;
+  color: #2c3e50;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(250, 250, 250, 10);
+  font: 16px/19px "Noto Sans TC";
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.select {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.select select {
+  display: inline-block;
+  width: 343px;
+  cursor: pointer;
+  padding: 15px 20px;
+  padding-top: 13px;
+  outline: 0;
+  border: 1px solid #34495e33;
+  border-radius: 10px;
+  background: #ffffff;
+  font: 16px/16px "Noto Sans TC";
+  color: #34495e;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.select select::-ms-expand {
+  display: none;
+}
+
+.select select:hover,
+.select select:focus {
+  color: #34495e;
+  background: #f5f5f5;
+}
+
+.select select:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.select_arrow {
+  position: absolute;
+  top: 17px;
+  right: 30px;
+  width: 0;
+  height: 0;
+  border: solid #7b7b7b;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+}
+
+.select select:hover ~ .select_arrow,
+.select select:focus ~ .select_arrow {
+  border-color: #34495e;
+}
+
+.select select:disabled ~ .select_arrow {
+  border-top-color: #cccccc;
+}
+
+.close {
+  transform: translateX(-310px);
+  height: 65px;
+}
+
+#menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 375px;
+  height: 100%;
+  background: #fafafa;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-delay: 0s;
+  transition-timing-function: ease;
+  font: 16px/24px "Noto Sans TC";
+  overflow: hidden;
+}
+
+#menu.close {
+  transform: translateX(-310px);
+  height: 65px;
+}
+
+#menu > .nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65px;
+  width: 375px;
+  background: #ffffff;
+}
+
+#menu > .nav > .nav_logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 16px;
+  margin-right: 10px;
+}
+
+#menu > .nav > .nav_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+  padding-bottom: 2px;
+}
+
+#menu > .nav > .nav_toggler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65px;
+  width: 65px;
+  margin-right: 3px;
+}
+
+#menu > .menu-scroll {
+  height: calc(100% - 65px);
+}
+
+#menu .search {
+  margin-top: 16px;
+}
+
+#menu .title_day {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 0 24px;
+  height: 54px;
+  text-align: left;
+}
+
+#menu .title_day > .text_big {
+  font: bold 36px/54px "Noto Sans TC";
+  letter-spacing: 0;
+  color: #34495e;
+}
+
+#menu .title_day > .text {
+  margin-left: 8px;
+  padding-bottom: 7px;
+  font: 16px/24px "Noto Sans TC";
+  letter-spacing: 0;
+  color: #34495e;
+}
+
+#menu .title_day > .info {
+  margin-left: 8px;
+  margin-bottom: 7px;
+  height: 24px;
+  width: 24px;
+}
+
+#menu .data_info {
+  margin-top: 10px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu .data_info > .info {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-right: auto;
+}
+
+#menu .data_info > .info span {
+  text-align: left;
+  font: 12px/18px "Noto Sans CJK TC";
+  letter-spacing: 0;
+  color: #566778;
+  opacity: 1;
+}
+
+#menu .data_info button {
+  height: 36px;
+  width: 96px;
+  border: 2px solid #34495e;
+  border-radius: 100px;
+  background: #fafafa;
+  opacity: 1;
+  font: 14px/20px "Noto Sans TC";
+  letter-spacing: 0;
+  color: #34495e;
+  outline: none;
+}
+
+#menu .cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  margin-top: 20px;
+  position: relative;
+}
+
+#menu .cards .card-list {
+  margin-top: 10px;
+  height: 100%;
+}
+
+#menu .cards .card {
+  margin-bottom: 20px;
+}
+
+.page_top {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background: #70777c;
+  opacity: 0.6;
+  border-radius: 50%;
+}
+
+.page_top a {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+}
+
+.page_top a::before {
+  content: "▲";
+  font-size: 14px;
+  color: #b5b5b5;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -2px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.card {
+  width: 343px;
+  padding-bottom: 20px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0 3px 10px #0000001a;
+  border-radius: 10px;
+}
+
+.card > .mask-num {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 116px;
+}
+
+.card > .mask-num > div {
+  width: 150px;
+  height: 92px;
+  background: #11787a;
+  border-radius: 10px;
+  letter-spacing: 0;
+  text-align: left;
+  color: #ffffff;
+  padding: 7px 16px;
+}
+
+.card > .mask-num > div > .text {
+  padding-top: 4px;
+  font: 14px/20px "Noto Sans TC";
+}
+
+.card > .mask-num > div > .num {
+  margin-top: 6px;
+  font: bold 32px/47px "Noto Sans TC";
+}
+
+.card > .mask-num > div > .num > .unit {
+  margin-left: 4px;
+  font: 12px/18px "Noto Sans TC";
+}
+
+.card > .mask-num > .adult {
+  margin-right: 11px;
+}
+
+.card > .mask-num > .good {
+  background: #11787a;
+}
+
+.card > .mask-num > .bad {
+  background: #e67e22;
+}
+
+.card > .mask-num > .none {
+  background: #70777c;
+  opacity: 0.5;
+}
+
+.card > .title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 8px;
+  width: 100%;
+  height: 24px;
+  text-align: left;
+  padding: 0 16px;
+  position: relative;
+  letter-spacing: 0;
+}
+
+.card > .title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: #11787a;
+}
+
+.card > .title > .name {
+  font: bold 16px/24px "Noto Sans TC";
+  color: #34495e;
+}
+
+.card > .title > .is-open {
+  height: 24px;
+  width: 48px;
+  margin-left: 12px;
+  background: rgba(169, 169, 169, 0.1);
+  border-radius: 6px;
+  text-align: center;
+  font: 12px/24px "Noto Sans TC";
+  letter-spacing: 0;
+  color: #a9a9a9;
+}
+
+.card > .title > .is-open.open {
+  background: rgba(22, 160, 133, 0.1);
+  color: #16a085;
+}
+
+.card > .info {
+  margin-top: 18px;
+  padding: 0 16px;
+  letter-spacing: 0;
+}
+
+.card > .info > .line {
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  font: 14px/20px "Noto Sans TC";
+  color: #70777c;
+}
+
+.card > .info > .line a:link,
+.card > .info > .line a:visited,
+.card > .info > .line a:hover,
+.card > .info > .line a:active {
+  color: #70777c;
+}
+
+.card > .info > .line > .title {
+  white-space: nowrap;
+  color: #34495e;
+}
+
+.card > .info > .line > .data {
+  margin-left: 10px;
+}
+
+.card > .info > .line > .check {
+  margin-left: auto;
+  white-space: nowrap;
+  font: 12px/18px "Noto Sans TC";
+  text-decoration: underline;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.05s;
+}
+
+.fade-enter-from,
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+#show-box {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 8;
+}
+
+.box {
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 321px) and (max-width: 720px) {
+  #show-box {
+    width: 100%;
+  }
+
+  .box {
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(250, 250, 250, 10);
+}
+
+.loader h2 {
+  margin-top: -100px;
+}
+
+.loader .logo {
+  margin-bottom: 20px;
+}
+
+.v-spinner .v-moon1 {
+  animation: v-moonStretchDelay 0.6s 0s infinite linear;
+  animation-fill-mode: forwards;
+  position: relative;
+}
+
+.v-spinner .v-moon2 {
+  animation: v-moonStretchDelay 0.6s 0s infinite linear;
+  animation-fill-mode: forwards;
+  opacity: 0.8;
+  position: absolute;
+}
+
+.v-spinner .v-moon3 {
+  opacity: 0.1;
+}
+
+@keyframes v-moonStretchDelay {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.load-error {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px #0000001a;
+}
+
+.load-error button {
+  height: 36px;
+  padding: 0 16px;
+  border: 2px solid #34495e;
+  border-radius: 100px;
+  background: #fafafa;
+  color: #34495e;
+  cursor: pointer;
+}
+
+.load-error.blocking {
+  top: 0;
+  left: 0;
+  transform: none;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0;
+  box-shadow: none;
+}
