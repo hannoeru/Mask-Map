@@ -24,14 +24,17 @@ import 'leaflet.markercluster/dist/MarkerCluster.css'
 import 'leaflet.locatecontrol/dist/L.Control.Locate.min.css'
 import L from 'leaflet'
 import 'leaflet.locatecontrol'
+import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png'
+import iconUrl from 'leaflet/dist/images/marker-icon.png'
+import shadowUrl from 'leaflet/dist/images/marker-shadow.png'
 import { LMap, LTileLayer, LGeoJson, LControlZoom } from 'vue2-leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
 
 delete L.Icon.Default.prototype._getIconUrl
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-  iconUrl: require('leaflet/dist/images/marker-icon.png'),
-  shadowUrl: require('leaflet/dist/images/marker-shadow.png')
+  iconRetinaUrl,
+  iconUrl,
+  shadowUrl
 })
 export default {
   props: ['data', 'show'],
@@ -52,7 +55,7 @@ export default {
       url: 'https://{s}.tile.osm.org/{z}/{x}/{y}.png',
       attribution:
         'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a>',
-      api: process.env.VUE_APP_MASK_API,
+      api: import.meta.env.VUE_APP_MASK_API,
       adultTotal: 0,
       childTotal: 0,
       geoJsonOption: {
